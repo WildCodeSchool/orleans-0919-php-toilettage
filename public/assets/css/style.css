@@ -4,6 +4,24 @@ p {
     font-family: var(--paragraphFont);
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1, h2, h3, h4, h5, h6 {
     font-family: var(--titleFont);
+}
+
+.carousel-inner {
+    height: 40vw;
+    min-width: auto;
+}
+
+.carousel-item img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 768px) {
+
+    .carousel-inner {
+        display: none;
+    }
 }
