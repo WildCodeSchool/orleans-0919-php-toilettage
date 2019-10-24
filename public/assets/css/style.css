@@ -7,3 +7,29 @@ p {
 h1,h2,h3,h4,h5,h6 {
     font-family: var(--titleFont);
 }
+
+/* NAVBAR */
+
+.navbar{
+    box-shadow: 0px 5px 5px grey;
+}
+
+.dogLogo{
+    width:80px;
+}
+
+#navbarNavDropdown{
+    font-size: 21px;
+}
+
+.navbar-nav{
+    width:90%;
+    display: flex;
+    justify-content: space-around;
+}
+
+#navbarNavContact{
+    border: solid 1px #fc5b4c;
+    border-radius: 100px;
+    background-color: #fc5b4c;
+}
