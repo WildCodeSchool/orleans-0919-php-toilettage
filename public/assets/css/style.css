@@ -1,0 +1,41 @@
+/*----formulaire----*/
+#contact {
+    background-color: #f5f9fa;
+}
+
+#contact-title {
+    text-align: center;
+    padding: 1em;
+}
+
+#form-home-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-row {
+    width: 60.5%;
+    text-align: center;
+}
+
+#form-contact {
+    display : flex;
+    flex-direction : column;
+    align_items : center;
+    width : 60%;
+    text-align: center;
+}
+
+.dog-paw {
+    height: 40px;
+    width: 40px;
+    margin: 10px;
+}
+
+#button-contact {
+    background-color: #fc5b4c;
+    border-color: #fc5b4c;
+    border-radius: 100px;
+}
