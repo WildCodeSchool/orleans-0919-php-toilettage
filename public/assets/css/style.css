@@ -1,3 +1,13 @@
+@import "style_master.css";
+
+p {
+    font-family: var(--paragraphFont);
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: var(--titleFont);
+}
+
 h1 {
     font-family: 'Roboto', sans-serif;
     font-size:2.5em;
@@ -67,3 +77,6 @@ h2 {
 }
 
 /*FIN style section presentation/Home */
+
+
+
