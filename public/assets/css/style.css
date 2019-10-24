@@ -1,3 +1,14 @@
+@import "style_master.css";
+
+p {
+    font-family: var(--paragraphFont);
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: var(--titleFont);
+
+}
+
 /*----formulaire----*/
 #contact {
     background-color: #f5f9fa;
@@ -39,3 +50,4 @@
     border-color: #fc5b4c;
     border-radius: 100px;
 }
+
