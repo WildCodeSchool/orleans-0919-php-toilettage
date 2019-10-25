@@ -11,6 +11,24 @@ h1 {
     color: black;
 }
 
+.carousel-inner {
+    height: 40vw;
+    min-width: auto;
+}
+
+.carousel-item img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 768px) {
+
+    .carousel-inner {
+        display: none;
+    }
+}
+
 h2 {
     font-family: var(--titleFont);
     font-size: 2.5em;
@@ -74,5 +92,51 @@ h2 {
 
 /*FIN style section presentation/Home */
 
+/*----formulaire----*/
+
+label {
+    font-family: var(--paragraphFont);
+}
+
+.contact {
+    background-color: var(--backgroundColor);
+}
+
+.contact-title {
+    text-align: center;
+    padding: 1em;
+}
+
+.form-home-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-row {
+    width: 60.5%;
+    text-align: center;
+}
+
+.form-group {
+    display : flex;
+    flex-direction : column;
+    align_items : center;
+    width : 60%;
+    text-align: center;
+}
+
+.dog-paw {
+    height: 40px;
+    width: 40px;
+    margin: 10px;
+}
+
+.btn {
+    background-color: var(--mainColor);
+    border-color: var(--mainColor);
+    border-radius: 100px;
+}
 
 
