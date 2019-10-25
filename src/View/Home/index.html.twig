@@ -3,21 +3,17 @@
 
 {% block title %}Toilettage Seduction{% endblock %}
 
+
 {% block content %}
 
     {#    Section Carousel #}
     {% include 'Home/Include/_carousel.html.twig' %}
 
-{% block content %}
     {#section Presentation#}
-    {% include 'presentation.html.twig' %}
-{% endblock %}
-
+    {% include 'Home/Include/presentation.html.twig' %}
 
 {#---form-part---#}
     {% include "Home/Include/_form.html.twig"%}
-
 {% endblock %}
-
 
 
