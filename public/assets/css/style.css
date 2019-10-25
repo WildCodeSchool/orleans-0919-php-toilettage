@@ -6,20 +6,24 @@ p {
 
 h1,h2,h3,h4,h5,h6 {
     font-family: var(--titleFont);
-
 }
 
 /*----formulaire----*/
-#contact {
-    background-color: #f5f9fa;
+
+label {
+    font-family: var(--paragraphFont);
 }
 
-#contact-title {
+.contact {
+    background-color: var(--backgroundColor);
+}
+
+.contact-title {
     text-align: center;
     padding: 1em;
 }
 
-#form-home-page {
+.form-home-page {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -31,7 +35,7 @@ h1,h2,h3,h4,h5,h6 {
     text-align: center;
 }
 
-#form-contact {
+.form-group {
     display : flex;
     flex-direction : column;
     align_items : center;
@@ -45,9 +49,9 @@ h1,h2,h3,h4,h5,h6 {
     margin: 10px;
 }
 
-#button-contact {
-    background-color: #fc5b4c;
-    border-color: #fc5b4c;
+.button-contact {
+    background-color: var(--mainColor);
+    border-color: var(--mainColor);
     border-radius: 100px;
 }
 

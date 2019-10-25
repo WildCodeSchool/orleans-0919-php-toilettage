@@ -1,36 +1,36 @@
-    <section id="contact">
-        <h2 id="contact-title">Contact</h2>
-        <form method="post" action="" id="form-home-page">
+<section class="contact">
+        <h2 class="contact-title">Contact</h2>
+        <form method="post" action="" class="form-home-page">
             <div class="form-row">
-                <div class="form-group col-md-6" id="form-name">
-                    <label for="inputEmail4">Nom</label>
-                    <input type="email" class="form-control" id="inputEmail4" placeholder="Doe">
+                <div class="form-group col-md-6">
+                    <label for="lastname">Nom</label>
+                    <input type="text" class="form-control" id="lastname" placeholder="Doe" required>
                 </div>
-                <div class="form-group col-md-6" id="form-name">
-                    <label for="inputPassword4">Prénom</label>
-                    <input type="password" class="form-control" id="inputPassword4" placeholder="John">
+                <div class="form-group col-md-6">
+                    <label for="firstname">Prénom</label>
+                    <input type="text" class="form-control" id="firstname" placeholder="John" required>
                 </div>
             </div>
-            <div class="form-group" id="form-contact">
-                <label for="exampleFormControlInput1">Adresse mail</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+            <div class="form-group">
+                <label for="mail">Adresse mail</label>
+                <input type="email" class="form-control" id="mail" placeholder="name@example.com" required>
             </div>
-            <div class="form-group" id="form-contact">
-                <label for="exampleFormControlSelect1"></label>
-                <select class="form-control" id="exampleFormControlSelect1">
+            <div class="form-group">
+                <label for="subject"></label>
+                <select class="form-control" id="subject">
                     <option>Selectionnez une option</option>
                     <option>Information</option>
                     <option>Prendre un rendez-vous</option>
                 </select>
             </div>
-            <div class="form-group" id="form-contact">
-                <label for="exampleFormControlTextarea1">Message</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="6"></textarea>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea class="form-control" id="message" rows="6" required></textarea>
             </div>
             <div>
-                <img src="https://i.postimg.cc/BnXBQK0Q/patte-de-chien.png" alt="dog-paw" class="dog-paw">
-                <button type="submit" class="btn btn-primary" id="button-contact">Envoyer</button>
-                <img src="https://i.postimg.cc/BnXBQK0Q/patte-de-chien.png" alt="dog-paw" class="dog-paw">
+                <img src="/assets/images/dog-paw.png" alt="dog-paw" class="dog-paw">
+                <button type="submit" class="btn btn-primary" class="button-contact">Envoyer</button>
+                <img src="/assets/images/dog-paw.png" alt="dog-paw" class="dog-paw">
             </div>
         </form>
     </section>
