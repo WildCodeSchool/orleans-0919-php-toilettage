@@ -18,7 +18,7 @@ h1,h2,h3,h4,h5,h6 {
     width:80px;
 }
 
-#navbarNavDropdown{
+.collapse{
     font-size: 21px;
 }
 
@@ -28,8 +28,8 @@ h1,h2,h3,h4,h5,h6 {
     justify-content: space-around;
 }
 
-#navbarNavContact{
-    border: solid 1px #fc5b4c;
+.contact{
+    border: solid 1px var(--secondaryColor);
     border-radius: 100px;
-    background-color: #fc5b4c;
+    background-color: var(--secondaryColor);
 }
