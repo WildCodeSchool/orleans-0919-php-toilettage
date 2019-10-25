@@ -49,7 +49,7 @@ label {
     margin: 10px;
 }
 
-.button-contact {
+.btn {
     background-color: var(--mainColor);
     border-color: var(--mainColor);
     border-radius: 100px;
