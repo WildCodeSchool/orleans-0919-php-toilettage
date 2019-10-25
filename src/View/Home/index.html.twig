@@ -1,5 +1,6 @@
 {% extends 'layout.html.twig' %}
 
+
 {% block title %}Toilettage Seduction{% endblock %}
 
 {% block content %}
@@ -7,11 +8,16 @@
     {#    Section Carousel #}
     {% include 'Home/Include/_carousel.html.twig' %}
 
+{% block content %}
+    {#section Presentation#}
+    {% include 'presentation.html.twig' %}
+{% endblock %}
+
+
 {#---form-part---#}
     {% include "Home/Include/_form.html.twig"%}
 
 {% endblock %}
-
 
 
 
