@@ -11,6 +11,36 @@ h1 {
     color: black;
 }
 
+/* NAVBAR */
+
+
+.navbar{
+    box-shadow: 0px 5px 5px var(--backgroundColor);
+}
+
+.dogLogo{
+    width:80px;
+}
+
+.collapse{
+    font-size: 1.5em;
+    font-family: var(--titleFont);
+
+}
+
+.navbar-nav{
+    width:90%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.navContact{
+    border: solid 1px var(--mainColor);
+    border-radius: 100px;
+    background-color: var(--mainColor);
+    color: white !important;
+}
+
 .carousel-inner {
     height: 40vw;
     min-width: auto;
@@ -50,7 +80,7 @@ h2 {
 
 .who {
     font-family: var(--titleFont);
-    background-color: var(--mainColor);
+    background-color: var(--mainColor) !important;
     color: white;
     text-align: center;
     font-weight: bold;
@@ -60,8 +90,8 @@ h2 {
 .nadege {
     display: block;
     width: 250px;
-    border-radius: 50%;
-    border-color:var(--secondaryColor);
+    border-radius: 50% !important;
+    border-color:var(--secondaryColor) !important;
     margin: auto;
 }
 
@@ -116,15 +146,13 @@ label {
 
 .form-row {
     width: 60.5%;
-    text-align: center;
 }
 
 .form-group {
     display : flex;
     flex-direction : column;
-    align_items : center;
     width : 60%;
-    text-align: center;
+
 }
 
 .dog-paw {
@@ -134,9 +162,7 @@ label {
 }
 
 .btn {
-    background-color: var(--mainColor);
-    border-color: var(--mainColor);
+    background-color: var(--mainColor) !important;
+    border-color: var(--mainColor) !important;
     border-radius: 100px;
 }
-
-
