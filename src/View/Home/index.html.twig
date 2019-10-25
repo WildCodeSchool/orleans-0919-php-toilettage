@@ -1,5 +1,20 @@
 {% extends 'layout.html.twig' %}
 
+
+{% block title %}Toilettage Seduction{% endblock %}
+
+
 {% block content %}
-    <h1>Hello Wilder !</h1>
+
+    {#    Section Carousel #}
+    {% include 'Home/Include/_carousel.html.twig' %}
+
+    {#section Presentation#}
+    {% include 'Home/Include/presentation.html.twig' %}
+
+{#---form-part---#}
+    {% include "Home/Include/_form.html.twig"%}
+
 {% endblock %}
+
+
