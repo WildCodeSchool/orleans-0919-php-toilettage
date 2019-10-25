@@ -4,9 +4,78 @@ p {
     font-family: var(--paragraphFont);
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1 {
     font-family: var(--titleFont);
+    font-size: 2.5em;
+    font-weight: bold;
+    color: black;
 }
+
+h2 {
+    font-family: var(--titleFont);
+    font-size: 2em;
+    font-weight: bold;
+    color: var(--mainColor);
+}
+
+
+/* DEBUT style section presentation/Home */
+.homePresentation {
+    padding: 2% 0 2% 0;
+    background: url(/assets/images/wave.png) no-repeat center center fixed;
+    background-size: cover;
+}
+
+.shadowCard-1 {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.who {
+    font-family: var(--titleFont);
+    background-color: var(--mainColor);
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.nadege {
+    display: block;
+    width: 250px;
+    border-radius: 50%;
+    border-color:var(--secondaryColor);
+    margin: auto;
+}
+
+.titlePresentation {
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 50px;
+
+}
+
+.paddingCard {
+    padding-top: 15px;
+}
+
+.seeDetails {
+    font-size: 1.1em;
+    font-weight: bolder;
+    color: var(--secondaryColor);
+}
+
+.discover {
+    padding-top: 5%;
+}
+
+.glyphTools {
+    padding-top: 4%;
+}
+
+/*FIN style section presentation/Home */
+
+
+
 
 /*----formulaire----*/
 
@@ -54,4 +123,5 @@ label {
     border-color: var(--mainColor);
     border-radius: 100px;
 }
+
 
