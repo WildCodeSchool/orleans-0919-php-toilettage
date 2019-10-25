@@ -29,18 +29,14 @@ label {
     justify-content: center;
     align-items: center;
 }
-
 .form-row {
     width: 60.5%;
-    text-align: center;
 }
 
 .form-group {
     display : flex;
     flex-direction : column;
-    align_items : center;
     width : 60%;
-    text-align: center;
 }
 
 .dog-paw {
