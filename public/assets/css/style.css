@@ -25,3 +25,51 @@ h1, h2, h3, h4, h5, h6 {
         display: none;
     }
 }
+
+/*----formulaire----*/
+
+label {
+    font-family: var(--paragraphFont);
+}
+
+.contact {
+    background-color: var(--backgroundColor);
+}
+
+.contact-title {
+    text-align: center;
+    padding: 1em;
+}
+
+.form-home-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-row {
+    width: 60.5%;
+    text-align: center;
+}
+
+.form-group {
+    display : flex;
+    flex-direction : column;
+    align_items : center;
+    width : 60%;
+    text-align: center;
+}
+
+.dog-paw {
+    height: 40px;
+    width: 40px;
+    margin: 10px;
+}
+
+.btn {
+    background-color: var(--mainColor);
+    border-color: var(--mainColor);
+    border-radius: 100px;
+}
+
