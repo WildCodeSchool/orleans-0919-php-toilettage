@@ -15,7 +15,7 @@ h1 {
 
 
 .navbar{
-    box-shadow: 0px 5px 5px var(--backgroundColor);
+    box-shadow: 0 5px 5px var(--backgroundColor);
 }
 
 .dogLogo{
@@ -165,4 +165,90 @@ label {
     background-color: var(--mainColor) !important;
     border-color: var(--mainColor) !important;
     border-radius: 100px;
+}
+/*Css section map and adress*/
+
+.detail-block{
+    display: flex;
+    background-color: var(--backgroundColor);
+    padding-top: 5vw;
+}
+
+/*.container_map {
+    background-color: #660066;
+}*/
+
+.coordonnates {
+    font-family: var(--titleFont);
+    /*font-size: 2em;*/
+    /*ont-weight: bold;*/
+    color: var(--mainColor);
+    text-align: center;
+    margin-bottom: 4vw;
+}
+
+.blockCoordonnate {
+    margin-top: 2vw;
+}
+
+.mapContour {
+    display: flow;
+    justify-items: center;
+    height: 66vh;
+    margin-top: 4vw;
+}
+
+.bloc_adress {
+    align-content: center;
+    height: 66vh;
+    background-color: #ffffff;
+}
+
+.adressContour {
+    display: flow;
+    justify-items: center;
+    margin-top: 4vw;
+    margin-bottom: 4vw;
+}
+
+.pCoordonnate {
+    text-align: center;
+    line-height: 3vh;
+}
+
+/*footer*/
+.footer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: black;
+    color: white;
+    font-size: 1.25em;
+    height: 10vw;
+    margin-top: 4vw
+}
+
+.footerPart {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+    background-color: black;
+}
+
+a:link {
+    text-decoration:none;
+    color: #ffffff;
+}
+a:focus {
+
+}
+a:visited {
+
+}
+a:hover {
+
+}
+a:active {
+
 }
