@@ -15,7 +15,7 @@ h1 {
 
 
 .navbar{
-    box-shadow: 0 5px 5px var(--backgroundColor);
+    box-shadow: 0px 5px 5px var(--backgroundColor);
 }
 
 .dogLogo{
