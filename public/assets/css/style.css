@@ -174,10 +174,6 @@ label {
     padding-top: 5vw;
 }
 
-/*.container_map {
-    background-color: #660066;
-}*/
-
 .coordonnates {
     font-family: var(--titleFont);
     /*font-size: 2em;*/
