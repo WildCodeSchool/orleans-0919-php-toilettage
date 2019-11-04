@@ -176,8 +176,6 @@ label {
 
 .coordonnates {
     font-family: var(--titleFont);
-    /*font-size: 2em;*/
-    /*ont-weight: bold;*/
     color: var(--mainColor);
     text-align: center;
     margin-bottom: 4vw;
