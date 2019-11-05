@@ -1,6 +1,7 @@
 {% extends 'layout.html.twig' %}
 
 
+{% block stylesheet %} <link rel="stylesheet" href="/assets/css/style_home.css"> {% endblock %}
 {% block title %}Toilettage Seduction{% endblock %}
 
 
@@ -12,7 +13,7 @@
     {#section Presentation#}
     {% include 'Home/Include/presentation.html.twig' %}
 
-{#---form-part---#}
+    {#---form-part---#}
     {% include "Home/Include/_form.html.twig"%}
 
 {% endblock %}
