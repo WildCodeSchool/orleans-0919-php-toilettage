@@ -57,6 +57,7 @@ h1 {
 }
 
 @media screen and (max-width: 768px) {
+
     .carousel-inner {
         display: none;
     }
@@ -78,7 +79,7 @@ h2 {
 }
 
 .shadowCard-1 {
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.22);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 .who {
@@ -212,9 +213,10 @@ label {
 
 .adressContour {
     display: flow;
+    justify-items: center;
     margin-top: 4vw;
     margin-bottom: 4vw;
-    
+
 }
 
 .bloc_adress p {
@@ -231,6 +233,7 @@ label {
 /*footer*/
 .footer {
     display: flex;
+    justify-content: space-evenly;
     align-items: center;
     background-color: black;
     color: white;
