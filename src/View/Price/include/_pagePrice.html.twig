@@ -21,71 +21,72 @@
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
 
-                    <!--boucle nombre Class -->
-                            <details>
-                                <summary class="titleAnimals"></summary>
-                                <nav>
-                                    <!--boucle nombre caterogie-->
+                    {% for animal in animals %}
+                        <details>
+                            <summary class="titleAnimals">{{ animal.name }}</summary>
+                            <nav>
+                                {% for category in categories %}
                                     <details>
-                                        <summary class="titleCategorie"></summary>
+                                        <summary class="titleCategorie">{{ category.name }}</summary>
                                         <nav>
                                             <ul class="titleRace">
-                                                <!-- boucle race -->
-                                                <li><a href="#"> </a></li>
-                                                <!-- fin boucle race -->
+                                                {% for race in races %}
+                                                    <li><a href="/price/index/?id={{ race.id }}">{{ race.name }}</a>
+                                                    </li>
+                                                {% endfor %}
                                             </ul>
                                         </nav>
                                     </details>
-                                    <!--boucle nombre caterogie-->
-                                </nav>
-                            </details>
-                    <!-- Fin boucle nombre Class -->
+                                {% endfor %}
+                            </nav>
+                        </details>
+                    {% endfor %}
 
                 </div>
             </div>
         </div>
 
-    <div class="rightBox card">
+        <div class="rightBox card">
 
-        <div class="titleTarif card">
-            <hr class="barre">
-            <h3>Tarifs</h3>
-            <hr class="barre">
-        </div>
+            <div class="titleTarif card">
+                <hr class="barre">
+                <h3>Tarifs</h3>
+                <hr class="barre">
+            </div>
 
-        <div class="boxTarif card">
-            <div class="leftTarif card" style="width: 18rem;">
-                <div class="card-body">
-                    <h4 class="card-title">Nettoyage Simple</h4>
-                    <p class="card-text">€</p>
+            <div class="boxTarif card">
+                <div class="leftTarif card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h4 class="card-title">Nettoyage Simple</h4>
+                        <p class="card-text">{{ showAnimal.price }} €</p>
+                    </div>
+                </div>
+                <div class="rightTarif card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h4 class="card-title">Défrisage</h4>
+                        <p class="card-text">50 €</p>
+                    </div>
                 </div>
             </div>
-            <div class="rightTarif card" style="width: 18rem;">
-                <div class="card-body">
-                    <h4 class="card-title">Défrisage</h4>
-                    <p class="card-text">50 €</p>
+
+            <div class="titlePhoto card">
+                <hr class="barre">
+                <h3>Photos</h3>
+                <hr class="barre">
+            </div>
+
+
+            <div class="boxPhoto card">
+                <div class="leftPicture card" style="width: 18rem;">
+                    <img src="..." class="card-img-top" alt="Avant">
                 </div>
+
+                <div class="rightpicture card" style="width: 18rem;">
+                    <img src="..." class="card-img-top" alt="Après">
+                </div>
+
             </div>
         </div>
-
-        <div class="titlePhoto card">
-            <hr class="barre">
-            <h3>Photos</h3>
-            <hr class="barre">
-        </div>
-
-
-        <div class="boxPhoto card">
-            <div class="leftPicture card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="Avant">
-            </div>
-
-            <div class="rightpicture card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="Après">
-            </div>
-
-        </div>
-    </div>
 
     </div>
 </section>
