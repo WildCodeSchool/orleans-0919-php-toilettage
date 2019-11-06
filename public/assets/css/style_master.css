@@ -1,7 +1,8 @@
 :root {
     --titleFont: 'Roboto', sans-serif;
     --paragraphFont: 'Open Sans', sans-serif;
+    --paragraphColor : #383838;
     --mainColor : rgb(252, 91, 76); /* orange */
     --secondaryColor: rgb(246 137 124); /* orange pale*/
-    --backgroundColor: rgb(245 249 250); /* gray blue */
+    --backgroundColor: rgb(245 249 250); /* pale gray blue  ou #f5f9fa*/
 }

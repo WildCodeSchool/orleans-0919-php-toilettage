@@ -1,7 +1,8 @@
 @import "style_master.css";
 
-p {
+p, label {
     font-family: var(--paragraphFont);
+    color: var(--paragraphColor );
 }
 
 h1 {
@@ -9,6 +10,13 @@ h1 {
     font-size: 2.5em;
     font-weight: bold;
     color: black;
+}
+
+h4 {
+    font-family: var(--titleFont);
+    font-size: 1.3em;
+    font-weight: bold;
+    color: var(--secondaryColor);
 }
 
 /* NAVBAR */
@@ -166,3 +174,24 @@ label {
     border-color: var(--mainColor) !important;
     border-radius: 100px;
 }
+
+.alert:empty, .alert-success{
+    display:none;
+}
+
+/* DEBUT style section Mentions Légales */
+.mentionBack {
+    padding: 2% 0 2% 0;
+    background: url(/assets/images/wave_mention.png) no-repeat center center fixed;
+    background-size: cover;
+}
+
+.mentionPara{
+    margin-left:2%;
+}
+
+.blockMention{
+    padding-top: 3%;
+}
+
+/* DEBUT style section Mentions Légales */
