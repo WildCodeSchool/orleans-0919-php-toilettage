@@ -1,7 +1,11 @@
 @import "style_master.css";
 
-p {
+p, label {
     font-family: var(--paragraphFont);
+}
+
+.form-control::placeholder {
+    color: var(--placeholderColor);
 }
 
 h1 {
@@ -123,6 +127,7 @@ h2 {
 /*FIN style section presentation/Home */
 
 /*----formulaire----*/
+
 
 label {
     font-family: var(--paragraphFont);
