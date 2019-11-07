@@ -8,7 +8,7 @@ h1 {
     font-family: var(--titleFont);
     font-size: 2.5em;
     font-weight: bold;
-    color: black;
+    color: var(--backgroundColorFooter);
 }
 
 /* NAVBAR */
@@ -53,7 +53,7 @@ h1 {
 }
 
 .dropdown-menu a:link {
-    color: #000000;
+    color: var(--backgroundColorFooter);;
 }
 
 @media screen and (max-width: 768px) {
