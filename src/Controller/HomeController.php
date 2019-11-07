@@ -33,7 +33,7 @@ class HomeController extends AbstractController
             if (empty($data['mail'])) {
                 $errors['mail'] = "Veuillez remplir le champ email";
             } elseif (!filter_var($data['mail'], FILTER_VALIDATE_EMAIL)) {
-                $error['mail'] = "Format invalide d'email";
+                $errors['mail'] = "Format invalide d'email";
             }
             if (empty($data['message'])) {
                 $errors['message'] = "Veuillez remplir le champ message";
