@@ -6,16 +6,19 @@
 
 {% block content %}
 
-    {#    Section Carousel #}
+    {#---Section Carousel---#}
     {% include 'Home/Include/_carousel.html.twig' %}
-    {#section Presentation#}
+    {#---section Presentation---#}
     {% include 'Home/Include/presentation.html.twig' %}
-    {#section blocAdress#}
+    {#---section blocAdress---#}
     {% include "Home/Include/_blocAdress.html.twig" %}
     {#---form-part---#}
     {% include "Home/Include/_form.html.twig"%}
     {#---footer---#}
-    {% include "Home/Include.html.twig" %}
+    {% include "Home/Include/_footer.html.twig" %}
+{% endblock %}
+
+{% block javascripts %}
 {% endblock %}
 
 
