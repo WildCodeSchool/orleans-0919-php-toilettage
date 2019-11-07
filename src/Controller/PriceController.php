@@ -8,8 +8,9 @@ use App\Model\PriceManager;
 class PriceController extends AbstractController
 {
 
-    public function index()
+    public function index($raceId = null)
     {
+
         $animalManager = new PriceManager('animal');
         $animals = $animalManager->selectAll();
 
@@ -19,18 +20,16 @@ class PriceController extends AbstractController
         $raceManager = new PriceManager('race');
         $races = $raceManager->selectAll();
 
-        $showAnimal = [];
-
-        if ($_GET) {
+        if ($raceId) {
             $showAnimalManager = new PriceManager('race');
-            $showAnimal = $showAnimalManager->selectOneById($_GET['id']);
+            $race = $showAnimalManager->selectOneById($raceId);
         }
 
         return $this->twig->render('Price/index.html.twig', [
             'animals' => $animals,
             'categories' => $categories,
             'races' => $races,
-            'showAnimal' => $showAnimal
+            'race' => $race ?? []
         ]);
     }
 }

@@ -25,19 +25,28 @@
                         <details>
                             <summary class="titleAnimals">{{ animal.name }}</summary>
                             <nav>
-                                {% for category in categories %}
-                                    <details>
-                                        <summary class="titleCategorie">{{ category.name }}</summary>
-                                        <nav>
-                                            <ul class="titleRace">
-                                                {% for race in races %}
-                                                    <li><a href="/price/index/?id={{ race.id }}">{{ race.name }}</a>
-                                                    </li>
-                                                {% endfor %}
-                                            </ul>
-                                        </nav>
-                                    </details>
-                                {% endfor %}
+                                <div id="accordionCategory">
+                                    {% for category in categories %}
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <button class="btn btn-link titleCategorie" data-toggle="collapse"
+                                                        data-target="#{{ category.name ~ category.id }}"
+                                                        aria-expanded="false"
+                                                        aria-controls="{{ category.name ~ category.id }}Collapse">{{ category.name }}</button>
+                                            </div>
+                                            <div id="{{ category.name ~ category.id }}" class="collapse"
+                                                 aria-labelledby="{{ category.name ~ category.id }}Collapse"
+                                                 data-parent="#accordionCategory">
+                                                <ul class="titleRace">
+                                                    {% for race in races %}
+                                                        <li><a href="/price/index/{{ race.id }}">{{ race.name }}</a>
+                                                        </li>
+                                                    {% endfor %}
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                </div>
                             </nav>
                         </details>
                     {% endfor %}
@@ -58,7 +67,7 @@
                 <div class="leftTarif card" style="width: 18rem;">
                     <div class="card-body">
                         <h4 class="card-title">Nettoyage Simple</h4>
-                        <p class="card-text">{{ showAnimal.price }} €</p>
+                        <p class="card-text">{{ race.price }} €</p>
                     </div>
                 </div>
                 <div class="rightTarif card" style="width: 18rem;">

@@ -16,6 +16,9 @@ p{
 
 }
 
+li {
+    list-style: none;
+}
 
 .background{
     display: flex;
@@ -33,29 +36,30 @@ p{
 
 }
 
-    a{
-        text-decoration: red;
-        color: black;
-    }
+a {
 
-    a:hover{
-        text-decoration:none;
-        color:var(--mainColor);
-    }
+    text-decoration: none;
+    color: black;
+}
 
-    .titleAnimals{
-        font-size: 25px;
-    }
+a:hover{
+    text-decoration:none;
+    color:var(--mainColor);
+}
 
-    .titleCategorie{
-        font-size: 20px;
-        padding-left: 8%;
-    }
+.titleAnimals{
+    font-size: 25px;
+}
 
-    .titleRace{
-        font-size: 18px;
-        padding-left: 20%;
-    }
+.titleCategorie{
+    font-size: 20px;
+    padding-left: 8%;
+}
+
+.titleRace{
+    font-size: 18px;
+    padding-left: 20%;
+}
 
 
 
