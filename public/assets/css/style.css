@@ -171,3 +171,7 @@ label {
     border-color: var(--mainColor) !important;
     border-radius: 100px;
 }
+
+.alert-success{
+    text-align: center;
+}
