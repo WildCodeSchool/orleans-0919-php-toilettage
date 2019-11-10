@@ -173,7 +173,7 @@ label {
     margin: 10px;
 }
 
-.btn primary{
+.btn-primary{
     background-color: var(--mainColor);
     border-color: var(--mainColor);
     border-radius: 100px;
