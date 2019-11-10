@@ -166,9 +166,9 @@ label {
     margin: 10px;
 }
 
-.btn {
-    background-color: var(--mainColor) !important;
-    border-color: var(--mainColor) !important;
+.btn-primary {
+    background-color: var(--mainColor);
+    border-color: var(--mainColor);
     border-radius: 100px;
 }
 
