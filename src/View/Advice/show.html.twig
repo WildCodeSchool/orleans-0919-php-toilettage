@@ -1,0 +1,28 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+<section class="advicePage">
+    <div class="container-fluid">
+        <div class="row justify-content-around">
+                <div class="col-lg-3 offset-lg-1">
+                    <div>
+                     <img src="https://via.placeholder.com/800" class="img-fluid" alt="Responsive image">
+                  </div>
+               </div>
+            <div class="col-lg-6 offset-lg-1">
+                <div class="titlePresentation">
+                    <h2>Conseils</h2>
+                </div>
+                <div>
+                    <h3>{{ advice.name }}</h3>
+                    <p class="text-justify">{{advice.description }}</p>
+                </div>
+                <div class=discover>
+                     <a><span class="seeDetails">Voir les tarifs<span></a>
+                </div>
+            </div>
+            <div class="col-lg-1"></div>
+        </div>
+    </div>
+</section>
+{% endblock %}
