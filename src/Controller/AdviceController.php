@@ -18,7 +18,8 @@ use App\Model\AdviceManager;
 class AdviceController extends AbstractController
 {
     public function show(int $id)
-    {   $race=[];
+    {
+        $race = [];
         $adviceManager = new AdviceManager();
         $race = $adviceManager->selectOneById($id);
         return $this->twig->render('Advice/show.html.twig', ['race' => $race]);
