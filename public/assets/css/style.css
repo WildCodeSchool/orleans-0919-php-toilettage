@@ -160,12 +160,6 @@ label {
     width : 82%;
 }
 
-.dog-paw {
-    height: 40px;
-    width: 40px;
-    margin: 10px;
-}
-
 .btn {
     background-color: var(--mainColor) !important;
     border-color: var(--mainColor) !important;

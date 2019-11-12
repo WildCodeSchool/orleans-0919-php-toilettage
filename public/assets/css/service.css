@@ -16,9 +16,7 @@ h2 {
 }
 
 .row-center {
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     margin-right: -15px;
     margin-left: -15px;
@@ -26,18 +24,7 @@ h2 {
 }
 
 .col-lg-3 {
-    margin-bottom: 40px;
-}
-
-.services-picture {
-    display: block;
-    margin: auto;
-}
-
-.img-thumbnail {
-    padding: 0;
-    max-width: 100%;
-    height: 300px;
+    margin-bottom: 50px;
 }
 
 .card-body {
@@ -49,11 +36,10 @@ h2 {
     margin-bottom: 80px;
 }
 
-@media screen and (max-width: 990px) {
-
-    .row-center {
-        display: flex;
-        flex-direction: column-reverse;
-    }
+.img-fluid {
+    object-fit: cover;
+    padding: 0;
+    margin: auto;
 }
+
 
