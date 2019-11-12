@@ -1,4 +1,5 @@
 @import "style_master.css";
+@import "style_advice.css";
 
 p {
     font-family: var(--paragraphFont);
