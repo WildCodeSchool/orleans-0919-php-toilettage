@@ -151,14 +151,13 @@ label {
 }
 
 .form-row {
-    width: 60.5%;
+    width: 82.5%;
 }
 
 .form-group {
     display : flex;
     flex-direction : column;
-    width : 60%;
-
+    width : 82%;
 }
 
 .dog-paw {
