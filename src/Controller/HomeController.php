@@ -24,7 +24,10 @@ class HomeController extends AbstractController
                 header('Location: /Home/index/?success=ok#contact');
             }
         }
-        return $this->twig->render('Home/index.html.twig', ['errors' => $errors ?? [], 'success' => $_GET['success'] ?? null]);
+        return $this->twig->render('Home/index.html.twig', [
+                'errors' => $errors ?? [],
+                'success' => $_GET['success'] ?? null]
+        );
     }
 
     private function validateContact($data): array
@@ -47,5 +50,4 @@ class HomeController extends AbstractController
 
         return $errors;
     }
-
 }
