@@ -1,8 +1,10 @@
 :root {
     --titleFont: 'Roboto', sans-serif;
     --paragraphFont: 'Open Sans', sans-serif;
-    --mainColor : rgb(252, 91, 76); /* orange */
-    --secondaryColor: rgb(246 137 124); /* orange pale*/
+    --paragraphTitle: rgb(255, 255, 255); /* white */
+    --mainColor: rgb(252, 91, 76); /* orange */
+    --secondaryColor: rgb(246 137 124); /* orange pale */
     --backgroundColor: rgb(245 249 250); /* gray blue */
     --placeholderColor: #D3D3D3; /*pale gray*/
+    --backgroundColorFooter: rgb(0 0 0); /* black */
 }
