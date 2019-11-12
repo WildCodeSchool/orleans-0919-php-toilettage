@@ -18,9 +18,9 @@ use App\Model\AdviceManager;
 class AdviceController extends AbstractController
 {
     public function show(int $id)
-    {
+    {   $race=[];
         $adviceManager = new AdviceManager();
-        $advice = $adviceManager->selectOneById($id);
-        return $this->twig->render('Advice/show.html.twig', ['advice' => $advice]);
+        $race = $adviceManager->selectOneById($id);
+        return $this->twig->render('Advice/show.html.twig', ['race' => $race]);
     }
 }

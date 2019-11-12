@@ -3,25 +3,30 @@
 {% block content %}
 <section class="advicePage">
     <div class="container-fluid">
-        <div class="row justify-content-around row align-items-center">
-                <div class="col-lg-3 offset-lg-1 vertical-center">
+        <div class="titlePresentation">
+            <h2>Conseils</h2>
+        </div>
+        <div class="row justify-content-around row align-items-center ">
+            <div class="col-lg-1" ></div>
+                <div class="col-lg-4 ">
                 <div class="pictureAlign">
-                     <img src="https://via.placeholder.com/800" class="img-fluid" alt="Responsive image">
+                    <div class="card border shadowCard-1">
+                     <img src="{{race.image }}" class="img-fluid" alt="photo chien" >
+                    </div>
                 </div>
                </div>
-            <div class="col-lg-6 offset-lg-1">
-                <div class="titlePresentation">
-                    <h2>Conseils</h2>
-                </div>
+            <div class="col-lg-5">
+
                 <div>
-                    <h3>{{ advice.name }}</h3>
-                    <p class="text-justify">{{advice.description }}</p>
+                    <h3 class="title">{{ race.name }}</h3>
+                    <p class="text-justify">{{race.description }}</p>
                 </div>
                 <div class=discover>
                      <a><span class="seeDetails">Voir les tarifs<span></a>
                 </div>
             </div>
             <div class="col-lg-1"></div>
+
         </div>
     </div>
 </section>
