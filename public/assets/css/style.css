@@ -2,6 +2,11 @@
 
 p {
     font-family: var(--paragraphFont);
+    color: var(--paragraphColor );
+}
+
+label {
+    color: var(--labelColor );
 }
 
 h1 {
@@ -9,6 +14,13 @@ h1 {
     font-size: 2.5em;
     font-weight: bold;
     color: var(--backgroundColorFooter);
+}
+
+h4 {
+    font-family: var(--titleFont);
+    font-size: 1.3em;
+    font-weight: bold;
+    color: var(--secondaryColor);
 }
 
 /* NAVBAR */
@@ -167,11 +179,14 @@ label {
     margin: 10px;
 }
 
-.btn {
-    background-color: var(--mainColor) !important;
-    border-color: var(--mainColor) !important;
+.btn-primary{
+    background-color: var(--mainColor);
+    border-color: var(--mainColor);
     border-radius: 100px;
 }
+
+.alert:empty, .alert-success{
+    display:none;
 
 .button_submit {
     margin-bottom: 10%;
