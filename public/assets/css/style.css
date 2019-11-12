@@ -1,14 +1,29 @@
 @import "style_master.css";
 
-p {
+p, label {
     font-family: var(--paragraphFont);
+    color: var(--paragraphColor );
+}
+
+label {
+    color: var(--labelColor );
+}
+
+.form-control::placeholder {
+    color: var(--placeholderColor);
 }
 
 h1 {
     font-family: var(--titleFont);
     font-size: 2.5em;
     font-weight: bold;
-    color: var(--backgroundColorFooter);
+}
+
+h4 {
+    font-family: var(--titleFont);
+    font-size: 1.3em;
+    font-weight: bold;
+    color: var(--secondaryColor);
 }
 
 /* NAVBAR */
@@ -38,7 +53,6 @@ h1 {
     border: solid 1px var(--mainColor);
     border-radius: 100px;
     background-color: var(--mainColor);
-    color: white !important;
 }
 
 .carousel-inner {
@@ -84,7 +98,7 @@ h2 {
 
 .who {
     font-family: var(--titleFont);
-    background-color: var(--mainColor) !important;
+    background-color: var(--mainColor);
     color: var(--paragraphTitle);
     text-align: center;
     font-weight: bold;
@@ -94,8 +108,8 @@ h2 {
 .nadege {
     display: block;
     width: 250px;
-    border-radius: 50% !important;
-    border-color:var(--secondaryColor) !important;
+    border-radius: 50%;
+    border-color:var(--secondaryColor);
     margin: auto;
 }
 
@@ -127,6 +141,7 @@ h2 {
 /*FIN style section presentation/Home */
 
 /*----formulaire----*/
+
 
 label {
     font-family: var(--paragraphFont);
@@ -160,11 +175,15 @@ label {
     width : 82%;
 }
 
-.btn {
-    background-color: var(--mainColor) !important;
-    border-color: var(--mainColor) !important;
+
+.btn-primary{
+    background-color: var(--mainColor);
+    border-color: var(--mainColor);
     border-radius: 100px;
 }
+
+.alert-success{
+    text-align: center;
 
 .button_submit {
     margin-bottom: 10%;
