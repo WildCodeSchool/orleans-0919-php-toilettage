@@ -17,8 +17,6 @@ use App\Model\ItemManager;
  */
 class MentionController extends AbstractController
 {
-
-
     /**
      * Display item listing
      *
@@ -32,6 +30,4 @@ class MentionController extends AbstractController
 
         return $this->twig->render('Mention/index.html.twig');
     }
-
-
 }
