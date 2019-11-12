@@ -11,22 +11,10 @@ namespace App\Model;
 
 class AdviceManager extends AbstractManager
 {
-
     const TABLE = 'race';
-
 
     public function __construct()
     {
         parent::__construct(self::TABLE);
     }
-
-    public function show(int $id)
-    {
-        $adviceManager = new ItemManager();
-        $race = $adviceManager->selectOneById($id);
-        $race->execute();
-
-        return $race->fetch();
-    }
-
 }
