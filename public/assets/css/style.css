@@ -2,6 +2,11 @@
 
 p, label {
     font-family: var(--paragraphFont);
+    color: var(--paragraphColor );
+}
+
+label {
+    color: var(--labelColor );
 }
 
 .form-control::placeholder {
@@ -12,6 +17,13 @@ h1 {
     font-family: var(--titleFont);
     font-size: 2.5em;
     font-weight: bold;
+}
+
+h4 {
+    font-family: var(--titleFont);
+    font-size: 1.3em;
+    font-weight: bold;
+    color: var(--secondaryColor);
 }
 
 /* NAVBAR */
@@ -170,7 +182,8 @@ label {
     margin: 10px;
 }
 
-.btn-primary {
+
+.btn-primary{
     background-color: var(--mainColor);
     border-color: var(--mainColor);
     border-radius: 100px;
@@ -178,7 +191,7 @@ label {
 
 .alert-success{
     text-align: center;
-  
+
 .button_submit {
     margin-bottom: 10%;
 }

@@ -18,7 +18,7 @@
                 </div>
                 <div class="form-group col-md-6 col-12">
                     <label for="firstname">Prénom</label>
-                    <input type="text" name="firstname" class="form-control" id="firstname" placeholder="John">
+                    <input type="text" name="firstname" class="form-control" id="firstname" placeholder="John" required>
                     {% if errors.firstname is not null %}
                         <ul class="alert alert-danger">
                             <li>{{ errors.firstname }}</li>
@@ -28,7 +28,7 @@
             </div>
             <div class="form-group">
                 <label for="mail">Adresse mail</label>
-                <input type="email" name="mail" class="form-control" id="mail" placeholder="name@example.com">
+                <input type="email" name="mail" class="form-control" id="mail" placeholder="name@example.com" required>
                 {% if errors.mail is not null %}
                     <ul class="alert alert-danger">
                         <li>{{ errors.mail }}</li>
@@ -45,7 +45,7 @@
             </div>
             <div class="form-group">
                 <label for="message">Message</label>
-                <textarea class="form-control" name="message" id="message" rows="6"></textarea>
+                <textarea class="form-control" name="message" id="message" rows="6" required></textarea>
                 {% if errors.message is not null %}
                     <ul class="alert alert-danger">
                         <li>{{ errors.message }}</li>
