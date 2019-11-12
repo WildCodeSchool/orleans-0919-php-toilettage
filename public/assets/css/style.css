@@ -41,7 +41,6 @@ h1 {
     border: solid 1px var(--mainColor);
     border-radius: 100px;
     background-color: var(--mainColor);
-    color: white !important;
 }
 
 .carousel-inner {
@@ -87,7 +86,7 @@ h2 {
 
 .who {
     font-family: var(--titleFont);
-    background-color: var(--mainColor) !important;
+    background-color: var(--mainColor);
     color: var(--paragraphTitle);
     text-align: center;
     font-weight: bold;
@@ -97,8 +96,8 @@ h2 {
 .nadege {
     display: block;
     width: 250px;
-    border-radius: 50% !important;
-    border-color:var(--secondaryColor) !important;
+    border-radius: 50%;
+    border-color:var(--secondaryColor);
     margin: auto;
 }
 
