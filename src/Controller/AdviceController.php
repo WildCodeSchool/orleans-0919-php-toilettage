@@ -9,7 +9,7 @@
 
 namespace App\Controller;
 
-use App\Model\AdviceManager;
+use App\Model\RaceManager;
 
 /**
  * Class AdviceController
@@ -19,7 +19,7 @@ class AdviceController extends AbstractController
 {
     public function show(int $id)
     {
-        $adviceManager = new AdviceManager();
+        $adviceManager = new RaceManager();
         $race = $adviceManager->selectOneById($id);
         return $this->twig->render('Advice/show.html.twig', ['race' => $race??[]]);
     }

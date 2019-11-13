@@ -9,7 +9,7 @@
 
 namespace App\Model;
 
-class AdviceManager extends AbstractManager
+class RaceManager extends AbstractManager
 {
     const TABLE = 'race';
 
