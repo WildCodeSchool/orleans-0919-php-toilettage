@@ -1,0 +1,39 @@
+h2 {
+    font-weight: 800;
+    font-size: 2.5rem;
+}
+p {
+    font: var(--paragraphFont);
+}
+
+.faqSection {
+    background: url('../images/wave.png') no-repeat 75% center fixed;
+    background-size: cover;
+    min-height: 110vh;
+}
+
+.panel-default > .panel-heading {
+    border-bottom: 3px solid var(--mainColor);
+    background: transparent;
+    padding: 0;
+}
+.panel-default .panel-title a {
+    /*display: block;*/
+    color: var(--mainColor);
+    text-decoration: none;
+    font-size: 2rem;
+}
+.panel-default .panel-title a:after {
+    font-size: 4rem;
+    content: "-";
+    color: var(--mainColor);
+    float: right;
+    margin-top: auto;
+}
+.panel-default .panel-title a.collapsed:after {
+    font-size: 3rem;
+    content: "+";
+}
+.panel-body {
+    font-size: 1.2rem;
+}

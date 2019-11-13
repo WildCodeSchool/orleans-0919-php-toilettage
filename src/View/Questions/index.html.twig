@@ -1,0 +1,39 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="/assets/css/style_questions.css"> {% endblock %}
+
+{% block title %}FAQ Toilettage Seduction{% endblock %}
+
+{% block content %}
+    <section class="accordion-section clearfix mt-3 faqSection" aria-label="Question Accordions">
+        <h2 class="titlePresentation">FAQ</h2>
+        <div class="container">
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+                {% for question in questions %}
+                    <div class="panel panel-default">
+                        <div class="panel-heading p-3 mb-3" role="tab" id="heading{{ question.id }}">
+                            <h3 class="panel-title">
+                                <a class="collapsed" role="button" title="" data-toggle="collapse"
+                                   data-parent="#accordion"
+                                   href="#collapse{{ question.id }}" aria-expanded="true" aria-controls="collapse0">
+                                    {{ question.question }}
+                                </a>
+                            </h3>
+                        </div>
+                        <div id="collapse{{ question.id }}" class="panel-collapse collapse" role="tabpanel"
+                             aria-labelledby="heading{{ question.id }}">
+                            <div class="panel-body px-3 mb-4">
+                                <p>{{ question.answer }}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
+
