@@ -2,11 +2,11 @@
 
 p {
     font-family: var(--paragraphFont);
-    color: var(--paragraphColor );
+    color: var(--paragraphColor);
 }
 
 label {
-    color: var(--labelColor );
+    color: var(--labelColor);
 }
 
 h1 {
@@ -24,34 +24,81 @@ h4 {
 }
 
 /* NAVBAR */
-
-
-.navbar{
-    box-shadow: 0 5px 5px var(--backgroundColor);
+.navbar-light .navbar-nav .nav-link{
+    color: inherit;
 }
 
-.dogLogo{
-    width:80px;
+.dogLogo {
+    width: 200px;
 }
 
-.collapse{
+.collapse {
     font-size: 1.5em;
     font-family: var(--titleFont);
-
+    color: inherit;
 }
 
-.navbar-nav{
-    width:90%;
+.navbar-nav {
+    width: 90%;
     display: flex;
     justify-content: space-around;
 }
 
-.navContact{
+.navContact {
     border: solid 1px var(--mainColor);
     border-radius: 100px;
     background-color: var(--mainColor);
-    color: white !important;
+    color: white;
 }
+.dropdown-item{
+    font-size: 20px;
+}
+
+.btn_nav{
+    margin-top:0.4%;
+}
+
+.cta {
+    position: relative;
+    padding: 13px 22px;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    color: inherit;
+}
+.cta:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 28px;
+    background: var(--mainColor);
+    width: 56px;
+    height: 56px;
+    transition: all 0.3s ease;
+}
+
+.cta:hover{
+    color:white
+}
+
+.cta span {
+    position: relative;
+    font-size: 20px;
+    line-height: 18px;
+    font-weight: 900;
+    letter-spacing: 0.25em;
+    vertical-align: middle;
+}
+
+.cta:hover:before {
+    width: 100%;
+    background: var(--secondaryColor);
+}
+
+.btn_title:hover {
+    color:white;
+}
+/*fin NAVBAR */
 
 .carousel-inner {
     height: 40vw;
@@ -107,7 +154,7 @@ h2 {
     display: block;
     width: 250px;
     border-radius: 50% !important;
-    border-color:var(--secondaryColor) !important;
+    border-color: var(--secondaryColor) !important;
     margin: auto;
 }
 
@@ -167,9 +214,9 @@ label {
 }
 
 .form-group {
-    display : flex;
-    flex-direction : column;
-    width : 60%;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
 
 }
 
@@ -179,14 +226,15 @@ label {
     margin: 10px;
 }
 
-.btn-primary{
+.btn-primary {
     background-color: var(--mainColor);
     border-color: var(--mainColor);
     border-radius: 100px;
 }
 
-.alert:empty, .alert-success{
-    display:none;
+.alert:empty, .alert-success {
+    display: none;
+}
 
 .button_submit {
     margin-bottom: 10%;
@@ -194,7 +242,7 @@ label {
 
 /*Css section map and adress*/
 
-.detail-block{
+.detail-block {
     display: flex;
     background-color: var(--backgroundColor);
     padding-top: 5vw;
@@ -245,6 +293,7 @@ label {
     margin-top: 1.5rem;
     justify-content: space-evenly;
 }
+
 /*footer*/
 .footer {
     display: flex;
@@ -266,12 +315,12 @@ label {
 }
 
 a:link {
-    text-decoration:none;
+    text-decoration: none;
     color: var(--paragraphTitle);
 }
 
 .map {
     width: 100%;
     height: 100%;
-    border: 0px;
+    border: 0;
 }

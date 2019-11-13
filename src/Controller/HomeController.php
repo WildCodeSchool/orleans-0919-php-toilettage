@@ -4,6 +4,8 @@
 
 namespace App\Controller;
 
+use App\Model\HomeManager;
+
 class HomeController extends AbstractController
 {
     /**
@@ -16,7 +18,9 @@ class HomeController extends AbstractController
      */
     public function index()
     {
-        return $this->twig->render('Home/index.html.twig');
+        $homeManager = new HomeManager();
+        $races = $homeManager->selectAll();
+        return $this->twig->render('Home/index.html.twig', ['races' => $races]);
     }
 
     public function send()
