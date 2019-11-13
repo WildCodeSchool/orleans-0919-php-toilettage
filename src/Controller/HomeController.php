@@ -4,7 +4,6 @@
 
 namespace App\Controller;
 
-use App\Model\HomeManager;
 use App\Model\RaceManager;
 
 class HomeController extends AbstractController
