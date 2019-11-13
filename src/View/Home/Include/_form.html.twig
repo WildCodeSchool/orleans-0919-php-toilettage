@@ -9,7 +9,7 @@
             <div class="form-row">
                 <div class="form-group col-md-6 col-12">
                     <label for="lastname">Nom</label>
-                    <input type="text" name="lastname" class="form-control" id="lastname" placeholder="Doe">
+                    <input type="text" name="lastname" class="form-control" id="lastname" placeholder="Doe" required>
                     {% if errors.lastname is not null %}
                         <ul class="alert alert-danger">
                             <li>{{ errors.lastname }}</li>
