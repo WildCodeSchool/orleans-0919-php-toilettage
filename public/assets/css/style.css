@@ -1,6 +1,6 @@
 @import "style_master.css";
 
-p {
+p, label {
     font-family: var(--paragraphFont);
     color: var(--paragraphColor);
 }
@@ -9,11 +9,14 @@ label {
     color: var(--labelColor);
 }
 
+.form-control::placeholder {
+    color: var(--placeholderColor);
+}
+
 h1 {
     font-family: var(--titleFont);
     font-size: 2.5em;
     font-weight: bold;
-    color: var(--backgroundColorFooter);
 }
 
 h4 {
@@ -240,6 +243,7 @@ h2 {
 
 /*----formulaire----*/
 
+
 label {
     font-family: var(--paragraphFont);
 }
@@ -263,21 +267,15 @@ label {
 }
 
 .form-row {
-    width: 60.5%;
+    width: 82.5%;
 }
 
 .form-group {
-    display: flex;
-    flex-direction: column;
-    width: 60%;
-
+    display : flex;
+    flex-direction : column;
+    width : 82%;
 }
 
-.dog-paw {
-    height: 40px;
-    width: 40px;
-    margin: 10px;
-}
 
 .btn-primary {
     background-color: var(--mainColor);
@@ -285,8 +283,13 @@ label {
     border-radius: 100px;
 }
 
+
 .alert:empty, .alert-success {
     display: none;
+}
+
+.alert-success{
+    text-align: center;
 }
 
 .button_submit {
