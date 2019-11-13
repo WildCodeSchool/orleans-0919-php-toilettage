@@ -5,6 +5,7 @@
 namespace App\Controller;
 
 use App\Model\HomeManager;
+use App\Model\RaceManager;
 
 class HomeController extends AbstractController
 {
@@ -18,8 +19,8 @@ class HomeController extends AbstractController
      */
     public function index()
     {
-        $homeManager = new HomeManager();
-        $races = $homeManager->selectAll();
+        $raceManager = new RaceManager();
+        $races = $raceManager->selectAll();
         return $this->twig->render('Home/index.html.twig', ['races' => $races]);
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {

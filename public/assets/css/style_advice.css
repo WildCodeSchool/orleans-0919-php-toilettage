@@ -1,0 +1,17 @@
+.advicePage {
+    padding: 2% 0 2% 0;
+    background: url('../images/wave_advice.png') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.pictureAlign{
+    display: flex;
+    align-items: center;
+    margin-bottom:2%;
+}
+
+
+.img-fluid{
+   object-fit: contain;
+}
+

@@ -1,8 +1,14 @@
 @import "style_master.css";
+@import "style_advice.css";
 
-p, label {
+p {
     font-family: var(--paragraphFont);
     color: var(--paragraphColor);
+}
+
+a:focus
+{
+    outline:0;
 }
 
 label {
@@ -26,6 +32,9 @@ h4 {
     color: var(--secondaryColor);
 }
 
+h3{
+    padding: 1em 0 0.5em 0;
+}
 /* NAVBAR */
 .navbar-light .navbar-nav .nav-link{
     color: inherit;
@@ -239,6 +248,19 @@ h2 {
     padding-top: 4%;
 }
 
+.btn-outline-primary {
+    color: var(--mainColor);
+    border-color: var(--mainColor);
+    border-radius: .25rem;
+}
+
+.btn-outline-primary:hover {
+    font-family: var(--titleFont);
+    color: var(--paragraphTitle);
+    background-color: var(--secondaryColor);
+    border-color: var(--secondaryColor);
+}
+
 /*FIN style section presentation/Home */
 
 /*----formulaire----*/
@@ -246,6 +268,7 @@ h2 {
 
 label {
     font-family: var(--paragraphFont);
+    color: var(--paragraphColor);
 }
 
 .contact {
@@ -280,19 +303,28 @@ label {
 .btn-primary {
     background-color: var(--mainColor);
     border-color: var(--mainColor);
-    border-radius: 100px;
+    border-radius: .25rem;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
+.alert-success {
+    text-align: center;
+}
 
 .alert:empty, .alert-success {
     display: none;
 }
 
-.alert-success{
-    text-align: center;
+.btn-primary:hover {
+    font-family: var(--titleFont);
+    color: var(--paragraphTitle);
+    background-color: var(--secondaryColor);
+    border-color: var(--secondaryColor);
 }
 
 .button_submit {
+    margin-top: 2%;
     margin-bottom: 10%;
 }
 
@@ -320,14 +352,17 @@ label {
 .mapContour {
     display: flow;
     justify-items: center;
-    height: 75vh;
+    height: 78vh;
     margin-top: 4vw;
 }
 
 .bloc_adress {
     align-content: center;
-    height: 75vh;
-    background-color: var(--backgroundColor);
+    height: 78vh;
+}
+
+address {
+    margin-bottom: 0;
 }
 
 .adressContour {
@@ -346,8 +381,9 @@ label {
 
 
 .heightParagraph {
-    margin-top: 1.5rem;
+    margin-top: 1.7em;
     justify-content: space-evenly;
+    margin-bottom: 1.45em;
 }
 
 /*footer*/
