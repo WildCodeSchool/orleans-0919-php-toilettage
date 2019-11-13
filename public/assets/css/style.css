@@ -1,4 +1,5 @@
 @import "style_master.css";
+@import "style_advice.css";
 
 p {
     font-family: var(--paragraphFont);
@@ -22,6 +23,9 @@ h4 {
     color: var(--secondaryColor);
 }
 
+h3{
+    padding: 1em 0 0.5em 0;
+}
 /* NAVBAR */
 
 
