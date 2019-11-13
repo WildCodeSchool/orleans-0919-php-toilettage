@@ -5,5 +5,7 @@
     --mainColor: rgb(252, 91, 76); /* orange */
     --secondaryColor: rgb(246 137 124); /* orange pale */
     --backgroundColor: rgb(245 249 250); /* gray blue */
-    --backgroundColorFooter: rgb(0 0 0); /* black */
+    --h1ColorFont: rgb(0 0 0); /* black */
+    --backgroundBottomFooter: linear-gradient(#404040, #222222); /* linear-gradient */
+
 }

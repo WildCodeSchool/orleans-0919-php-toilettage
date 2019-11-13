@@ -9,6 +9,8 @@
 
 namespace App\Model;
 
+use PDO;
+
 /**
  *
  */
@@ -36,7 +38,7 @@ class ItemManager extends AbstractManager
     {
         // prepared request
         $statement = $this->pdo->prepare("INSERT INTO $this->table (`title`) VALUES (:title)");
-        $statement->bindValue('title', $item['title'], \PDO::PARAM_STR);
+        $statement->bindValue('title', $item['title'], PDO::PARAM_STR);
 
         if ($statement->execute()) {
             return (int)$this->pdo->lastInsertId();
@@ -51,7 +53,7 @@ class ItemManager extends AbstractManager
     {
         // prepared request
         $statement = $this->pdo->prepare("DELETE FROM $this->table WHERE id=:id");
-        $statement->bindValue('id', $id, \PDO::PARAM_INT);
+        $statement->bindValue('id', $id, PDO::PARAM_INT);
         $statement->execute();
     }
 
@@ -65,8 +67,8 @@ class ItemManager extends AbstractManager
 
         // prepared request
         $statement = $this->pdo->prepare("UPDATE $this->table SET `title` = :title WHERE id=:id");
-        $statement->bindValue('id', $item['id'], \PDO::PARAM_INT);
-        $statement->bindValue('title', $item['title'], \PDO::PARAM_STR);
+        $statement->bindValue('id', $item['id'], PDO::PARAM_INT);
+        $statement->bindValue('title', $item['title'], PDO::PARAM_STR);
 
         return $statement->execute();
     }

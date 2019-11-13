@@ -5,7 +5,8 @@
 
 
 {% block content %}
-
+    {#---Section navbar---#}
+    {% include 'Home/Include/_navbar.html.twig' %}
     {#---Section Carousel---#}
     {% include 'Home/Include/_carousel.html.twig' %}
     {#---section Presentation---#}
@@ -19,6 +20,7 @@
 {% endblock %}
 
 {% block javascripts %}
+         {% include "Home/Include/_blocscript.html.twig" %}
 {% endblock %}
 
 

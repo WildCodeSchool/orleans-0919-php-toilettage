@@ -8,33 +8,33 @@ h1 {
     font-family: var(--titleFont);
     font-size: 2.5em;
     font-weight: bold;
-    color: var(--backgroundColorFooter);
+    color: var(--h1ColorFont);
 }
 
 /* NAVBAR */
 
 
-.navbar{
+.navbar {
     box-shadow: 0 5px 5px var(--backgroundColor);
 }
 
-.dogLogo{
-    width:80px;
+.dogLogo {
+    width: 80px;
 }
 
-.collapse{
+.collapse {
     font-size: 1.5em;
     font-family: var(--titleFont);
 
 }
 
-.navbar-nav{
-    width:90%;
+.navbar-nav {
+    width: 90%;
     display: flex;
     justify-content: space-around;
 }
 
-.navContact{
+.navContact {
     border: solid 1px var(--mainColor);
     border-radius: 100px;
     background-color: var(--mainColor);
@@ -53,7 +53,7 @@ h1 {
 }
 
 .dropdown-menu a:link {
-    color: var(--backgroundColorFooter);;
+    color: var(--h1ColorFont);
 }
 
 @media screen and (max-width: 768px) {
@@ -95,7 +95,7 @@ h2 {
     display: block;
     width: 250px;
     border-radius: 50% !important;
-    border-color:var(--secondaryColor) !important;
+    border-color: var(--secondaryColor) !important;
     margin: auto;
 }
 
@@ -133,7 +133,6 @@ label {
 }
 
 .contact {
-    background-color: var(--backgroundColor);
     background: url('../images/wave_form.png') no-repeat center center fixed;
     background-size: cover;
 }
@@ -155,10 +154,9 @@ label {
 }
 
 .form-group {
-    display : flex;
-    flex-direction : column;
-    width : 60%;
-
+    display: flex;
+    flex-direction: column;
+    width: 60%;
 }
 
 .dog-paw {
@@ -179,7 +177,7 @@ label {
 
 /*Css section map and adress*/
 
-.detail-block{
+.detail-block {
     display: flex;
     background-color: var(--backgroundColor);
     padding-top: 5vw;
@@ -205,6 +203,12 @@ label {
     margin-top: 4vw;
 }
 
+.map {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
 .bloc_adress {
     align-content: center;
     height: 75vh;
@@ -216,7 +220,6 @@ label {
     justify-items: center;
     margin-top: 4vw;
     margin-bottom: 4vw;
-
 }
 
 .bloc_adress p {
@@ -230,16 +233,43 @@ label {
     margin-top: 1.5rem;
     justify-content: space-evenly;
 }
+
 /*footer*/
+
+.footerLogoBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    width: 100%;
+}
+
+.footerLogo {
+    filter:invert(100%);
+    align-self: center;
+    width: 128px;
+    height: 128px;
+    margin-bottom: 2vw;
+    margin-left: auto;
+    margin-right: auto;
+    background: url("../images/dogAndCatLogo.png") no-repeat center;
+}
+
+/* No display with mobil responsive */
+@media screen and (max-width: 992px) {
+    #footerLogo {
+        display: none;
+    }
+}
+
 .footer {
+    background: var(--backgroundBottomFooter);
+    font-size: 0.9em;
+}
+
+.footer div{
     display: flex;
     justify-content: space-evenly;
-    align-items: center;
-    background-color: var(--backgroundColorFooter);
-    color: var(--paragraphTitle);
-    font-size: 1.25em;
-    height: 10vw;
-    width: 100vw;
 }
 
 .footerPart {
@@ -247,16 +277,55 @@ label {
     flex-direction: column;
     text-align: center;
     color: var(--paragraphTitle);
-    background-color: var(--backgroundColorFooter);
 }
 
-a:link {
-    text-decoration:none;
+.footer li address{
     color: var(--paragraphTitle);
 }
 
-.map {
+.footerTitle {
+    color: var(--mainColor);
+    font-size: 1.35em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
     width: 100%;
-    height: 100%;
-    border: 0px;
+}
+
+.footerList li {
+    list-style-type: none;
+}
+
+.footerList {
+    text-align: left;
+}
+
+a:link {
+    text-decoration: none;
+    color: var(--paragraphTitle);
+}
+
+/* Network link */
+.fa {
+    padding-top: 6px;
+    font-size: 15px;
+    width: 25px;
+    height: 25px;
+    border-radius:50%;
+    text-align: center;
+    text-decoration: none;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+/* Twitter */
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
 }

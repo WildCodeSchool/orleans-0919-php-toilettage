@@ -12,6 +12,7 @@
 namespace App\Model;
 
 use \PDO;
+use PDOException;
 
 /**
  *
@@ -51,7 +52,7 @@ class Connection
             if (APP_DEV) {
                 $this->pdoConnection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             }
-        } catch (\PDOException $e) {
+        } catch (PDOException $e) {
             echo('<div class="error">Error !: ' . $e->getMessage() . '</div>');
         }
     }
