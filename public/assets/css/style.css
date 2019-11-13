@@ -38,7 +38,7 @@ h1 {
     border: solid 1px var(--mainColor);
     border-radius: 100px;
     background-color: var(--mainColor);
-    color: white !important;
+    color: var(--paragraphTitle);
 }
 
 .carousel-inner {
@@ -84,7 +84,7 @@ h2 {
 
 .who {
     font-family: var(--titleFont);
-    background-color: var(--mainColor) !important;
+    background-color: var(--mainColor);
     color: var(--paragraphTitle);
     text-align: center;
     font-weight: bold;
@@ -94,8 +94,8 @@ h2 {
 .nadege {
     display: block;
     width: 250px;
-    border-radius: 50% !important;
-    border-color: var(--secondaryColor) !important;
+    border-radius: 50%;
+    border-color: var(--secondaryColor);
     margin: auto;
 }
 
@@ -165,9 +165,9 @@ label {
     margin: 10px;
 }
 
-.btn {
-    background-color: var(--mainColor) !important;
-    border-color: var(--mainColor) !important;
+.btn-primary {
+    background-color: var(--mainColor);
+    border-color: var(--mainColor);
     border-radius: 100px;
 }
 
@@ -307,12 +307,12 @@ a:link {
 /* Network link */
 .fa {
     padding-top: 6px;
-    font-size: 15px;
-    width: 25px;
-    height: 25px;
+    font-size: 40px;
+    width: 50px;
+    height: 50px;
     border-radius:50%;
     text-align: center;
-    text-decoration: none;
+    text-decoration: none;;
 }
 
 .fa:hover {
@@ -320,12 +320,6 @@ a:link {
 }
 
 .fa-facebook {
-    background: #3B5998;
-    color: white;
-}
-
-/* Twitter */
-.fa-twitter {
-    background: #55ACEE;
-    color: white;
+    color: var(--paragraphTitle);
+    margin-left: 25%;
 }
