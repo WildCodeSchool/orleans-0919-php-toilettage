@@ -48,7 +48,7 @@ h4 {
     border: solid 1px var(--mainColor);
     border-radius: 100px;
     background-color: var(--mainColor);
-    color: white;
+    color: var(--paragraphTitle);
 }
 .dropdown-item{
     font-size: 20px;
@@ -78,7 +78,7 @@ h4 {
 }
 
 .cta:hover{
-    color:white
+    color:var(--paragraphTitle);
 }
 
 .cta span {
@@ -96,7 +96,7 @@ h4 {
 }
 
 .btn_title:hover {
-    color:white;
+    color:var(--paragraphTitle);
 }
 /*fin NAVBAR */
 
@@ -143,7 +143,7 @@ h2 {
 
 .who {
     font-family: var(--titleFont);
-    background-color: var(--mainColor) !important;
+    background-color: var(--mainColor);
     color: var(--paragraphTitle);
     text-align: center;
     font-weight: bold;
@@ -153,8 +153,8 @@ h2 {
 .nadege {
     display: block;
     width: 250px;
-    border-radius: 50% !important;
-    border-color: var(--secondaryColor) !important;
+    border-radius: 50%;
+    border-color: var(--secondaryColor);
     margin: auto;
 }
 
