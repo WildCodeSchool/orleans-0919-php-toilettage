@@ -6,8 +6,17 @@ p {
     color: var(--paragraphColor );
 }
 
+a:focus
+{
+    outline:0;
+}
+
+label {
+    color: var(--labelColor );
+
 .form-control::placeholder {
     color: var(--placeholderColor);
+
 }
 
 h1 {
