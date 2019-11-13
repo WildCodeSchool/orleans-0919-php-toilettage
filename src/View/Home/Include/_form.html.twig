@@ -1,11 +1,11 @@
 <section class="contact" id="contact">
     {% if success is not null %}
-        <div class="alert alert-success" role="alert" style="text-align: center"><strong>
-            {% if success %}Votre message a bien été envoyé !{% endif %}</strong>
+        <div class="alert alert-success" role="alert">
+            <strong>Votre message a bien été envoyé !</strong>
         </div>
     {% endif %}
         <h2 class="contact-title">Contact</h2>
-    <form method="post" action="/Home/send#contact" class="form-home-page">
+    <form method="post" action="#contact" class="form-home-page">
             <div class="form-row">
                 <div class="form-group col-md-6 col-12">
                     <label for="lastname">Nom</label>
@@ -53,9 +53,7 @@
                 {% endif %}
             </div>
             <div class="button_submit">
-                <img src="/assets/images/dog-paw.png" alt="dog-paw" class="dog-paw">
                 <button type="submit" name="submit" value='Submit' class="btn btn-primary">Envoyer</button>
-                <img src="/assets/images/dog-paw.png" alt="dog-paw" class="dog-paw">
             </div>
         </form>
     </section>

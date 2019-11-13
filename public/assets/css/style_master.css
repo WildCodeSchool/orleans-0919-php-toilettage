@@ -7,6 +7,7 @@
     --backgroundColor: rgb(245 249 250); /* gray blue  ou f5f9fa*/
     --backgroundColorFooter: rgb(0 0 0); /* black */
     --labelColor: #DCDCDC; /* pale gray */
-    --backgroundColor: rgb(245 249 250); /* gray blue */
-    --backgroundColorFooter: rgb(0 0 0); /* black */
+    --placeholderColor: #D3D3D3; /*pale gray*/
+    --paragraphColor: rgb(30 30 30 ); /* dark gray */
+    --backgroundBottomFooter: linear-gradient(#404040, #222222);
 }

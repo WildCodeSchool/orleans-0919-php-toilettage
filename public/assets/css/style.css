@@ -12,13 +12,16 @@ a:focus
 
 label {
     color: var(--labelColor );
+
+.form-control::placeholder {
+    color: var(--placeholderColor);
+
 }
 
 h1 {
     font-family: var(--titleFont);
     font-size: 2.5em;
     font-weight: bold;
-    color: var(--backgroundColorFooter);
 }
 
 h4 {
@@ -55,7 +58,6 @@ h4 {
     border: solid 1px var(--mainColor);
     border-radius: 100px;
     background-color: var(--mainColor);
-    color: white !important;
 }
 
 .carousel-inner {
@@ -101,7 +103,7 @@ h2 {
 
 .who {
     font-family: var(--titleFont);
-    background-color: var(--mainColor) !important;
+    background-color: var(--mainColor);
     color: var(--paragraphTitle);
     text-align: center;
     font-weight: bold;
@@ -111,8 +113,8 @@ h2 {
 .nadege {
     display: block;
     width: 250px;
-    border-radius: 50% !important;
-    border-color:var(--secondaryColor) !important;
+    border-radius: 50%;
+    border-color:var(--secondaryColor);
     margin: auto;
 }
 
@@ -141,12 +143,27 @@ h2 {
     padding-top: 4%;
 }
 
+.btn-outline-primary {
+    color: var(--mainColor);
+    border-color: var(--mainColor);
+    border-radius: .25rem;
+}
+
+.btn-outline-primary:hover {
+    font-family: var(--titleFont);
+    color: var(--paragraphTitle);
+    background-color: var(--secondaryColor);
+    border-color: var(--secondaryColor);
+}
+
 /*FIN style section presentation/Home */
 
 /*----formulaire----*/
 
+
 label {
     font-family: var(--paragraphFont);
+    color: var(--paragraphColor);
 }
 
 .contact {
@@ -168,32 +185,37 @@ label {
 }
 
 .form-row {
-    width: 60.5%;
+    width: 82.5%;
 }
 
 .form-group {
     display : flex;
     flex-direction : column;
-    width : 60%;
-
+    width : 82%;
 }
 
-.dog-paw {
-    height: 40px;
-    width: 40px;
-    margin: 10px;
-}
 
 .btn-primary{
     background-color: var(--mainColor);
     border-color: var(--mainColor);
-    border-radius: 100px;
+    border-radius: .25rem;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
-.alert:empty, .alert-success{
-    display:none;
+.btn-primary:hover {
+    font-family: var(--titleFont);
+    color: var(--paragraphTitle);
+    background-color: var(--secondaryColor);
+    border-color: var(--secondaryColor);
+}
+
+.alert-success {
+    text-align: center;
+}
 
 .button_submit {
+    margin-top: 2%;
     margin-bottom: 10%;
 }
 
@@ -221,14 +243,17 @@ label {
 .mapContour {
     display: flow;
     justify-items: center;
-    height: 75vh;
+    height: 78vh;
     margin-top: 4vw;
 }
 
 .bloc_adress {
     align-content: center;
-    height: 75vh;
-    background-color: var(--backgroundColor);
+    height: 78vh;
+}
+
+address {
+    margin-bottom: 0;
 }
 
 .adressContour {
@@ -247,8 +272,9 @@ label {
 
 
 .heightParagraph {
-    margin-top: 1.5rem;
+    margin-top: 1.7em;
     justify-content: space-evenly;
+    margin-bottom: 1.45em;
 }
 /*footer*/
 .footer {
