@@ -5,6 +5,11 @@ p {
     color: var(--paragraphColor );
 }
 
+a:focus
+{
+    outline:0;
+}
+
 label {
     color: var(--labelColor );
 }
