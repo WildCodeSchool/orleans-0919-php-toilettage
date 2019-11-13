@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Model\QuestionsManager;
 
 class QuestionsController extends AbstractController
 {

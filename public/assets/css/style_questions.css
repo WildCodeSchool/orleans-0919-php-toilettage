@@ -2,6 +2,7 @@ h2 {
     font-weight: 800;
     font-size: 2.5rem;
 }
+
 p {
     font: var(--paragraphFont);
 }
@@ -17,12 +18,14 @@ p {
     background: transparent;
     padding: 0;
 }
+
 .panel-default .panel-title a {
     /*display: block;*/
     color: var(--mainColor);
     text-decoration: none;
     font-size: 2rem;
 }
+
 .panel-default .panel-title a:after {
     font-size: 4rem;
     content: "-";
@@ -30,10 +33,12 @@ p {
     float: right;
     margin-top: auto;
 }
+
 .panel-default .panel-title a.collapsed:after {
     font-size: 3rem;
     content: "+";
 }
+
 .panel-body {
     font-size: 1.2rem;
 }
