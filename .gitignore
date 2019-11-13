@@ -7,11 +7,3 @@ db.php
 bdd_toilettage_seduction.sql
 /public/uploads/*
 !./uploads/gitkeep
-/public/uploads/lhassa.jpg
-/public/uploads/poodle.png
-/public/uploads/poodle_corde.jpg
-/public/uploads/poodle_toy
-/public/uploads/russel.jpeg
-/public/uploads/shih-tsu
-/public/uploads/yorshire
-/public/uploads/teckel.jpg
