@@ -1,0 +1,59 @@
+.salon_title{
+    text-align: center;
+    margin-top: 3%;
+    margin-bottom: 2%;
+}
+
+.salon_resume{
+    text-align:center;
+    width: 70%;
+    margin-left: 16%;
+    margin-bottom: 2%;
+}
+
+.salonPresentation {
+
+    background: url('../images/wave.png') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.shadowCard-1 {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.row {
+    margin-bottom: 3%;
+}
+
+
+.row-center {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    margin-bottom: 30px;
+}
+
+.col-lg-3 {
+    margin-bottom: 50px;
+}
+
+.card-body {
+    padding: 0;
+}
+
+.text-justify {
+    margin-top: 20px;
+    margin-bottom: 80px;
+}
+
+.img-fluid {
+    object-fit: cover;
+    padding: 0;
+    margin: auto;
+}
+
+
+.carousel{
+    width: 50;
+}

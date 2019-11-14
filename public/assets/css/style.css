@@ -12,7 +12,8 @@ a:focus
 }
 
 label {
-    color: var(--labelColor );
+    color: var(--labelColor);
+}
 
 .form-control::placeholder {
     color: var(--placeholderColor);
