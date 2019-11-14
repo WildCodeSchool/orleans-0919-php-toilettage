@@ -4,9 +4,7 @@ namespace App\Model;
 
 /**
  * Class RaceManager
- * 
  */
-
 class RaceManager extends AbstractManager
 {
     const TABLE = 'race';
@@ -31,7 +29,7 @@ class RaceManager extends AbstractManager
 
     public function update(array $data)
     {
-        $statement = $this->pdo->prepare("UPDATE ". self::TABLE  ."
+        $statement = $this->pdo->prepare("UPDATE " . self::TABLE . "
                 SET name=:name, price=:price, image=:image, description=:description            
                 WHERE id=:id
             ");

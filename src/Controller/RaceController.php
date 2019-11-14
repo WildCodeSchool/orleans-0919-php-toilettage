@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Model\RaceManager;
 use App\Model\CategoryManager;
+
 /**
  * Class RaceController
  *
@@ -48,14 +49,14 @@ class RaceController extends AbstractController
         }
 
         return $this->twig->render('Race/edit.html.twig', [
-            'race'  => $race,
-            'data'  => $data ?? [],
+            'race' => $race,
+            'data' => $data ?? [],
             'errors' => $errors,
             'categories' => $categories,
         ]);
     }
 
-    private function validate (array $data) :array
+    private function validate(array $data): array
     {
         // verif coté serveur
         if (empty($data['name'])) {
