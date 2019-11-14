@@ -33,3 +33,28 @@ a {
     background-color: var(--secondaryColor);
     border-color: var(--secondaryColor);
 }
+
+/*******edit page *******/
+
+.race-edit-title {
+    font-family: var(--titleFont);
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.form-home-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-row {
+    width: 82.5%;
+}
+
+.form-group {
+    display : flex;
+    flex-direction : column;
+    width : 82%;
+}

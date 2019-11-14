@@ -1,0 +1,52 @@
+<form method="post" action="#contact" class="form-home-page">
+    <div class="form">
+        <input type="hidden" name="id" value="{{ race.id }}">
+        <div class="form">
+            <div class="form-group col-md-6 col-12">
+                <label for="category">Categorie :</label>
+                <select name="category" class="custom-select" id="category">
+                    {% for category in categories %}
+                        <option {{ category.id == race.category_id ? 'selected' }}  value="{{category.id}}">{{category.name}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+        <div class="form-group col-md-6 col-12">
+            <label for="name">Name :</label>
+            <input type="text" class="form-control" name="name" value="{{ race.name ?? race.name }}" >
+            {% if errors.name is defined %}
+                {{ errors.name }}
+            {% endif %}
+        </div>
+        <div class="form-group col-md-6 col-12">
+            <label for="price">Prix :</label>
+            <input type="text" class="form-control" name="price" value="{{ race.price ?? race.price }}">
+        </div>
+        {% if errors.prix is defined %}
+            {{ errors.prix }}
+        {% endif %}
+    </div>
+    <div class="form">
+        <div class="form-group col-md-6 col-12">
+            <label for="description">Description :</label>
+            <input type="text" class="form-control" name="description" id="description"  value="{{ race.description ?? race.description }}"/>
+            {% if errors.description is defined %}
+                {{ errors.description }}
+            {% endif %}
+        </div>
+        <div class="form-group col-md-6 col-12">
+            <label for="image">Image :</label>
+            <input type="url" class="form-control" name="image" id="image" value="{{ race.image ?? race.image}}"/>
+        </div>
+        {% if errors.image is defined %}
+            {{ errors.image }}
+        {% endif %}
+
+    </div>
+
+    <div class="form">
+        <ul class="list">
+            <input type="submit" value="Valider" class="btn btn-primary">
+        </ul>
+    </div>
+</form>
