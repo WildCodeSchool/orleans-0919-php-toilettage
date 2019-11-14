@@ -1,5 +1,6 @@
 @import "style_master.css";
 @import "style_advice.css";
+@import "style_footer.css";
 
 p {
     font-family: var(--paragraphFont);
@@ -372,29 +373,8 @@ address {
 }
 
 /*footer*/
-.footer {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    background-color: var(--backgroundColorFooter);
-    color: var(--paragraphTitle);
-    font-size: 1.25em;
-    height: 10vw;
-    width: 100vw;
-}
 
-.footerPart {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    color: var(--paragraphTitle);
-    background-color: var(--backgroundColorFooter);
-}
 
-a:link {
-    text-decoration: none;
-    color: var(--paragraphTitle);
-}
 
 .map {
     width: 100%;
