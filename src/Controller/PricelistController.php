@@ -13,9 +13,7 @@ class PricelistController extends AbstractController
         $animalManager = new RaceManager();
         $allInAnimals = $animalManager->selectAllInAnimals();
 
-
         foreach ($allInAnimals as $animal) {
-
             $groupedAnimals[$animal['animal']][$animal['category']][] =
                 ['race_name' => $animal['race_name'], 'id' => $animal['id'], 'price' => $animal['price']];
         }
@@ -33,4 +31,3 @@ class PricelistController extends AbstractController
         ]);
     }
 }
-
