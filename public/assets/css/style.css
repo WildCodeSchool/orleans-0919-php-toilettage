@@ -228,6 +228,8 @@ h2 {
 
 .discover {
     padding-top: 5%;
+    display: flex;
+    justify-content: center;
 }
 
 .glyphTools {
@@ -286,19 +288,11 @@ label {
 }
 
 
-.btn-primary {
-    background-color: var(--mainColor);
-    border-color: var(--mainColor);
-    border-radius: .25rem;
-    padding-left: 20px;
-    padding-right: 20px;
-}
-
 .alert-success {
     text-align: center;
 }
 
-.alert:empty, .alert-success {
+.alert:empty {
     display: none;
 }
 
@@ -326,7 +320,6 @@ label {
     font-family: var(--titleFont);
     color: var(--mainColor);
     text-align: center;
-    margin-bottom: 4vw;
 }
 
 .blockCoordonnate {

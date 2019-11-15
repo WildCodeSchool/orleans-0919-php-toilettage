@@ -21,6 +21,7 @@ class AdviceController extends AbstractController
     {
         $raceManager = new RaceManager();
         $race = $raceManager->selectOneById($id);
-        return $this->twig->render('Advice/show.html.twig', ['race' => $race??[]]);
+        $races = $raceManager->selectAll();
+        return $this->twig->render('Advice/show.html.twig', ['race' => $race ?? [], 'races' => $races]);
     }
 }
