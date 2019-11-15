@@ -7,6 +7,8 @@ use App\Model\RaceManager;
 class PricelistController extends AbstractController
 {
 
+    const STRAIGHTENING_PRICE = 50;
+
     public function index($raceId = null)
     {
 
@@ -22,7 +24,7 @@ class PricelistController extends AbstractController
         if ($raceId) {
             $raceManager = new RaceManager();
             $race = $raceManager->selectOneById($raceId);
-            $straighteningPrice = $race['price'] + 50;
+            $straighteningPrice = $race['price'] + self::STRAIGHTENING_PRICE;
         }
 
         return $this->twig->render('Pricelist/index.html.twig', [
