@@ -34,7 +34,7 @@ abstract class AbstractManager
      * Initializes Manager Abstract class.
      * @param string $table
      */
-    public function __construct(string $table)
+    public function __construct(string $table = null)
     {
         $this->table = $table;
         $this->className = __NAMESPACE__ . '\\' . ucfirst($table);
