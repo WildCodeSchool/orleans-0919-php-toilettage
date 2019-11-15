@@ -51,6 +51,14 @@ abstract class AbstractManager
         return $this->pdo->query('SELECT * FROM ' . $this->table)->fetchAll();
     }
 
+    public function selectAllOrder(): array
+    {
+        $statement = $this->pdo->prepare("SELECT * FROM $this->table ORDER BY name");
+        $statement->execute();
+
+        return $statement->fetchall();
+    }
+
     /**
      * Get one row from database by ID.
      *
