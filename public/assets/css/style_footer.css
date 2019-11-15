@@ -1,0 +1,74 @@
+
+.footerLogoBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    width: 100%;
+}
+
+.footerLogo {
+    filter:invert(100%);
+    width: 128px;
+    height: 128px;
+    margin-bottom: 0.5vw;
+    margin: auto;
+    background: url("../images/logo-noname.png") no-repeat center;
+}
+
+/* No display with mobil responsive */
+
+.footer {
+    background: var(--backgroundBottomFooter);
+    font-size: 0.9em;
+}
+
+.footer div{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.footerPart {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: var(--paragraphTitle);
+    background-color: var(--backgroundColorFooter);
+}
+
+
+
+.footer li address{
+    color: var(--paragraphTitle);
+}
+
+.footerTitle {
+    color: var(--mainColor);
+    font-size: 1.35em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    width: 100%;
+}
+
+.footerList li {
+    list-style-type: none;
+    text-decoration: none;
+}
+
+.footerList {
+    text-align: left;
+}
+
+a:link {
+    text-decoration: none;
+    color: var(--paragraphTitle);
+}
+
+/* Network link */
+.facebookLogo{
+    align-items: left;
+}
+
+
+
+
