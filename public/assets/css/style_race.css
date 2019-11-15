@@ -49,18 +49,20 @@ a {
     align-items: center;
 }
 
-.form-row {
-    width: 82.5%;
-}
-
 .form-group {
     display : flex;
     flex-direction : column;
-    width : 82%;
+    width : 100%;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .form-group-delete {
     width: 50px;
     margin-top: 50px;
     margin-bottom: 50px;
+}
+
+.back {
+    margin-top: 10px;
 }

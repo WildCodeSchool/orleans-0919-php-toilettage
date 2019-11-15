@@ -65,11 +65,16 @@ class RaceController extends AbstractController
             $errors['name'] = 'le nom est trop long';
         }
 
-        if (empty($data['prix'])) {
-            $errors['size'] = 'Un prix est requis';
-        } elseif ($data['size'] < 0) {
-            $errors['size'] = 'le prix doit être positif';
+        if (empty($data['price'])) {
+            $errors['price'] = 'Un prix est requis';
+        } elseif ($data['price'] < 0) {
+            $errors['price'] = 'le prix doit être positif';
         }
+
+        if (empty($data['description'])) {
+            $errors['description'] = 'Une description est requise';
+        }
+
         return $errors ?? [];
     }
 }

@@ -1,50 +1,55 @@
 <form method="post" action="#contact" class="form-home-page">
-    <div class="form">
-        <input type="hidden" name="id" value="{{ race.id }}">
-        <div class="form">
-            <div class="form-group col-md-6 col-12">
+    <div class="container-fluid">
+        <div class="row">
+            <input type="hidden" name="id" value="{{ race.id }}">
+
+            <div class="form-group">
                 <label for="category">Categorie :</label>
                 <select name="category" class="custom-select" id="category">
                     {% for category in categories %}
-                        <option {{ category.id == race.category_id ? 'selected' }}  value="{{category.id}}">{{category.name}}</option>
+                        <option {{ category.id == race.category_id ? 'selected' }}
+                                value="{{ category.id }}">{{ category.name }}</option>
                     {% endfor %}
                 </select>
             </div>
-        </div>
-        <div class="form-group col-md-6 col-12">
-            <label for="name">Name :</label>
-            <input type="text" class="form-control" name="name" value="{{ race.name ?? race.name }}" >
-            {% if errors.name is defined %}
-                {{ errors.name }}
+            <div class="form-group">
+                <label for="name">Name :</label>
+                <input type="text" class="form-control" name="name" value="{{ race.name ?? race.name }}">
+                {% if errors.name is defined %}
+                    {{ errors.name }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                <label for="price">Prix :</label>
+                <input type="text" class="form-control" name="price" value="{{ race.price ?? race.price }}">
+            </div>
+            {% if errors.prix is defined %}
+                {{ errors.prix }}
+            {% endif %}
+            <div class="form-group">
+                <label for="description">Description :</label>
+                <input type="text" class="form-control" name="description" id="description"
+                       value="{{ race.description ?? race.description }}"/>
+                {% if errors.description is defined %}
+                    {{ errors.description }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                <label for="image">Image :</label>
+                <input type="url" class="form-control" name="image" id="image"
+                       value="{{ race.image ?? race.image }}"/>
+            </div>
+            {% if errors.image is defined %}
+                {{ errors.image }}
             {% endif %}
         </div>
-        <div class="form-group col-md-6 col-12">
-            <label for="price">Prix :</label>
-            <input type="text" class="form-control" name="price" value="{{ race.price ?? race.price }}">
-        </div>
-        {% if errors.prix is defined %}
-            {{ errors.prix }}
-        {% endif %}
     </div>
-    <div class="form">
-        <div class="form-group col-md-6 col-12">
-            <label for="description">Description :</label>
-            <input type="text" class="form-control" name="description" id="description"  rows="6" value="{{ race.description ?? race.description }}"/>
-            {% if errors.description is defined %}
-                {{ errors.description }}
-            {% endif %}
-        </div>
-        <div class="form-group col-md-6 col-12">
-            <label for="image">Image :</label>
-            <input type="url" class="form-control" name="image" id="image" value="{{ race.image ?? race.image}}"/>
-        </div>
-        {% if errors.image is defined %}
-            {{ errors.image }}
-        {% endif %}
-
+    <div class="container-fluid">
+        <input type="submit" value="Valider" class="btn btn-primary">
+        <form class="form-group-delete" method="post" action="/Race/delete/{{ race.id }}">
+            <input type="submit" name="delete" value="Supprimer" class="btn btn-primary">
+        </form>
+        <a href="/Race/index"><button class="btn btn-primary">Back</button></a>
     </div>
-
-        <ul class="list">
-            <input type="submit" value="Valider" class="btn btn-primary">
-        </ul>
 </form>
+
