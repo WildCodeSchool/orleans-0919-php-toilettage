@@ -2,6 +2,10 @@
 
 namespace App\Model;
 
+/**
+ * Class RaceManager
+ *
+ */
 class RaceManager extends AbstractManager
 {
     const TABLE = 'race';

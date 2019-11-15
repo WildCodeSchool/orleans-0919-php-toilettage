@@ -15,7 +15,6 @@ class PricelistController extends AbstractController
 
 
         foreach ($allInAnimals as $animal) {
-
             $groupedAnimals[$animal['animal']][$animal['category']][] =
                 ['race_name' => $animal['race_name'], 'id' => $animal['id'], 'price' => $animal['price']];
         }
@@ -27,10 +26,9 @@ class PricelistController extends AbstractController
         }
 
         return $this->twig->render('Pricelist/index.html.twig', [
-            'groupedAnimals' => $groupedAnimals,
+            'groupedAnimals' => $groupedAnimals ?? [],
             'race' => $race ?? ['price' => '--'],
             'straighteningPrice' => $straighteningPrice ?? '--'
         ]);
     }
 }
-
