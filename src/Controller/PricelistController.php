@@ -25,7 +25,7 @@ class PricelistController extends AbstractController
         }
 
         return $this->twig->render('Pricelist/index.html.twig', [
-            'groupedAnimals' => $groupedAnimals,
+            'groupedAnimals' => $groupedAnimals ?? [],
             'race' => $race ?? ['price' => '--'],
             'straighteningPrice' => $straighteningPrice ?? '--'
         ]);
