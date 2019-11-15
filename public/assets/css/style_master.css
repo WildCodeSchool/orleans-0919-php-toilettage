@@ -10,4 +10,5 @@
     --paragraphColor: rgb(30 30 30); /* dark gray */
     --backgroundBottomFooter: linear-gradient(#404040, #222222);
     --raceMenuColor: black; /* black */
+    --placeholderColor: #D3D3D3;
 }

@@ -4,8 +4,6 @@
 
 namespace App\Controller;
 
-use App\Model\RaceManager;
-
 class HomeController extends AbstractController
 {
     /**
@@ -18,10 +16,6 @@ class HomeController extends AbstractController
      */
     public function index()
     {
-        $raceManager = new RaceManager();
-        $races = $raceManager->selectAll();
-        return $this->twig->render('Home/index.html.twig', ['races' => $races]);
-
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $data = array_map('trim', $_POST);
             $errors = $this->validateContact($data);
@@ -32,9 +26,9 @@ class HomeController extends AbstractController
         }
 
         return $this->twig->render('Home/index.html.twig', [
-                'errors' => $errors ?? [],
-                'success' => $_GET['success'] ?? null
-            ]);
+            'errors' => $errors ?? [],
+            'success' => $_GET['success'] ?? null
+        ]);
     }
 
     private function validateContact($data): array

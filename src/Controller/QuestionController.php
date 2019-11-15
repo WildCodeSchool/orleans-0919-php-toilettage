@@ -11,7 +11,7 @@ class QuestionController extends AbstractController
     {
         $questionManager = new QuestionManager();
         $questions = $questionManager->selectAll();
-
-        return $this->twig->render('Question/index.html.twig', ['questions' => $questions]);
+        return $this->twig->render('Question/index.html.twig', [
+            'questions' => $questions,]);
     }
 }

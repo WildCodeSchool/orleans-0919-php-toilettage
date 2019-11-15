@@ -64,6 +64,11 @@ a:link {
     color: var(--paragraphTitle);
 }
 
+.link-visited:visited {
+    text-decoration: none;
+    color: var(--paragraphTitle)
+}
+
 /* Network link */
 .facebookLogo{
     align-items: left;
