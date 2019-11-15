@@ -4,8 +4,6 @@
 
 namespace App\Controller;
 
-use App\Model\RaceManager;
-
 class HomeController extends AbstractController
 {
     /**
@@ -25,16 +23,12 @@ class HomeController extends AbstractController
             if (empty($errors)) {
                 header('Location: /Home/index/?success=ok#contact');
             }
-
-            $raceManager = new RaceManager();
-            $races = $raceManager->selectAll();
-            return $this->twig->render('Home/index.html.twig', ['races' => $races]);
         }
 
         return $this->twig->render('Home/index.html.twig', [
-                'errors' => $errors ?? [],
-                'success' => $_GET['success'] ?? null
-            ]);
+            'errors' => $errors ?? [],
+            'success' => $_GET['success'] ?? null
+        ]);
     }
 
     private function validateContact($data): array

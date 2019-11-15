@@ -11,23 +11,25 @@
         <h1>Page Administrateur</h1>
         <div class="row">
             <div class="col-lg-3">
-            <h2>Liste des animaux</h2>
+                <h2>Liste des animaux</h2>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-3">
-            <ul class="list">
-                {% for race in races %}
-                    <li><a href="/race/edit/{{ race.id }}">{{ race.name }}</a></li>
-                {% else %}
-                    <li>Nothing to display</li>
-                {% endfor %}
-            </ul>
+                <ul class="list">
+                    {% for race in races %}
+                        <li><a href="/race/edit/{{ race.id }}">{{ race.name }}</a></li>
+                    {% else %}
+                        <li>Nothing to display</li>
+                    {% endfor %}
+                </ul>
             </div>
         </div>
         <div class="row">
             <ul class="list">
-            <a href="/race/add"><button class="btn btn-primary">Ajouter</button></a>
+                <a href="/race/add">
+                    <button class="btn btn-primary">Ajouter</button>
+                </a>
             </ul>
         </div>
     </section>
