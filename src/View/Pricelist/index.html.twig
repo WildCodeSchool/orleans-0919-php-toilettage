@@ -1,0 +1,107 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="/assets/css/style_pricelist.css"> {% endblock %}
+
+{% block title %}Tarifs Toilettage Séduction{% endblock %}
+
+
+{% block content %}
+    <section class="pricelistSection">
+        <h1 class="mainTitle">Tarifs du salon Toilettage Séduction</h1>
+
+        <div class="row">
+            <p class="col-10 offset-1 paragraphInfo"> Les tarifs sont donnés suivant l'état d'entretien du chien et sa
+                corpulence, pour un toilettage complet. L'application d'un shampoing spécifique, les soins des ongles,
+                des
+                yeux,
+                des oreilles, et la vidange des glandes anales sont compris dans le tarif. Le démêlage nécessaire en
+                supplément
+                en accord avec les propriétaires. Les prix de base sont applicables à un animal
+                normalement entretenu, de race ou se rapprochant le plus du type de la race.
+                Mes tarifs sont identiques en tonte ou en coupe ciseaux.
+                Pour les chiens susceptibles d'être épilés, se référer aux explications données dans leur conseil. Si
+                vous souhaitez un tarif précis, vous pouvez venir me faire voir votre chien avant toilettage (téléphoner
+                avant
+                de venir).
+
+                La coupe des ongles (chiens, chats, oiseaux, rongeurs, ...) et l'épilation des oreilles peuvent
+                s'effectuer
+                sans
+                toilettage complet. </p>
+        </div>
+        <div class="container-fluid boxes row">
+            <div class=" col-md-2 offset-md-1">
+                <div class="leftBox card">
+
+                    {% for animalName, groupedAnimal in groupedAnimals %}
+                        <div class="card-header headerCollapse">
+                            <h2>{{ animalName }}</h2>
+                        </div>
+
+                        <div class="accordion" id="accordionCategory">
+                            <div class="card">
+
+                                {% for categoryName, animals in groupedAnimal %}
+                                    <div class="card-header categoryHeader" id="heading{{ categoryName }}">
+                                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                                data-target="#collapse{{ categoryName }}"
+                                                aria-expanded="false" aria-controls="collapse{{ categoryName }}">
+                                            {{ categoryName }}
+                                        </button>
+                                    </div>
+
+                                    {% for animal in animals %}
+                                        <div id="collapse{{ categoryName }}" class="collapse raceHeader"
+                                             aria-labelledby="heading{{ categoryName }}"
+                                             data-parent="#accordionCategory">
+                                            <div class="card-body">
+                                                <a href="/pricelist/index/{{ animal.id }}#prices">{{ animal.race_name }}</a>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                {% endfor %}
+
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+            <div id="prices" class="rightBox col-md-7 offset-md-1">
+
+                <div class="titlePrices card">
+                    <hr class="line">
+                    <h2 class="titleRightBox">Tarifs {{ race.name }}</h2>
+                    <hr class="line">
+                </div>
+
+                <div class="pricesBox card my-5 border-0">
+
+                    <div class="pricesBoxLeft card">
+                        <h4 class="card-title">Nettoyage Simple : {{ race.price }} €</h4>
+                    </div>
+                    <div class="pricesBoxRight card">
+                        <h4 class="card-title">Avec Défrisage : {{ straighteningPrice }} €</h4>
+                    </div>
+                </div>
+
+                <div class="titlePhoto card">
+                    <hr class="line">
+                    <h2 class="titleRightBox">Photos</h2>
+                    <hr class="line">
+                </div>
+
+                <div class="photoBox card my-5 border-0">
+
+                    <img class="photoBoxLeft" src="/assets/images/caniche_corde-avant.jpg"
+                         class="card-img-top card-border shadowCard-1" alt="Avant">
+
+                    <img class="photoBoxRight" src="/assets/images/caniche_corde-apres.jpg"
+                         class="card-img-top card-border shadowCard-1" alt="Après">
+
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

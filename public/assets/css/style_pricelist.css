@@ -1,0 +1,163 @@
+@import "style_master.css";
+
+.mainTitle {
+    text-align: center;
+    margin-top: 3%;
+    margin-bottom: 1%;
+    color: var(--mainColor);
+}
+
+.collapse, .collapsing {
+    font-size: 1.5rem;
+}
+
+.titleRightBox {
+    text-align: center;
+    width: 100%;
+    margin-right: 1%;
+    margin-left: 1%;
+    font-family: var(--titleFont);
+}
+
+.titlePrices, .titlePhoto {
+    padding: 20px;
+}
+
+.paragraphInfo {
+    font-family: var(--paragraphFont);
+    color: var(--paragraphColor);
+    text-align: justify;
+    margin-top: 3%;
+    margin-bottom: 5%;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+
+    text-decoration: none;
+    color: var(--raceMenuColor);
+}
+
+a:hover {
+    text-decoration: none;
+    color: var(--mainColor);
+}
+
+.boxes {
+    display: flex;
+    margin: 0px;
+}
+
+.headerCollapse {
+    background-color: var(--mainColor);
+}
+
+.headerCollapse h2 {
+    color: white;
+}
+
+.categoryHeader {
+    background-color: var(--paragraphTitle);
+}
+
+.categoryHeader button {
+    font-size: 1.7rem;
+    color: var(--mainColor);
+    text-decoration: none;
+}
+
+.categoryHeader button:hover {
+    color: var(--mainColor);
+    text-decoration: none;
+}
+
+.raceHeader {
+    background-color: white;
+}
+
+.line {
+    width: 100%;
+    background-color: var(--secondaryColor);
+}
+
+.leftBox {
+    min-width: 320px;
+    margin-bottom: 30px;
+}
+
+.pricesBox {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.pricesBox :nth-child(n) {
+    width: 40%;
+    height: 200px;
+    min-width: 350px;
+    background-color: var(--backgroundColor);
+    border: none;
+    margin-bottom: 20px;
+}
+
+.pricesBoxLeft :nth-child(n), .pricesBoxRight :nth-child(n) {
+    width: 100%;
+    color: var(--mainColor);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+}
+
+.pricesBoxLeft p, .pricesBoxRight p {
+    font-weight: bold;
+    color: var(--mainColor);
+}
+
+.photoBox {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.photoBox :nth-child(n) {
+    min-width: 350px;
+    height: 250px;
+    display: flex;
+}
+
+.photoBoxLeft, .photoBoxRight {
+    margin-bottom: 20px;
+    min-width: 30px;
+}
+
+.titleAnimals {
+    font-size: 25px;
+}
+
+.titlePrices, .titlePhoto, .boxPhoto, .pricelistBox {
+    width: 99%;
+    flex-direction: row;
+    justify-content: center;
+    border: none;
+}
+
+.card-title {
+    text-align: center;
+}
+
+.card-body  {
+    background-color: var(--backgroundColor);
+}
+
+.card-body a {
+    margin: 1rem 0 1rem 2rem;
+}
+
+
+
