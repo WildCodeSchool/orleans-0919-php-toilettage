@@ -2,7 +2,7 @@
 
 {% block content %}
     {% block stylesheet %}
-        <link rel="stylesheet" href="/assets/css/style_race.css">
+        <link rel="stylesheet" href="/assets/css/style_race.css" xmlns="http://www.w3.org/1999/html">
     {% endblock %}
     <section class="race-edit">
         <h2 class="race-edit-title">Modifier les informations d'un animal</h2>
@@ -10,15 +10,11 @@
             {% include 'Race/_form.html.twig' %}
 
 
-        <div class="row">
-            <form class="form-group" method="post" action="/Race/delete/{{ race.id }}">
+            <form class="form-group-delete" method="post" action="/Race/delete/{{ race.id }}">
                 <input type="submit" name="delete" value="delete" class="btn btn-primary">
             </form>
-        </div>
-        <ul class="form">
             <ul class="list">
                 <a href="/Race/index"><button class="btn btn-primary">Back</button></a>
             </ul>
-        </div>
     </section>
 {% endblock %}

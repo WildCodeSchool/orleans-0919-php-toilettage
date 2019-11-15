@@ -29,7 +29,7 @@
     <div class="form">
         <div class="form-group col-md-6 col-12">
             <label for="description">Description :</label>
-            <input type="text" class="form-control" name="description" id="description"  value="{{ race.description ?? race.description }}"/>
+            <input type="text" class="form-control" name="description" id="description"  rows="6" value="{{ race.description ?? race.description }}"/>
             {% if errors.description is defined %}
                 {{ errors.description }}
             {% endif %}
@@ -44,9 +44,7 @@
 
     </div>
 
-    <div class="form">
         <ul class="list">
             <input type="submit" value="Valider" class="btn btn-primary">
         </ul>
-    </div>
 </form>
