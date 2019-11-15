@@ -1,0 +1,35 @@
+@import "style_master.css";
+
+* {
+    background-color: var(--backgroundColor);
+}
+
+h1 {
+    font-family: var(--titleFont);
+    text-align: center;
+}
+
+h2 {
+    font-family: var(--titleFont);
+}
+
+a {
+    font-family: var(--paragraphFont);
+    text-decoration: none;
+    color: var(--paragraphColor);
+}
+
+.btn-primary{
+    background-color: var(--mainColor);
+    border-color: var(--mainColor);
+    border-radius: .25rem;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.btn-primary:hover {
+    font-family: var(--titleFont);
+    color: var(--paragraphTitle);
+    background-color: var(--secondaryColor);
+    border-color: var(--secondaryColor);
+}
