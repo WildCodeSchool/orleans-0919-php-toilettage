@@ -21,6 +21,7 @@ class RaceManager extends AbstractManager
                     JOIN category c ON c.id=r.category_id
                         JOIN animal a ON a.id=c.animal_id";
         return $this->pdo->query($query)->fetchAll();
+    }
 
     public function selectOneById(int $id)
     {
