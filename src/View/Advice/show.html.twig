@@ -1,34 +1,76 @@
 {% extends 'layout.html.twig' %}
 
+{% block stylesheet %}
+    <link rel="stylesheet" href="/assets/css/style_pricelist.css">
+{% endblock %}
+
 {% block content %}
     <section class="advicePage">
         <div class="container-fluid">
             <div class="titlePresentation">
                 <h2>Conseils</h2>
             </div>
-            <div class="row justify-content-around row align-items-center ">
-                <div class="col-lg-1"></div>
-                <div class="col-lg-4 ">
-                    <div class="pictureAlign">
-                        <div class="card border shadowCard-1">
-                            <img src="{{ race.image }}" class="img-fluid" alt="photo chien">
+            <div class="container-fluid boxes row">
+                <div class=" col-md-2 offset-md-1">
+                    <div class="leftBox card">
+
+                        {% for animalName, groupedAnimal in groupedAnimals %}
+                            <div class="card-header headerCollapse">
+                                <h2>{{ animalName }}</h2>
+                            </div>
+
+                            <div class="accordion" id="accordionCategory">
+                                <div class="card">
+
+                                    {% for categoryName, animals in groupedAnimal %}
+                                        <div class="card-header categoryHeader" id="heading{{ categoryName }}">
+                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                                    data-target="#collapse{{ categoryName }}"
+                                                    aria-expanded="false" aria-controls="collapse{{ categoryName }}">
+                                                {{ categoryName }}
+                                            </button>
+                                        </div>
+
+                                        {% for animal in animals %}
+                                            <div id="collapse{{ categoryName }}" class="collapse raceHeader"
+                                                 aria-labelledby="heading{{ categoryName }}"
+                                                 data-parent="#accordionCategory">
+                                                <div class="card-body">
+                                                    <a href="/advice/show/{{ animal.animal_id }}">{{ animal.race_name }}</a>
+                                                </div>
+                                            </div>
+                                        {% endfor %}
+                                    {% endfor %}
+
+                                </div>
+                            </div>
+                        {% endfor %}
+
+                    </div>
+                </div>
+                <div id="prices" class="rightBox col-md-7 offset-md-1">
+                    <div class="titlePrices card">
+                        <hr class="line">
+                        <h2 class="titleRightBox">{{ race.name }}</h2>
+                        <hr class="line">
+                    </div>
+                    <div>
+                        <p class="text-justify">{{ race.description }}</p
+                    </div>
+
+                    <div class="container-fluid">
+                        <div class=" my-5 border-0">
+                            <div class="card border shadowCard-1">
+                                <img src="{{ race.image }}" class="img-fluid" alt="photo chien">
+                            </div>
+                        </div>
+                        <div class=discover>
+                            <a href="/pricelist/index">
+                                <button type="button" class="btn btn-outline-primary">Voir les tarifs</button>
+                            </a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-5">
-
-                    <div>
-                        <h3 class="title">{{ race.name }}</h3>
-                        <p class="text-justify">{{ race.description }}</p>
-                    </div>
-                    <div class=discover>
-                        <a href="/pricelist/index">
-                            <button type="button" class="btn btn-outline-primary">Voir les tarifs</button>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-1"></div>
-
             </div>
         </div>
     </section>
