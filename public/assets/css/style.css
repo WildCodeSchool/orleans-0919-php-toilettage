@@ -30,9 +30,9 @@ h1 {
 
 h4 {
     font-family: var(--titleFont);
-    font-size: 1.3em;
+    font-size: 1.2em;
     font-weight: bold;
-    color: var(--secondaryColor);
+    color: var(--raceMenuColor);
 }
 
 h3{
