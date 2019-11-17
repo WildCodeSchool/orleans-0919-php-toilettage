@@ -1,37 +1,60 @@
-<section class="contact">
-        <h2 class="contact-title">Contact</h2>
-        <form method="post" action="" class="form-home-page">
-            <div class="form-row">
-                <div class="form-group col-md-6 col-12">
-                    <label for="lastname">Nom</label>
-                    <input type="text" name="lastname" class="form-control" id="lastname" placeholder="Doe" required>
-                </div>
-                <div class="form-group col-md-6 col-12">
-                    <label for="firstname">Prénom</label>
-                    <input type="text" name="firstname" class="form-control" id="firstname" placeholder="John" required>
-                </div>
+<section class="contact" id="contact">
+    {% if success is not null %}
+        <div class="alert alert-success" role="alert">
+            <strong>Votre message a bien été envoyé !</strong>
+        </div>
+    {% endif %}
+    <h2 class="contact-title">Contact</h2>
+    <form method="post" action="#contact" class="form-home-page">
+        <div class="form-row">
+            <div class="form-group col-md-6 col-12">
+                <label for="lastname">Nom</label>
+                <input type="text" name="lastname" class="form-control" id="lastname" placeholder="Doe">
+                {% if errors.lastname is not null %}
+                    <ul class="alert alert-danger">
+                        <li>{{ errors.lastname }}</li>
+                    </ul>
+                {% endif %}
             </div>
-            <div class="form-group">
-                <label for="mail">Adresse mail</label>
-                <input type="email" name="mail" class="form-control" id="mail" placeholder="name@example.com" required>
+            <div class="form-group col-md-6 col-12">
+                <label for="firstname">Prénom</label>
+                <input type="text" name="firstname" class="form-control" id="firstname" placeholder="John">
+                {% if errors.firstname is not null %}
+                    <ul class="alert alert-danger">
+                        <li>{{ errors.firstname }}</li>
+                    </ul>
+                {% endif %}
             </div>
-            <div class="form-group">
-                <label for="subject"></label>
-                <select class="form-control" name="subject" id="subject">
-                    <option>Selectionnez une option</option>
-                    <option>Information</option>
-                    <option>Prendre un rendez-vous</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea class="form-control" name="message" id="message" rows="6" required></textarea>
-            </div>
-            <div class="button_submit">
-                <img src="/assets/images/dog-paw.png" alt="dog-paw" class="dog-paw">
-                <button type="submit" class="btn btn-primary">Envoyer</button>
-                <img src="/assets/images/dog-paw.png" alt="dog-paw" class="dog-paw">
-            </div>
-        </form>
-    </section>
+        </div>
+        <div class="form-group">
+            <label for="mail">Adresse mail</label>
+            <input type="email" name="mail" class="form-control" id="mail" placeholder="name@example.com">
+            {% if errors.mail is not null %}
+                <ul class="alert alert-danger">
+                    <li>{{ errors.mail }}</li>
+                </ul>
+            {% endif %}
+        </div>
+        <div class="form-group">
+            <label for="subject"></label>
+            <select class="form-control" name="subject" id="subject">
+                <option>Selectionnez une option</option>
+                <option>Information</option>
+                <option>Prendre un rendez-vous</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="message">Message</label>
+            <textarea class="form-control" name="message" id="message" rows="6"></textarea>
+            {% if errors.message is not null %}
+                <ul class="alert alert-danger">
+                    <li>{{ errors.message }}</li>
+                </ul>
+            {% endif %}
+        </div>
+        <div class="button_submit">
+            <button type="submit" name="submit" value='Submit' class="btn btn-outline-primary">Envoyer</button>
+        </div>
+    </form>
+</section>
 

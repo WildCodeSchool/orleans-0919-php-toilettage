@@ -1,45 +1,155 @@
 @import "style_master.css";
+@import "style_advice.css";
+@import "style_footer.css";
 
 p {
     font-family: var(--paragraphFont);
+    color: var(--paragraphColor);
+}
+
+a:focus
+{
+    outline:0;
+}
+
+label {
+    color: var(--labelColor);
+}
+
+.form-control::placeholder {
+    color: var(--placeholderColor);
 }
 
 h1 {
     font-family: var(--titleFont);
     font-size: 2.5em;
     font-weight: bold;
-    color: var(--backgroundColorFooter);
 }
 
+h4 {
+    font-family: var(--titleFont);
+    font-size: 1.3em;
+    font-weight: bold;
+    color: var(--secondaryColor);
+}
+
+h3{
+    padding: 1em 0 0.5em 0;
+}
 /* NAVBAR */
-
-
-.navbar{
-    box-shadow: 0 5px 5px var(--backgroundColor);
+.navbar-light .navbar-nav .nav-link{
+    color: inherit;
 }
 
-.dogLogo{
-    width:80px;
+.dogLogo {
+    width: 200px;
 }
 
-.collapse{
+.collapse {
     font-size: 1.5em;
     font-family: var(--titleFont);
-
+    color: inherit;
 }
 
-.navbar-nav{
-    width:90%;
+.navbar-nav {
+    width: 90%;
     display: flex;
     justify-content: space-around;
 }
 
-.navContact{
+.navContact {
     border: solid 1px var(--mainColor);
     border-radius: 100px;
     background-color: var(--mainColor);
-    color: white !important;
+    color: var(--paragraphTitle);
 }
+.dropdown-item{
+    font-size: 20px;
+}
+
+.btn_nav{
+    margin-top:0.4%;
+}
+
+.cta {
+    position: relative;
+    padding: 13px 22px;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    color: inherit;
+}
+.cta:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 28px;
+    background: var(--mainColor);
+    width: 56px;
+    height: 56px;
+    transition: all 0.3s ease;
+}
+
+.cta:hover{
+    color:var(--paragraphTitle);
+}
+
+.cta span {
+    position: relative;
+    font-size: 20px;
+    line-height: 18px;
+    font-weight: 900;
+    letter-spacing: 0.25em;
+    vertical-align: middle;
+}
+
+.cta:hover:before {
+    width: 100%;
+    background: var(--secondaryColor);
+}
+
+.btn_title:hover {
+    color:var(--paragraphTitle);
+}
+/*fin NAVBAR */
+
+/* Logo Facebook*/
+.icon_header {
+    position: fixed;
+    z-index: 99;
+    left: 0;
+    top: 20%;
+}
+
+.icon_header a {
+    font-size: 15.5pt;
+    text-align: center;
+    transition: all .5s ease-in-out;
+    float: right;
+    border-radius: 10px 10px 10px 10px;
+    background-color: var(--paragraphTitle);
+    padding: .5em .5em 0em 1em;
+    margin: 5px 0;
+    min-width: 160px;
+    transform: translateX(-290px);
+    box-shadow: 0 0 10px var(--backgroundColorFooter);
+}
+
+.icon_header a i {
+    float: right;
+    padding: 0.3em;
+    transition: .5s;
+}
+
+.icon_header a:hover {
+    transform: translateX(-15px);
+}
+
+.icon_header p {
+    float: left;
+    margin-right: .5em;
+}
+/* Fin Facebook */
 
 .carousel-inner {
     height: 40vw;
@@ -84,7 +194,7 @@ h2 {
 
 .who {
     font-family: var(--titleFont);
-    background-color: var(--mainColor) !important;
+    background-color: var(--mainColor);
     color: var(--paragraphTitle);
     text-align: center;
     font-weight: bold;
@@ -94,8 +204,8 @@ h2 {
 .nadege {
     display: block;
     width: 250px;
-    border-radius: 50% !important;
-    border-color:var(--secondaryColor) !important;
+    border-radius: 50%;
+    border-color: var(--secondaryColor);
     margin: auto;
 }
 
@@ -118,18 +228,35 @@ h2 {
 
 .discover {
     padding-top: 5%;
+    display: flex;
+    justify-content: center;
 }
 
 .glyphTools {
     padding-top: 4%;
 }
 
+.btn-outline-primary {
+    color: var(--mainColor);
+    border-color: var(--mainColor);
+    border-radius: .25rem;
+}
+
+.btn-outline-primary:hover {
+    font-family: var(--titleFont);
+    color: var(--paragraphTitle);
+    background-color: var(--secondaryColor);
+    border-color: var(--secondaryColor);
+}
+
 /*FIN style section presentation/Home */
 
 /*----formulaire----*/
 
+
 label {
     font-family: var(--paragraphFont);
+    color: var(--paragraphColor);
 }
 
 .contact {
@@ -151,35 +278,39 @@ label {
 }
 
 .form-row {
-    width: 60.5%;
+    width: 82.5%;
 }
 
 .form-group {
     display : flex;
     flex-direction : column;
-    width : 60%;
-
+    width : 82%;
 }
 
-.dog-paw {
-    height: 40px;
-    width: 40px;
-    margin: 10px;
+
+.alert-success {
+    text-align: center;
 }
 
-.btn {
-    background-color: var(--mainColor) !important;
-    border-color: var(--mainColor) !important;
-    border-radius: 100px;
+.alert:empty {
+    display: none;
+}
+
+.btn-primary:hover {
+    font-family: var(--titleFont);
+    color: var(--paragraphTitle);
+    background-color: var(--secondaryColor);
+    border-color: var(--secondaryColor);
 }
 
 .button_submit {
+    margin-top: 2%;
     margin-bottom: 10%;
 }
 
 /*Css section map and adress*/
 
-.detail-block{
+.detail-block {
     display: flex;
     background-color: var(--backgroundColor);
     padding-top: 5vw;
@@ -189,7 +320,6 @@ label {
     font-family: var(--titleFont);
     color: var(--mainColor);
     text-align: center;
-    margin-bottom: 4vw;
 }
 
 .blockCoordonnate {
@@ -201,14 +331,17 @@ label {
 .mapContour {
     display: flow;
     justify-items: center;
-    height: 75vh;
+    height: 78vh;
     margin-top: 4vw;
 }
 
 .bloc_adress {
     align-content: center;
-    height: 75vh;
-    background-color: var(--backgroundColor);
+    height: 78vh;
+}
+
+address {
+    margin-bottom: 0;
 }
 
 .adressContour {
@@ -227,36 +360,17 @@ label {
 
 
 .heightParagraph {
-    margin-top: 1.5rem;
+    margin-top: 1.7em;
     justify-content: space-evenly;
+    margin-bottom: 1.45em;
 }
+
 /*footer*/
-.footer {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    background-color: var(--backgroundColorFooter);
-    color: var(--paragraphTitle);
-    font-size: 1.25em;
-    height: 10vw;
-    width: 100vw;
-}
 
-.footerPart {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    color: var(--paragraphTitle);
-    background-color: var(--backgroundColorFooter);
-}
 
-a:link {
-    text-decoration:none;
-    color: var(--paragraphTitle);
-}
 
 .map {
     width: 100%;
     height: 100%;
-    border: 0px;
+    border: 0;
 }

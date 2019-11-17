@@ -4,6 +4,11 @@
     --paragraphTitle: rgb(255, 255, 255); /* white */
     --mainColor: rgb(252, 91, 76); /* orange */
     --secondaryColor: rgb(246 137 124); /* orange pale */
-    --backgroundColor: rgb(245 249 250); /* gray blue */
+    --backgroundColor: rgb(245 249 250); /* gray blue  ou f5f9fa*/
     --backgroundColorFooter: rgb(0 0 0); /* black */
+    --labelColor: #DCDCDC; /* pale gray */
+    --paragraphColor: rgb(30 30 30); /* dark gray */
+    --backgroundBottomFooter: linear-gradient(#404040, #222222);
+    --raceMenuColor: black; /* black */
+    --placeholderColor: #D3D3D3;
 }

@@ -1,0 +1,23 @@
+.titlePartner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font: var(--titleFont);
+    color: var(--mainColor);
+
+}
+
+.imgPartner {
+    width: 25vw;
+    height: 32vh;
+    padding: 1.5vw;
+}
+
+.cardPartner {
+    padding: 1.5vw;
+    width: 25vh;
+}
+
+.linkPartner a:link {
+     color: var(--backgroundColorFooter);
+ }

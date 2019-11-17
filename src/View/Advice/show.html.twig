@@ -1,0 +1,35 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <section class="advicePage">
+        <div class="container-fluid">
+            <div class="titlePresentation">
+                <h2>Conseils</h2>
+            </div>
+            <div class="row justify-content-around row align-items-center ">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-4 ">
+                    <div class="pictureAlign">
+                        <div class="card border shadowCard-1">
+                            <img src="{{ race.image }}" class="img-fluid" alt="photo chien">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+
+                    <div>
+                        <h3 class="title">{{ race.name }}</h3>
+                        <p class="text-justify">{{ race.description }}</p>
+                    </div>
+                    <div class=discover>
+                        <a href="/pricelist/index">
+                            <button type="button" class="btn btn-outline-primary">Voir les tarifs</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-1"></div>
+
+            </div>
+        </div>
+    </section>
+{% endblock %}

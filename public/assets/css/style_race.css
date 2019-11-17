@@ -1,0 +1,68 @@
+@import "style_master.css";
+
+* {
+    background-color: var(--backgroundColor);
+}
+
+h1 {
+    font-family: var(--titleFont);
+    text-align: center;
+}
+
+h2 {
+    font-family: var(--titleFont);
+}
+
+a {
+    font-family: var(--paragraphFont);
+    text-decoration: none;
+    color: var(--paragraphColor);
+}
+
+.btn-primary{
+    background-color: var(--mainColor);
+    border-color: var(--mainColor);
+    border-radius: .25rem;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.btn-primary:hover {
+    font-family: var(--titleFont);
+    color: var(--paragraphTitle);
+    background-color: var(--secondaryColor);
+    border-color: var(--secondaryColor);
+}
+
+/*******edit page *******/
+
+.race-edit-title {
+    font-family: var(--titleFont);
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.form-home-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-group {
+    display : flex;
+    flex-direction : column;
+    width : 100%;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.form-group-delete {
+    width: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.back {
+    margin-top: 10px;
+}
