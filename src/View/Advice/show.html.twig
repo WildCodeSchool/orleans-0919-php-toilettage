@@ -8,7 +8,7 @@
     <section class="advicePage">
         <div class="container-fluid">
             <div class="titlePresentation">
-                <h2>Conseils</h2>
+                <h1>Conseils</h1>
             </div>
             <div class="container-fluid boxes row">
                 <div class=" col-md-2 offset-md-1">
@@ -16,7 +16,7 @@
 
                         {% for animalName, groupedAnimal in groupedAnimals %}
                             <div class="card-header headerCollapse">
-                                <h2>{{ animalName }}</h2>
+                                <p class="titleAnimals">{{ animalName }}</p>
                             </div>
 
                             <div class="accordion" id="accordionCategory">
@@ -35,7 +35,7 @@
                                             <div id="collapse{{ categoryName }}" class="collapse raceHeader"
                                                  aria-labelledby="heading{{ categoryName }}"
                                                  data-parent="#accordionCategory">
-                                                <div class="card-body">
+                                                <div class="card-body sub">
                                                     <a href="/advice/show/{{ animal.animal_id }}">{{ animal.race_name }}</a>
                                                 </div>
                                             </div>
@@ -51,20 +51,20 @@
                 <div id="prices" class="rightBox col-md-7 offset-md-1">
                     <div class="titlePrices card">
                         <hr class="line">
-                        <h2 class="titleRightBox">{{ race.name }}</h2>
+                        <h3 class="titleRightBox">{{ race.name }}</h3>
                         <hr class="line">
                     </div>
                     <div>
-                        <p class="text-justify">{{ race.description }}</p
+                        <p class="text-justify">{{ race.description }}</p>
                     </div>
 
-                    <div class="container-fluid">
+                    <div class="container-fluid col-lg-10">
                         <div class=" my-5 border-0">
                             <div class="card border shadowCard-1">
                                 <img src="{{ race.image }}" class="img-fluid" alt="photo chien">
                             </div>
                         </div>
-                        <div class=discover>
+                        <div class=discoverBis>
                             <a href="/pricelist/index">
                                 <button type="button" class="btn btn-outline-primary">Voir les tarifs</button>
                             </a>

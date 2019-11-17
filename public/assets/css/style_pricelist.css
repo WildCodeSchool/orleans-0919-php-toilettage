@@ -23,6 +23,7 @@
     padding: 20px;
 }
 
+
 .paragraphInfo {
     font-family: var(--paragraphFont);
     color: var(--paragraphColor);
@@ -64,7 +65,7 @@ a:hover {
 }
 
 .categoryHeader button {
-    font-size: 1.7rem;
+    font-size: 1.4em;
     color: var(--mainColor);
     text-decoration: none;
 }
@@ -137,7 +138,11 @@ a:hover {
 }
 
 .titleAnimals {
-    font-size: 25px;
+    font-family: var(--titleFont);
+    background-color: var(--mainColor);
+    color: var(--paragraphTitle);
+    font-weight: bold;
+    font-size: 1.8em;
 }
 
 .titlePrices, .titlePhoto, .boxPhoto, .pricelistBox {
@@ -151,13 +156,19 @@ a:hover {
     text-align: center;
 }
 
-.card-body {
+.sub {
     background-color: var(--backgroundColor);
+    padding: 0.6em;
 }
 
 .card-body a {
-    margin: 1rem 0 1rem 2rem;
+    font-size: 1.25rem;
+    margin: 0em 0 0em 1.1em;
 }
 
-
+.discoverBis {
+    padding-bottom: 5%;
+    display: flex;
+    justify-content: center;
+}
 
