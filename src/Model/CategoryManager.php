@@ -22,4 +22,23 @@ class CategoryManager extends AbstractManager
     {
         parent::__construct(self::TABLE);
     }
+
+    public function update(array $data)
+    {
+        $statement = $this->pdo->prepare("UPDATE " . self::TABLE . "
+                SET name=:name, animal_id=:animal_id           
+                WHERE id=:id
+            ");
+        $statement->bindValue('name', $data['name'], \PDO::PARAM_STR);
+        $statement->bindValue('animal_id', $data['animal_id'], \PDO::PARAM_INT);
+        $statement->bindValue('id', $data['id'], \PDO::PARAM_INT);
+        $statement->execute();
+    }
+
+    public function insert(array $data)
+    {
+        $statement = $this->pdo->prepare('INSERT INTO ' . self::TABLE . " (name) VALUES (:name)");
+        $statement->bindValue('name', $data['category'], \PDO::PARAM_STR);
+        $statement->execute();
+    }
 }

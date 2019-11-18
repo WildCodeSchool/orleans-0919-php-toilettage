@@ -8,5 +8,15 @@
         <h2 class="race-edit-title">Modifier les informations d'un animal</h2>
 
         {% include 'Race/_form.html.twig' %}
+        <div class="container-fluid">
+
+            <form class="form-group-delete" method="post" action="/Race/delete/{{ race.id }}">
+                <input type="submit" name="delete" value="Supprimer" class="btn btn-primary">
+            </form>
+            <a href="/Race/index">
+                <button class="btn btn-primary">Retour</button>
+            </a>
+
+        </div>
     </section>
 {% endblock %}

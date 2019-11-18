@@ -36,6 +36,21 @@ class RaceManager extends AbstractManager
         return $statement->fetch();
     }
 
+    public function insert(array $data)
+    {
+        // prepared request
+        $statement = $this->pdo->prepare('INSERT INTO ' .self::TABLE . " 
+                (name, price, image, description, category_id) 
+                VALUES (:name, :price, :image, :description, :category) 
+                ");
+        $statement->bindValue('name', $data['name'], \PDO::PARAM_STR);
+        $statement->bindValue('price', $data['price'], \PDO::PARAM_INT);
+        $statement->bindValue('image', $data['image'], \PDO::PARAM_STR);
+        $statement->bindValue('description', $data['description'], \PDO::PARAM_STR);
+        $statement->bindValue('category', $data['category'], \PDO::PARAM_STR);
+        $statement->execute();
+    }
+
     public function update(array $data)
     {
         $statement = $this->pdo->prepare("UPDATE " . self::TABLE . "
@@ -44,9 +59,17 @@ class RaceManager extends AbstractManager
             ");
         $statement->bindValue('name', $data['name'], \PDO::PARAM_STR);
         $statement->bindValue('price', $data['price'], \PDO::PARAM_STR);
-        $statement->bindValue('image', $data['image'], \PDO::PARAM_INT);
+        $statement->bindValue('image', $data['image'], \PDO::PARAM_STR);
         $statement->bindValue('description', $data['description'], \PDO::PARAM_STR);
         $statement->bindValue('id', $data['id'], \PDO::PARAM_INT);
+
+        $statement->execute();
+    }
+
+    public function delete(int $id)
+    {
+        $statement = $this->pdo->prepare("DELETE FROM " . self::TABLE . " WHERE id=:id");
+        $statement->bindValue('id', $id, \PDO::PARAM_INT);
         $statement->execute();
     }
 }

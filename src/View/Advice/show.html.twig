@@ -1,35 +1,39 @@
 {% extends 'layout.html.twig' %}
 
+{% block stylesheet %}
+    <link rel="stylesheet" href="/assets/css/style_pricelist.css">
+{% endblock %}
+
 {% block content %}
     <section class="advicePage">
-        <div class="container-fluid">
-            <div class="titlePresentation">
-                <h2>Conseils</h2>
+        <div class="titlePresentation">
+            <h1>Conseils</h1>
+        </div>
+    {% include 'Advice/_side_menu.html.twig' %}
+    <div id="prices" class="rightBox col-md-7 offset-md-1">
+        <div class="titlePrices card">
+            <hr class="line">
+            <h3 class="titleRightBox">{{ race.name }}</h3>
+            <hr class="line">
+        </div>
+        <div>
+            <p class="text-justify">{{ race.description }}</p>
+        </div>
+
+        <div class="container-fluid col-lg-9">
+            <div class=" my-5 border-0">
+                <div class="card border shadowCard-1">
+                    <img src="{{ race.image }}" class="img-fluid" alt="photo chien">
+                </div>
             </div>
-            <div class="row justify-content-around row align-items-center ">
-                <div class="col-lg-1"></div>
-                <div class="col-lg-4 ">
-                    <div class="pictureAlign">
-                        <div class="card border shadowCard-1">
-                            <img src="{{ race.image }}" class="img-fluid" alt="photo chien">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-5">
-
-                    <div>
-                        <h3 class="title">{{ race.name }}</h3>
-                        <p class="text-justify">{{ race.description }}</p>
-                    </div>
-                    <div class=discover>
-                        <a href="/pricelist/index">
-                            <button type="button" class="btn btn-outline-primary">Voir les tarifs</button>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-1"></div>
-
+            <div class=discoverBis>
+                <a href="/pricelist/index">
+                    <button type="button" class="btn btn-outline-primary">Voir les tarifs</button>
+                </a>
             </div>
         </div>
+    </div>
+    </div>
+    </div>
     </section>
 {% endblock %}
