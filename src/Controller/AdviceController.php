@@ -19,10 +19,9 @@ class AdviceController extends AbstractController
 {
     public function show($id)
     {
-        $raceManager = new RaceManager();
-        $race = $raceManager->selectOneById($id);
         $animalManager = new RaceManager();
         $allInAnimals = $animalManager->selectAllInAnimals();
+        $race = $animalManager->selectOneById($id);
 
         foreach ($allInAnimals as $animal) {
             $groupedAnimals[$animal['animal']][$animal['category']][] =
