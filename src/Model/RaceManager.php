@@ -19,7 +19,8 @@ class RaceManager extends AbstractManager
     {
         $query = "SELECT r.name race_name, r.id, price, c.name category, a.name animal FROM " . self::TABLE . " r
                     JOIN category c ON c.id=r.category_id
-                        JOIN animal a ON a.id=c.animal_id";
+                        JOIN animal a ON a.id=c.animal_id
+                     ORDER BY race_name";
         return $this->pdo->query($query)->fetchAll();
     }
 
@@ -48,5 +49,13 @@ class RaceManager extends AbstractManager
         $statement->bindValue('description', $data['description'], \PDO::PARAM_STR);
         $statement->bindValue('id', $data['id'], \PDO::PARAM_INT);
         $statement->execute();
+    }
+
+    public function selectFirstRace()
+    {
+        $query = "SELECT * FROM " . self::TABLE . " r
+                    ORDER BY name
+                    LIMIT 1";
+        return $this->pdo->query($query)->fetch();
     }
 }

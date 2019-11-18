@@ -17,11 +17,16 @@ use App\Model\RaceManager;
  */
 class AdviceController extends AbstractController
 {
-    public function show($id)
+    public function show($id = null)
     {
-        $animalManager = new RaceManager();
-        $allInAnimals = $animalManager->selectAllInAnimals();
-        $race = $animalManager->selectOneById($id);
+        $races = new RaceManager();
+        if ($id === null) {
+            $firstRace = $races->selectFirstRace();
+            $id = $firstRace['id'];
+        }
+
+        $allInAnimals = $races->selectAllInAnimals();
+        $race = $races->selectOneById($id);
 
         foreach ($allInAnimals as $animal) {
             $groupedAnimals[$animal['animal']][$animal['category']][] =
