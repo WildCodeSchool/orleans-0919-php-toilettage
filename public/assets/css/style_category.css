@@ -1,0 +1,37 @@
+@import "style_master.css";
+
+body {
+    background-color: var(--backgroundColor);
+}
+
+.race_admin {
+    margin: 50px;
+}
+
+h1 {
+    font-family: var(--titleFont);
+}
+
+.list a  {
+    color: var(--raceMenuColor);
+    font-size: 1.4rem;
+}
+
+.list a:hover  {
+    color: var(--mainColor);
+}
+
+.btn-primary{
+    background-color: var(--mainColor);
+    border-color: var(--mainColor);
+    border-radius: .25rem;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.btn-primary:hover {
+    font-family: var(--titleFont);
+    color: var(--paragraphTitle);
+    background-color: var(--secondaryColor);
+    border-color: var(--secondaryColor);
+}
