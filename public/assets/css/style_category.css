@@ -10,6 +10,7 @@ body {
 
 h1 {
     font-family: var(--titleFont);
+    text-align: center;
 }
 
 .list a  {
