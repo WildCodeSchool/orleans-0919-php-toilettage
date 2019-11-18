@@ -8,7 +8,9 @@
 
 {% block content %}
     <section class="pricelistSection">
-        <h1 class="mainTitle">Tarifs du salon Toilettage Séduction</h1>
+        <div class="titlePresentation">
+          <h1>Tarifs du salon Toilettage Séduction</h1>
+        </div>
 
         <div class="row">
             <p class="col-10 offset-1 paragraphInfo"> Les tarifs sont donnés suivant l'état d'entretien du chien et sa
@@ -33,10 +35,9 @@
         <div class="container-fluid boxes row">
             <div class=" col-md-2 offset-md-1">
                 <div class="leftBox card">
-
                     {% for animalName, groupedAnimal in groupedAnimals %}
                         <div class="card-header headerCollapse">
-                            <h2>{{ animalName }}</h2>
+                            <p class="titleAnimals">{{ animalName }}</p>
                         </div>
 
                         <div class="accordion" id="accordionCategory">
@@ -55,7 +56,7 @@
                                         <div id="collapse{{ categoryName }}" class="collapse raceHeader"
                                              aria-labelledby="heading{{ categoryName }}"
                                              data-parent="#accordionCategory">
-                                            <div class="card-body">
+                                            <div class="card-body sub">
                                                 <a href="/pricelist/index/{{ animal.id }}#prices">{{ animal.race_name }}</a>
                                             </div>
                                         </div>
@@ -68,38 +69,39 @@
 
                 </div>
             </div>
-            <div id="prices" class="rightBox col-md-7 offset-md-1">
+
+                <div id="prices" class="rightBox col-md-7 offset-md-1">
 
                 <div class="titlePrices card">
                     <hr class="line">
-                    <h2 class="titleRightBox">Tarifs {{ race.name }}</h2>
+                    <h3 class="titleRightBox">Tarifs {{ race.name }}</h3>
                     <hr class="line">
                 </div>
 
                 <div class="pricesBox card my-5 border-0">
-
                     <div class="pricesBoxLeft card">
-                        <h4 class="card-title">Nettoyage Simple : {{ race.price }} €</h4>
+                        <p>Nettoyage Simple : {{ race.price }} €</p>
                     </div>
                     <div class="pricesBoxRight card">
-                        <h4 class="card-title">Avec Défrisage : {{ straighteningPrice }} €</h4>
+                        <p>Avec Défrisage : {{ straighteningPrice }} €</p>
                     </div>
                 </div>
 
                 <div class="titlePhoto card">
                     <hr class="line">
-                    <h2 class="titleRightBox">Photos</h2>
+                    <h3 class="titleRightBox">Photos</h3>
                     <hr class="line">
                 </div>
 
                 <div class="photoBox card my-5 border-0">
-
-                    <img class="photoBoxLeft" src="/assets/images/caniche_corde-avant.jpg"
-                         class="card-img-top card-border shadowCard-1" alt="Avant">
-
-                    <img class="photoBoxRight" src="/assets/images/caniche_corde-apres.jpg"
-                         class="card-img-top card-border shadowCard-1" alt="Après">
-
+                    <div class="card border shadowCard-1">
+                        <img class="photoBoxLeft" src="/assets/images/caniche_corde-avant.jpg"
+                             alt="Avant">
+                    </div>
+                    <div class="card border shadowCard-1">
+                        <img class="photoBoxRight" src="/assets/images/caniche_corde-apres.jpg"
+                              alt="Après">
+                    </div>
                 </div>
             </div>
         </div>
