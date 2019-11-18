@@ -58,8 +58,8 @@ class RaceManager extends AbstractManager
                 WHERE id=:id
             ");
         $statement->bindValue('name', $data['name'], \PDO::PARAM_STR);
-        $statement->bindValue('price', $data['price'], \PDO::PARAM_STR);
-        $statement->bindValue('image', $data['image'], \PDO::PARAM_INT);
+        $statement->bindValue('price', $data['price'], \PDO::PARAM_INT);
+        $statement->bindValue('image', $data['image'], \PDO::PARAM_STR);
         $statement->bindValue('description', $data['description'], \PDO::PARAM_STR);
         $statement->bindValue('id', $data['id'], \PDO::PARAM_INT);
 
