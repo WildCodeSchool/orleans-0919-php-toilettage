@@ -29,12 +29,10 @@ class CategoryController extends AbstractController
     public function add(): string
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
             $data = array_map('trim', $_POST);
             $errors = $this->validate($data);
 
             if (empty($errors)) {
-
                 $categoryManager = new CategoryManager();
                 $categoryManager->insert($data);
                 header('Location:/category/index');
