@@ -22,20 +22,27 @@ label {
 
 h1 {
     font-family: var(--titleFont);
-    font-size: 2.5em;
+    font-size: 2.2em;
     font-weight: bold;
+    color: var(--mainColor);
+    padding-bottom: 1%;
 }
 
 h4 {
     font-family: var(--titleFont);
-    font-size: 1.3em;
+    font-size: 1.2em;
     font-weight: bold;
     color: var(--secondaryColor);
 }
 
 h3{
-    padding: 1em 0 0.5em 0;
+    font-family: var(--titleFont);
+    font-size: 1.6em;
+    font-weight: bold;
+    color: var(--raceMenuColor);
+
 }
+
 /* NAVBAR */
 .navbar-light .navbar-nav .nav-link{
     color: inherit;
@@ -237,18 +244,22 @@ h2 {
 }
 
 .btn-outline-primary {
-    color: var(--mainColor);
-    border-color: var(--mainColor);
+    color: var(--paragraphTitle);
+    background-color: var(--secondaryColor) ;
+    border-color: var(--secondaryColor);
     border-radius: .25rem;
 }
 
 .btn-outline-primary:hover {
     font-family: var(--titleFont);
     color: var(--paragraphTitle);
-    background-color: var(--secondaryColor);
-    border-color: var(--secondaryColor);
+    background-color: var(--mainColor);
+    border-color: var(--mainColor);
 }
 
+.btn-outline-primary:active {
+    box-shadow: none;
+}
 /*FIN style section presentation/Home */
 
 /*----formulaire----*/
@@ -326,6 +337,7 @@ label {
     justify-content: space-evenly;
     margin-top: 2vw;
     line-height: 3vh;
+    margin-bottom: 4vh;
 }
 
 .mapContour {
@@ -337,7 +349,7 @@ label {
 
 .bloc_adress {
     align-content: center;
-    height: 78vh;
+    height: 75vh;
 }
 
 address {
@@ -355,7 +367,7 @@ address {
 .bloc_adress p {
     justify-content: space-evenly;
     text-align: center;
-    line-height: 2vh;
+    line-height: 1vh;
 }
 
 
