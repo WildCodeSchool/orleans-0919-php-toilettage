@@ -1,0 +1,33 @@
+{% extends 'layoutAdmin.html.twig' %}
+
+{% block title %}Admin Category{% endblock %}
+{% block stylesheet %}<link rel="stylesheet" href="/assets/css/style_category.css">{% endblock %}
+
+{% block content %}
+    <section class="race_admin">
+        <div class="row">
+            <div class="col-lg-3">
+                <h1>Catégories</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3">
+
+            <ul class="list">
+                {% for category in categories %}
+                    <li><a href="/race/edit/{{ category.id }}">{{ category.name }}</a></li>
+                {% else %}
+                    <li>Rien à afficher</li>
+                {% endfor %}
+            </ul>
+            </div>
+        </div>
+        <div class="row">
+            <ul class="list">
+                <a href="/race/add">
+                    <button class="btn btn-primary">Ajouter</button>
+                </a>
+            </ul>
+        </div>
+    </section>
+{% endblock %}
