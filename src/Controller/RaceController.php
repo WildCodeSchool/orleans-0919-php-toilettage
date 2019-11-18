@@ -82,15 +82,7 @@ class RaceController extends AbstractController
         return $errors ?? [];
     }
 
-    public function delete(int $id)
-    {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $raceManager = new RaceManager();
-            $raceManager->delete($id);
 
-            header('Location: /Race/index');
-        }
-    }
 
     public function add(): string
     {
@@ -139,5 +131,19 @@ class RaceController extends AbstractController
             'categories' => $categories,
             'path' => $fileName ?? ''
         ]);
+    }
+
+    public function delete(int $id)
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $raceManager = new RaceManager();
+            $race = $raceManager->selectOneById($id);
+            $fileName = $race['image'];
+            if ($race) {
+                unlink($fileName);
+                $raceManager->delete($id);
+            }
+            header('Location: /Race/index');
+        }
     }
 }
