@@ -120,6 +120,16 @@ h3{
 }
 /*fin NAVBAR */
 
+
+/* Carousel */
+
+.title_carousel {
+    margin-bottom: 10%;
+    font-size: 4.5vw;
+    color: var(--paragraphTitle);
+    text-shadow: 0 0 10px var(--backgroundColorFooter);;
+}
+
 /* Logo Facebook*/
 .icon_header {
     position: fixed;
