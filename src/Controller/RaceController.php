@@ -41,10 +41,32 @@ class RaceController extends AbstractController
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $data = array_map('trim', $_POST);
-
+            $uploadDir = 'uploads/';
+            $data['image'] = $uploadDir . $_FILES['path']['name'];
             $errors = $this->validate($data);
 
+            if (!empty($_FILES['path']['name'])) {
+                $path = $_FILES['path'];
+
+                if ($path['error'] !== 0) {
+                    $errors[] = "Fichier non ajouté";
+                }
+
+                if ($path['size'] > self::MAX_FILES_SIZE) {
+                    $errors[] = "Le fichier ne doit pas dépasser " . (self::MAX_FILES_SIZE / 1000) . "KO";
+                }
+
+                if (!in_array($path['type'], self::ALLOWED_MIMES)) {
+                    $errors[] = "Mauvais type de fichier, les fichier accepté sont "
+                        . implode(', ', self::ALLOWED_MIMES);
+                }
+            }
             if (empty($errors)) {
+                if (!empty($path)) {
+                    $fileName = $_FILES['path']['name'];
+
+                    move_uploaded_file($_FILES['path']['tmp_name'], $uploadDir . $fileName);
+                }
                 // update en bdd si pas d'erreur
                 $raceManager->update($data);
                 // redirection en GET
