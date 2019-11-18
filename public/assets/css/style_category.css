@@ -4,6 +4,14 @@ body {
     background-color: var(--backgroundColor);
 }
 
+/* form */
+
+.form-admin {
+    width: 30%;
+}
+
+/* */
+
 .race_admin {
     margin: 50px;
 }
