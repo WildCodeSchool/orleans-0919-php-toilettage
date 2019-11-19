@@ -25,21 +25,20 @@ class HomeController extends AbstractController
             $errors = $this->validateContact($data);
 
             if (empty($errors)) {
-                if (empty($errors)) {
-                    $transport = Transport::fromDsn(MAIL_DSN);
-                    $mailer = new Mailer($transport);
-                    $email = (new Email())
-                        ->from(MAIL_FROM)
-                        ->to(MAIL_TO)
-                        ->subject('Site toilettage séduction : contact')
-                        ->html($this->twig->render('Email/index.html.twig', [
-                            'data' => $data,
-                        ]));
-                    $mailer->send($email);
-                }
-                header('Location: /Home/index/?success=ok#contact');
+                $transport = Transport::fromDsn(MAIL_DSN);
+                $mailer = new Mailer($transport);
+                $email = (new Email())
+                    ->from(MAIL_FROM)
+                    ->to(MAIL_TO)
+                    ->subject('Site toilettage séduction')
+                    ->html($this->twig->render('Email/index.html.twig', [
+                        'data' => $data,
+                    ]));
+                $mailer->send($email);
             }
+            header('Location: /Home/index/?success=ok#contact');
         }
+
 
         return $this->twig->render('Home/index.html.twig', [
             'errors' => $errors ?? [],
