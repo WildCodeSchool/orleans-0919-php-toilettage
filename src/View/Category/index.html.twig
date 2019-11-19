@@ -11,7 +11,7 @@
 
             <ul class="list">
                 {% for category in categories %}
-                    <li><a href="/race/edit/{{ category.id }}">{{ category.name }}</a></li>
+                    <li><a href="/category/edit/{{ category.id }}">{{ category.name }}</a></li>
                 {% else %}
                     <li>Rien à afficher</li>
                 {% endfor %}
