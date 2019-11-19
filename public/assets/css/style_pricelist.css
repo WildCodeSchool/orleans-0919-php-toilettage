@@ -1,9 +1,5 @@
 @import "style_master.css";
 
-.pricelistSection{
-    padding: 2% 0 2% 0;
-}
-
 .collapse, .collapsing {
     font-size: 1.5rem;
 }
