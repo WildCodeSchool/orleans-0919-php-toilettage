@@ -104,62 +104,59 @@ class RaceController extends AbstractController
         return $errors ?? [];
     }
 
-    public function delete(int $id)
-    {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $raceManager = new RaceManager();
-            $raceManager->delete($id);
 
-            header('Location: /Race/index');
-        }
-    }
 
     public function add(): string
     {
         $raceManager = new RaceManager();
         $categoryManager = new CategoryManager();
         $categories = $categoryManager->selectAll();
-
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $data = array_map('trim', $_POST);
             $uploadDir = 'uploads/';
             $data['image'] = $uploadDir . $_FILES['path']['name'];
             $errors = $this->validate($data);
-
             if (!empty($_FILES['path']['name'])) {
                 $path = $_FILES['path'];
-
                 if ($path['error'] !== 0) {
                     $errors[] = "Fichier non ajouté";
                 }
-
                 if ($path['size'] > self::MAX_FILES_SIZE) {
                     $errors[] = "Le fichier ne doit pas dépasser " . (self::MAX_FILES_SIZE / 1000) . "KO";
                 }
-
                 if (!in_array($path['type'], self::ALLOWED_MIMES)) {
                     $errors[] = "Mauvais type de fichier, les fichier accepté sont "
                         . implode(', ', self::ALLOWED_MIMES);
                 }
             }
-
             if (empty($errors)) {
                 if (!empty($path)) {
                     $fileName = $_FILES['path']['name'];
-
                     move_uploaded_file($_FILES['path']['tmp_name'], $uploadDir . $fileName);
                 }
                 $raceManager->insert($data);
                 header('Location:/race/index');
             }
         }
-
-
         return $this->twig->render('Race/add.html.twig', [
             'data' => $data ?? [],
             'errors' => $errors ?? [],
             'categories' => $categories,
             'path' => $fileName ?? ''
         ]);
+    }
+
+    public function delete(int $id)
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $raceManager = new RaceManager();
+            $race = $raceManager->selectOneById($id);
+            $fileName = $race['image'];
+            if ($race) {
+                unlink($fileName);
+                $raceManager->delete($id);
+            }
+            header('Location: /Race/index');
+        }
     }
 }
