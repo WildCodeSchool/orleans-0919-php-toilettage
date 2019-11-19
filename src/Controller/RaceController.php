@@ -183,8 +183,12 @@ class RaceController extends AbstractController
             $raceManager = new RaceManager();
             $race = $raceManager->selectOneById($id);
             $fileName = $race['image'];
+            $fileNameBefore = $race['before'];
+            $fileNameAfter = $race['after'];
             if ($race) {
-                unlink($fileName);
+                unlink('uploads/' . $fileName);
+                unlink('uploads/before/' .$fileNameBefore);
+                unlink('uploads/after/' .$fileNameAfter);
                 $raceManager->delete($id);
             }
             header('Location: /Race/index');
