@@ -50,6 +50,7 @@ h3{
     color: inherit;
 }
 
+
 .dogLogo {
     width: 200px;
 }
@@ -127,7 +128,7 @@ h3{
 
 .title_carousel {
     margin-bottom: 10%;
-    font-size: 4.5vw;
+    font-size: 3.5vw;
     color: var(--paragraphTitle);
     text-shadow: 0 0 10px var(--backgroundColorFooter);;
 }
