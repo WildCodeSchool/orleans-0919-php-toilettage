@@ -1,6 +1,6 @@
 {% extends 'layoutAdmin.html.twig' %}
 
-{% block title %}Ajouter Catégorie{% endblock %}
+{% block title %}Modifier Catégorie{% endblock %}
 
     {% block stylesheet %}
         <link rel="stylesheet" href="/assets/css/style_category.css" xmlns="http://www.w3.org/1999/html">
@@ -9,7 +9,7 @@
 {% block content %}
     <div class="container-fluid form-admin">
 
-        <h1>Ajouter une nouvelle catégorie</h1>
+        <h1>Modifier cette catégorie</h1>
         <form method="post" action="">
 
             <div class="row">
@@ -31,6 +31,11 @@
                     </div>
 
                     <div class="col">
+                        <form class="form-group-delete" method="post" action="/Category/delete/{{ category.id }}">
+                            <input type="submit" name="delete" value="Supprimer" class="btn btn-primary">
+                        </form>
+                    </div>
+                    <div class="col">
                         <a href="/Category/index">
                             <button type="button" class="btn btn-primary">Retour</button>
                         </a>
@@ -38,8 +43,6 @@
 
                 </div>
             </div>
-    </div>
-
-    </form>
+        </form>
     </div>
 {% endblock %}
