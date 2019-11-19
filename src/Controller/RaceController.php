@@ -134,14 +134,14 @@ class RaceController extends AbstractController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $data = array_map('trim', $_POST);
             $uploadDir = 'uploads/';
-            $data['image'] = $uploadDir . $_FILES['path']['name'];
+            $data['image'] = $_FILES['path']['name'];
 
 
             $uploadDirBefore = 'uploads/before/';
-            $data['before'] = $uploadDirBefore . $_FILES['path-before']['name'];
+            $data['before'] = $_FILES['path-before']['name'];
 
             $uploadDirAfter = 'uploads/after/';
-            $data['after'] = $uploadDirAfter . $_FILES['path-after']['name'];
+            $data['after'] = $_FILES['path-after']['name'];
 
             $errors = $this->validate($data);
 

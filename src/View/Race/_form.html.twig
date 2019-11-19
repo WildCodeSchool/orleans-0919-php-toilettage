@@ -39,7 +39,7 @@
                 <label for="image">Image :</label>
                 <input type="text" class="form-control" name="path" id="image"
                        value="{{ race.image ?? race.image }}"/>
-                <img src="/{{ race.image }}">
+                <img src="/uploads/{{ race.image }}">
             </div>
             <input id="image" type="file" name="path"/>
             {% if errors.image is defined %}
@@ -50,7 +50,7 @@
                 <label for="image-before">Image toilletage avant:</label>
                 <input type="text" class="form-control" name="path-before" id="image-before"
                        value="{{ race.before ?? race.before }}"/>
-                <img src="/{{ race.before }}">
+                <img src="/uploads/before/{{ race.before }}">
             </div>
             <input id="image" type="file" name="path-before"/>
             {% if errors.image is defined %}
@@ -61,7 +61,7 @@
                 <label for="image-after">Image toilletage après:</label>
                 <input type="text" class="form-control" name="path-after" id="image-after"
                        value="{{ race.after ?? race.after }}"/>
-                <img src="/{{ race.after }}">
+                <img src="/uploads/after/{{ race.after }}">
             </div>
             <input id="image" type="file" name="path-after"/>
             {% if errors.image is defined %}
