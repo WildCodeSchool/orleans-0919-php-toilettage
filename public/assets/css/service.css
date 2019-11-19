@@ -6,7 +6,6 @@ h2 {
 }
 
 .servicePresentation {
-    padding: 2% 0 2% 0;
     background: url('../images/wave.png') no-repeat center center fixed;
     background-size: cover;
 }
@@ -24,8 +23,8 @@ h2 {
     flex-wrap: wrap;
     margin-right: -15px;
     margin-left: -15px;
-    margin-bottom: 80px;
-    margin-top: 80px;
+    margin-bottom: 4%;
+    margin-top: 4%;
 }
 
 .card-body {
@@ -44,3 +43,9 @@ h2 {
 }
 
 
+.discoverBis {
+    padding-top: 2%;
+    padding-bottom: 4%;
+    display: flex;
+    justify-content: center;
+}
