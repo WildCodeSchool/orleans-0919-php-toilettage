@@ -5,7 +5,9 @@ namespace App\Model;
 /**
  * Class CategoryManager
  *
- */
+**/
+
+
 class CategoryManager extends AbstractManager
 {
     /**
@@ -13,25 +15,29 @@ class CategoryManager extends AbstractManager
      */
     const TABLE = 'category';
 
+    /**
+     *  Initializes this class.
+     */
+    public function selectCountByCategory(): array
+    {
+        $statement = $this->pdo->prepare("SELECT * FROM $this->table ORDER BY name");
+        $statement->execute();
+
+        return $statement->fetchall();
+    }
 
     /**
-     * BeastManager constructor.
+     * Handle item deletion
      *
+     * @param int $id
      */
-    public function __construct()
+    public function delete(int $id)
     {
-        parent::__construct(self::TABLE);
+        // prepared request
+        $statement = $this->pdo->prepare("DELETE FROM $this->table WHERE id=:id");
+        $statement->bindValue('id', $id, \PDO::PARAM_INT);
+        $statement->execute();;
+
     }
 
-    public function update(array $data)
-    {
-        $statement = $this->pdo->prepare("UPDATE " . self::TABLE . "
-                SET name=:name, animal_id=:animal_id           
-                WHERE id=:id
-            ");
-        $statement->bindValue('name', $data['name'], \PDO::PARAM_STR);
-        $statement->bindValue('animal_id', $data['animal_id'], \PDO::PARAM_INT);
-        $statement->bindValue('id', $data['id'], \PDO::PARAM_INT);
-        $statement->execute();
-    }
 }
