@@ -11,7 +11,7 @@
         <div class="container-fluid">
 
             <form class="form-group-delete" method="post" action="/Race/delete/{{ race.id }}">
-                <input type="submit" name="delete" value="Supprimer" class="btn btn-primary">
+                <input type="submit" name="delete" value="Supprimer" class="btn btn-primary" OnClick="return confirm('Voulez-vous vraiment supprimer ?');">
             </form>
             <a href="/Race/index">
                 <button class="btn btn-primary">Retour</button>

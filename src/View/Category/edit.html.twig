@@ -1,0 +1,48 @@
+{% extends 'layoutAdmin.html.twig' %}
+
+{% block title %}Modifier Catégorie{% endblock %}
+
+    {% block stylesheet %}
+        <link rel="stylesheet" href="/assets/css/style_category.css" xmlns="http://www.w3.org/1999/html">
+    {% endblock %}
+
+{% block content %}
+    <div class="container-fluid form-admin">
+
+        <h1>Modifier cette catégorie</h1>
+        <form method="post" action="">
+
+            <div class="row">
+                <div class="form-group">
+                    <label for="category">Nom de la catégorie :</label>
+                    <input type="text" id="category" class="form-control" name="category" value="{{ category.name }}">
+                    {% if errors.category is defined %}
+                        {{ errors.category }}
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="container-fluid">
+
+                <div class="row">
+
+                    <div class="col">
+                        <input type="submit" value="Valider" class="btn btn-primary">
+                    </div>
+
+                    <div class="col">
+                        <form class="form-group-delete" method="post" action="/Category/delete/{{ category.id }}">
+                            <input type="submit" name="delete" value="Supprimer" class="btn btn-primary">
+                        </form>
+                    </div>
+                    <div class="col">
+                        <a href="/Category/index">
+                            <button type="button" class="btn btn-primary">Retour</button>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+    </div>
+{% endblock %}
