@@ -23,8 +23,8 @@
                 <label for="price">Prix :</label>
                 <input type="text" class="form-control" name="price" value="{{ race.price ?? race.price }}">
             </div>
-            {% if errors.prix is defined %}
-                {{ errors.prix }}
+            {% if errors.price is defined %}
+                {{ errors.price }}
             {% endif %}
             <div class="form-group">
                 <label for="description">Description :</label>
@@ -42,6 +42,28 @@
                 <img src="/{{ race.image }}">
             </div>
             <input id="image" type="file" name="path"/>
+            {% if errors.image is defined %}
+                {{ errors.image }}
+            {% endif %}
+
+            <div class="form-group">
+                <label for="image-before">Image toilletage avant:</label>
+                <input type="text" class="form-control" name="path-before" id="image-before"
+                       value="{{ race.before ?? race.before }}"/>
+                <img src="/{{ race.before }}">
+            </div>
+            <input id="image" type="file" name="path-before"/>
+            {% if errors.image is defined %}
+                {{ errors.image }}
+            {% endif %}
+
+            <div class="form-group">
+                <label for="image-after">Image toilletage après:</label>
+                <input type="text" class="form-control" name="path-after" id="image-after"
+                       value="{{ race.after ?? race.after }}"/>
+                <img src="/{{ race.after }}">
+            </div>
+            <input id="image" type="file" name="path-after"/>
             {% if errors.image is defined %}
                 {{ errors.image }}
             {% endif %}

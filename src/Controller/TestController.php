@@ -114,26 +114,6 @@ class RaceController extends AbstractController
         }
     }
 
-    public function validateUpload($image)
-    {
-        $errors = [];
-        if ($image['error'] === 0) {
-            $errors = "Fichier non ajouté";
-        }
-        if ($image['size'] > self::MAX_FILES_SIZE) {
-            $errors = "Le fichier ne doit pas dépasser " . (self::MAX_FILES_SIZE / 1000) . "KO";
-        }
-        if (!in_array($image['type'], self::ALLOWED_MIMES)) {
-            $errors = "Mauvais type de fichier, les fichier accepté sont "
-                . implode(', ', self::ALLOWED_MIMES);
-        }
-        if (empty($errors)) {
-            return $image;
-        } else {
-            return $errors;
-        }
-    }
-
     public function add(): string
     {
         $raceManager = new RaceManager();
@@ -154,14 +134,12 @@ class RaceController extends AbstractController
             $errors = $this->validate($data);
 
             $path = $this->validateUpload($_FILES['path']);
-
             $pathBefore = $this->validateUpload($_FILES['path-before']);
             $pathAfter = $this->validateUpload($_FILES['path-after']);
 
             if (empty($errors)) {
                 if (!empty($path)) {
                     $fileName = $_FILES['path']['name'];
-
                     move_uploaded_file($_FILES['path']['tmp_name'], $uploadDir . $fileName);
                 }
                 if (!empty($pathBefore)) {
@@ -175,15 +153,31 @@ class RaceController extends AbstractController
                 $raceManager->insert($data);
                 header('Location:/race/index');
             }
-        }
-        return $this->twig->render('Race/add.html.twig', [
 
-            'data' => $data ?? [],
-            'errors' => $errors ?? [],
-            'categories' => $categories,
-            'path' => $fileName ?? '',
-            'path-before' => $fileNameBefore ?? '',
-            'path-after' => $fileNameAfter ?? '',
-        ]);
+            return $this->twig->render('Race/add.html.twig', [
+                'data' => $data ?? [],
+                'errors' => $errors ?? [],
+                'categories' => $categories,
+                'path' => $fileName ?? '',
+                'path-before' => $fileNameBefore ?? '',
+                'path-after' => $fileNameAfter ?? '',
+            ]);
+        }
+    }
+
+
+    public function validateUpload($image)
+    {
+        if ($image['error'] !== 0) {
+            $errors[] = "Fichier non ajouté";
+        }
+        if ($image['size'] > self::MAX_FILES_SIZE) {
+            $errors[] = "Le fichier ne doit pas dépasser " . (self::MAX_FILES_SIZE / 1000) . "KO";
+        }
+        if (!in_array($image['type'], self::ALLOWED_MIMES)) {
+            $errors[] = "Mauvais type de fichier, les fichier accepté sont "
+                . implode(', ', self::ALLOWED_MIMES);
+        }
+        return $errors ?? [];
     }
 }
