@@ -104,15 +104,7 @@ class RaceController extends AbstractController
         return $errors ?? [];
     }
 
-    public function delete(int $id)
-    {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $raceManager = new RaceManager();
-            $raceManager->delete($id);
 
-            header('Location: /Race/index');
-        }
-    }
 
     public function validateUpload($image)
     {
@@ -139,11 +131,11 @@ class RaceController extends AbstractController
         $raceManager = new RaceManager();
         $categoryManager = new CategoryManager();
         $categories = $categoryManager->selectAll();
-
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $data = array_map('trim', $_POST);
             $uploadDir = 'uploads/';
             $data['image'] = $uploadDir . $_FILES['path']['name'];
+
 
             $uploadDirBefore = 'uploads/before/';
             $data['before'] = $uploadDirBefore . $_FILES['path-before']['name'];
@@ -154,14 +146,12 @@ class RaceController extends AbstractController
             $errors = $this->validate($data);
 
             $path = $this->validateUpload($_FILES['path']);
-
             $pathBefore = $this->validateUpload($_FILES['path-before']);
             $pathAfter = $this->validateUpload($_FILES['path-after']);
-
+         
             if (empty($errors)) {
                 if (!empty($path)) {
                     $fileName = $_FILES['path']['name'];
-
                     move_uploaded_file($_FILES['path']['tmp_name'], $uploadDir . $fileName);
                 }
                 if (!empty($pathBefore)) {
@@ -185,5 +175,19 @@ class RaceController extends AbstractController
             'path-before' => $fileNameBefore ?? '',
             'path-after' => $fileNameAfter ?? '',
         ]);
+    }
+
+    public function delete(int $id)
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $raceManager = new RaceManager();
+            $race = $raceManager->selectOneById($id);
+            $fileName = $race['image'];
+            if ($race) {
+                unlink($fileName);
+                $raceManager->delete($id);
+            }
+            header('Location: /Race/index');
+        }
     }
 }

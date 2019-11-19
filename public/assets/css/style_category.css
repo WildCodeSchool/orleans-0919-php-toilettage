@@ -4,6 +4,14 @@ body {
     background-color: var(--backgroundColor);
 }
 
+/* form */
+
+.form-admin {
+    width: 30%;
+}
+
+/* */
+
 .race_admin {
     margin: 50px;
 }
@@ -13,21 +21,19 @@ h1 {
     text-align: center;
 }
 
-.list a  {
+.list a {
     color: var(--raceMenuColor);
     font-size: 1.4rem;
 }
 
-.list a:hover  {
+.list a:hover {
     color: var(--mainColor);
 }
 
-.btn-primary{
+.btn-primary {
     background-color: var(--mainColor);
     border-color: var(--mainColor);
     border-radius: .25rem;
-    padding-left: 20px;
-    padding-right: 20px;
 }
 
 .btn-primary:hover {

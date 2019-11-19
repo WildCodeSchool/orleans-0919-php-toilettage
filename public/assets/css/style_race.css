@@ -9,14 +9,19 @@ h1 {
     text-align: center;
 }
 
-h2 {
-    font-family: var(--titleFont);
-}
-
 a {
     font-family: var(--paragraphFont);
     text-decoration: none;
     color: var(--paragraphColor);
+}
+
+.list a  {
+    color: var(--raceMenuColor);
+    font-size: 1.4rem;
+}
+
+.list a:hover  {
+    color: var(--mainColor);
 }
 
 .btn-primary{
