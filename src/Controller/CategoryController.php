@@ -68,9 +68,11 @@ class CategoryController extends AbstractController
 
     public function delete(int $id)
     {
-        $catetogyManager = new CategoryManager();
-        $catetogyManager->delete($id);
-        header('Location:/Category/index');
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $catetogyManager = new CategoryManager();
+            $catetogyManager->delete($id);
+            header('Location:/Category/index');
+        }
     }
 
     private function validate(array $data): array
