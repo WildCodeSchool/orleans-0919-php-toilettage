@@ -1,0 +1,10 @@
+{% extends 'layoutAdmin.html.twig' %}
+
+    {% block stylesheet %}
+        <link rel="stylesheet" href="/assets/css/style_race.css" xmlns="http://www.w3.org/1999/html">
+    {% endblock %}
+
+{% block content %}
+    <h1>Ajouter une nouvelle race</h1>
+    {% include 'Race/_form.html.twig' %}
+{% endblock %}

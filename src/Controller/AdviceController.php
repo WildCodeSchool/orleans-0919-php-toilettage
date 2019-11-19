@@ -17,11 +17,25 @@ use App\Model\RaceManager;
  */
 class AdviceController extends AbstractController
 {
-    public function show(int $id)
+    public function show($id = null)
     {
-        $raceManager = new RaceManager();
-        $race = $raceManager->selectOneById($id);
-        $races = $raceManager->selectAll();
-        return $this->twig->render('Advice/show.html.twig', ['race' => $race ?? [], 'races' => $races]);
+        $races = new RaceManager();
+        if ($id === null) {
+            $firstRace = $races->selectFirstRace();
+            $id = $firstRace['id'];
+        }
+
+        $allInAnimals = $races->selectAllInAnimals();
+        $race = $races->selectOneById($id);
+
+        foreach ($allInAnimals as $animal) {
+            $groupedAnimals[$animal['animal']][$animal['category']][] =
+                ['race_name' => $animal['race_name'], 'animal_id' => $animal['id']];
+        }
+
+        return $this->twig->render('Advice/show.html.twig', [
+            'groupedAnimals' => $groupedAnimals ?? [],
+            'race' => $race ?? []
+        ]);
     }
 }
