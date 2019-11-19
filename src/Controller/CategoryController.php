@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use App\Model\RaceManager;
 use App\Model\CategoryManager;
 
 /**
@@ -40,6 +39,26 @@ class CategoryController extends AbstractController
         }
 
         return $this->twig->render('Category/add.html.twig', ['errors' => $errors ?? []]);
+    }
+
+    public function edit(int $id): string
+    {
+        $catetogyManager = new CategoryManager();
+        $category = $catetogyManager->selectOneById($id);
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $data = array_map('trim', $_POST);
+            $data['id'] = $category['id'];
+            $errors = $this->validate($data);
+
+            if (empty($errors)) {
+                $catetogyManager->update($data);
+
+                header('Location: /Category/index/');
+            }
+        }
+
+        return $this->twig->render('Category/edit.html.twig', ['category' => $category, 'errors' => $errors ?? []]);
     }
 
     private function validate(array $data): array

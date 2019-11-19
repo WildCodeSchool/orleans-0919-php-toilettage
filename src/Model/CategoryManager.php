@@ -26,11 +26,10 @@ class CategoryManager extends AbstractManager
     public function update(array $data)
     {
         $statement = $this->pdo->prepare("UPDATE " . self::TABLE . "
-                SET name=:name, animal_id=:animal_id           
+                SET name=:name          
                 WHERE id=:id
             ");
-        $statement->bindValue('name', $data['name'], \PDO::PARAM_STR);
-        $statement->bindValue('animal_id', $data['animal_id'], \PDO::PARAM_INT);
+        $statement->bindValue('name', $data['category'], \PDO::PARAM_STR);
         $statement->bindValue('id', $data['id'], \PDO::PARAM_INT);
         $statement->execute();
     }
