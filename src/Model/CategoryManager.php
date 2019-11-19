@@ -40,4 +40,20 @@ class CategoryManager extends AbstractManager
         $statement->bindValue('name', $data['category'], \PDO::PARAM_STR);
         $statement->execute();
     }
+
+    public function delete(int $id): void
+    {
+        $statement = $this->pdo->prepare("DELETE FROM " . self::TABLE . " WHERE id=:id");
+        $statement->bindValue('id', $id, \PDO::PARAM_INT);
+        $statement->execute();
+    }
+
+    public function countRacesInCategory(int $id)
+    {
+        $statement = $this->pdo->prepare("SELECT COUNT(r.category_id) nb FROM race r WHERE category_id=:id");
+        $statement->bindValue('id', $id, \PDO::PARAM_INT);
+        $statement->execute();
+
+        return $statement->fetch();
+    }
 }

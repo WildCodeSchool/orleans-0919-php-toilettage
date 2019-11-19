@@ -4,13 +4,15 @@ body {
     background-color: var(--backgroundColor);
 }
 
-/* form */
+.countRaces {
+    color: var(--mainColor);
+    font-size: 1.1rem;
+}
 
 .form-admin {
     width: 30%;
 }
 
-/* */
 
 .race_admin {
     margin: 50px;
