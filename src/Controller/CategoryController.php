@@ -45,6 +45,7 @@ class CategoryController extends AbstractController
     {
         $catetogyManager = new CategoryManager();
         $category = $catetogyManager->selectOneById($id);
+        $countRaces = $catetogyManager->countRacesInCategory($id);
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $data = array_map('trim', $_POST);
@@ -58,7 +59,18 @@ class CategoryController extends AbstractController
             }
         }
 
-        return $this->twig->render('Category/edit.html.twig', ['category' => $category, 'errors' => $errors ?? []]);
+        return $this->twig->render('Category/edit.html.twig', [
+            'category' => $category,
+            'errors' => $errors ?? [],
+            'countRaces' => $countRaces
+        ]);
+    }
+
+    public function delete(int $id)
+    {
+        $catetogyManager = new CategoryManager();
+        $catetogyManager->delete($id);
+        header('Location:/Category/index');
     }
 
     private function validate(array $data): array
