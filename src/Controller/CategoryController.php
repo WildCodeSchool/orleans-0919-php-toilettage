@@ -71,7 +71,7 @@ class CategoryController extends AbstractController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $catetogyManager = new CategoryManager();
             $catetogyManager->delete($id);
-            header('Location:/Category/index');
+            header('Location: /Category/index');
         }
     }
 
