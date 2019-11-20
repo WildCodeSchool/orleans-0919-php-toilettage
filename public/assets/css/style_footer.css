@@ -50,6 +50,13 @@
     width: 100%;
 }
 
+.partnerTitle {
+    color: var(--mainColor);
+    font-size: 1.15rem;
+    margin-top: 0.8em;
+    margin-bottom: 0.8em;
+}
+
 .footerList li {
     list-style-type: none;
     text-decoration: none;
