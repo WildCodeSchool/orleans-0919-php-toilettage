@@ -10,42 +10,42 @@
     <div class="container-fluid form-admin">
 
         <h1>Modifier cette catégorie</h1>
+
         <form method="post" action="">
+        <div class="row">
+            <div class="form-group">
+                <label for="category">Nom de la catégorie :</label>
+                <input type="text" id="category" class="form-control" name="category" value="{{ category.name }}">
+                {% if errors.category is defined %}
+                    {{ errors.category }}
+                {% endif %}
+            </div>
+        </div>
+
+        <p>Cette catégorie contient <span class="countRaces">{{ countRaces.nb }}</span> races.</p>
+
+        <div class="container-fluid">
 
             <div class="row">
-                <div class="form-group">
-                    <label for="category">Nom de la catégorie :</label>
-                    <input type="text" id="category" class="form-control" name="category" value="{{ category.name }}">
-                    {% if errors.category is defined %}
-                        {{ errors.category }}
-                    {% endif %}
+
+                    <div class="col">
+                        <input type="submit" value="Valider" class="btn btn-success">
+                    </div>
+                </form>
+                <div class="col">
+                    <form class="form-group-delete" method="POST" action="/category/delete/{{ category.id }}">
+                        <input type="submit" name="delete" value="Supprimer" class="btn btn-danger"
+                               onclick="return confirm('Supprimmer cette catégorie ?')">
+                    </form>
                 </div>
-            </div>
-
-            <p>Cette catégorie contient <span class="countRaces">{{ countRaces.nb }}</span> races.</p>
-
-            <div class="container-fluid">
-
-                <div class="row">
-
-                    <div class="col">
-                        <input type="submit" value="Valider" class="btn btn-primary">
-                    </div>
-
-                    <div class="col">
-                        <a href="/category/delete/{{ category.id }}">
-                            <input type="button" name="delete" value="Supprimer" class="btn btn-primary"
-                   onclick="return confirm('Supprimmer cette catégorie ?')">
-                        </a>
-                    </div>
-                    <div class="col">
-                        <a href="/Category/index">
-                            <button type="button" class="btn btn-primary">Retour</button>
-                        </a>
-                    </div>
-
+                <div class="col">
+                    <a href="/Category/index">
+                        <button type="button" class="btn btn-primary">Retour</button>
+                    </a>
                 </div>
+
             </div>
-        </form>
+        </div>
+
     </div>
 {% endblock %}
