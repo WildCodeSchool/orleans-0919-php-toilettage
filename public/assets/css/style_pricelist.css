@@ -16,6 +16,13 @@
     padding: 10px;
 }
 
+.firstParagraph {
+    margin: 0;
+}
+
+.boxes {
+    padding-right: 0;
+}
 
 .paragraphInfo {
     font-family: var(--paragraphFont);
@@ -70,8 +77,14 @@ a:hover {
 }
 
 .leftBox {
+    margin: auto;
     min-width: 320px;
+    max-width: 320px;
     margin-bottom: 30px;
+}
+
+.rightBox {
+    margin: auto;
 }
 
 .pricesBox {
@@ -82,17 +95,17 @@ a:hover {
 }
 
 .pricesBox :nth-child(n) {
-    width: 40%;
     height: 200px;
+    width: 40%;
     min-width: 350px;
     background-color: var(--backgroundColor);
     border: none;
-    margin-bottom: 20px;
+    margin: 20px;
 }
 
 .pricesBoxLeft :nth-child(n), .pricesBoxRight :nth-child(n) {
-    width: 100%;
     color: var(--mainColor);
+    margin: auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -115,6 +128,7 @@ a:hover {
     min-width: 350px;
     height: 250px;
     display: flex;
+    margin: 20px;
 }
 
 .photoBoxLeft, .photoBoxRight {
