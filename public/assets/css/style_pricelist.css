@@ -77,8 +77,12 @@ a:hover {
     margin-bottom: 30px;
 }
 
-.rightBox :nth-child((n)) {
-    width: 100%;
+.rightBox :nth-child((n)
+
+)
+{
+    width: 100%
+;
 }
 
 .pricesBox {
