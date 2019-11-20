@@ -71,13 +71,11 @@
             </div>
 
                 <div id="prices" class="rightBox col-md-7 offset-md-1">
-
                 <div class="titlePrices card">
                     <hr class="line">
                     <h3 class="titleRightBox">Tarifs {{ race.name }}</h3>
                     <hr class="line">
                 </div>
-
                 <div class="pricesBox card my-5 border-0">
                     <div class="pricesBoxLeft card">
                         <p>Nettoyage Simple : {{ race.price }} €</p>
@@ -86,13 +84,11 @@
                         <p>Avec Défrisage : {{ straighteningPrice }} €</p>
                     </div>
                 </div>
-
                 <div class="titlePhoto card">
                     <hr class="line">
-                    <h3 class="titleRightBox">Photos</h3>
+                    <h3 class="titleRightBox">Avant / Après</h3>
                     <hr class="line">
                 </div>
-
                 <div class="photoBox card my-5 border-0">
                     <div class="card border shadowCard-1">
                         <img class="photoBoxLeft" src="/uploads/before/{{ race.before }}"
@@ -103,7 +99,13 @@
                               alt="Après">
                     </div>
                 </div>
+                    <div class="buttonPrice">
+                        <a href="/advice/show">
+                        <button type="submit" name="submit" value='Submit' class="btn btn-primary btn-lg">Voir les conseils</button>
+                        </a>
+                    </div>
             </div>
+
         </div>
     </section>
 {% endblock %}

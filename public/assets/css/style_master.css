@@ -11,4 +11,5 @@
     --backgroundBottomFooter: linear-gradient(#404040, #222222);
     --raceMenuColor: black; /* black */
     --placeholderColor: #D3D3D3;
+    --primary: var(--mainColor);
 }

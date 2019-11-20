@@ -149,9 +149,10 @@ a:hover {
     margin: 0em 0 0em 1.1em;
 }
 
-.discoverBis {
-    padding-bottom: 5%;
+.buttonPrice {
+    padding: 5% 0 0 4%;
     display: flex;
     justify-content: center;
 }
+
 
