@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Model\AnimalManager;
 use App\Model\CategoryManager;
 
 /**
@@ -27,6 +28,9 @@ class CategoryController extends AbstractController
 
     public function add(): string
     {
+        $animalManager = new AnimalManager();
+        $animals = $animalManager->selectAll();
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $data = array_map('trim', $_POST);
             $errors = $this->validate($data);
@@ -38,7 +42,10 @@ class CategoryController extends AbstractController
             }
         }
 
-        return $this->twig->render('Category/add.html.twig', ['errors' => $errors ?? []]);
+        return $this->twig->render('Category/add.html.twig', [
+            'errors' => $errors ?? [],
+            'animals' => $animals
+        ]);
     }
 
     public function edit(int $id): string

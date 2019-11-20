@@ -13,6 +13,17 @@
         <form method="post" action="">
 
             <div class="row">
+
+                <div class="form-group">
+                    <label for="category">Sélectionner l'Animal :</label>
+                    <select name="animal" class="custom-select" id="animal">
+                        {% for animal in animals %}
+                            <option {{ animal.id == category.animal_id ? 'selected' }}
+                                    value="{{ animal.id }}">{{ animal.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
                 <div class="form-group">
                     <label for="category">Nom de la catégorie :</label>
                     <input type="text" id="category" class="form-control" name="category" value="{{ category.name }}">
