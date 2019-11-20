@@ -8,29 +8,19 @@
 
 {% block content %}
     <section>
-        <div class="titlePresentation">
+        <div class="titlePresentation m-1">
           <h1>Tarifs du salon Toilettage Séduction</h1>
         </div>
 
-        <div class="row">
-            <p class="col-10 offset-1 paragraphInfo"> Les tarifs sont donnés suivant l'état d'entretien du chien et sa
-                corpulence, pour un toilettage complet. L'application d'un shampoing spécifique, les soins des ongles,
-                des
-                yeux,
-                des oreilles, et la vidange des glandes anales sont compris dans le tarif. Le démêlage nécessaire en
-                supplément
-                en accord avec les propriétaires. Les prix de base sont applicables à un animal
+        <div class="row firstParagraph">
+            <p class="col-10 offset-1 paragraphInfo mb-5"> Les tarifs sont donnés suivant l'état d'entretien du chien et sa
+                corpulence, pour un toilettage complet. Les prix de base sont applicables à un animal
                 normalement entretenu, de race ou se rapprochant le plus du type de la race.
                 Mes tarifs sont identiques en tonte ou en coupe ciseaux.
                 Pour les chiens susceptibles d'être épilés, se référer aux explications données dans leur conseil. Si
                 vous souhaitez un tarif précis, vous pouvez venir me faire voir votre chien avant toilettage (téléphoner
                 avant
-                de venir).
-
-                La coupe des ongles (chiens, chats, oiseaux, rongeurs, ...) et l'épilation des oreilles peuvent
-                s'effectuer
-                sans
-                toilettage complet. </p>
+                de venir).</p>
         </div>
         <div class="container-fluid boxes row">
             <div class=" col-md-2 offset-md-1">
@@ -71,13 +61,11 @@
             </div>
 
                 <div id="prices" class="rightBox col-md-7 offset-md-1">
-
                 <div class="titlePrices card">
                     <hr class="line">
                     <h3 class="titleRightBox">Tarifs {{ race.name }}</h3>
                     <hr class="line">
                 </div>
-
                 <div class="pricesBox card my-5 border-0">
                     <div class="pricesBoxLeft card">
                         <p>Nettoyage Simple : {{ race.price }} €</p>
@@ -86,13 +74,11 @@
                         <p>Avec Défrisage : {{ straighteningPrice }} €</p>
                     </div>
                 </div>
-
                 <div class="titlePhoto card">
                     <hr class="line">
-                    <h3 class="titleRightBox">Photos</h3>
+                    <h3 class="titleRightBox">Avant / Après</h3>
                     <hr class="line">
                 </div>
-
                 <div class="photoBox card my-5 border-0">
                     <div class="card border shadowCard-1">
                         <img class="photoBoxLeft" src="/uploads/before/{{ race.before }}"
@@ -103,7 +89,13 @@
                               alt="Après">
                     </div>
                 </div>
+                    <div class="buttonPrice">
+                        <a href="/advice/show">
+                        <button type="submit" name="submit" value='Submit' class="btn btn-primary btn-lg">Voir les conseils</button>
+                        </a>
+                    </div>
             </div>
+
         </div>
     </section>
 {% endblock %}
