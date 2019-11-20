@@ -17,4 +17,7 @@ define('APP_DEV', true);
 define('APP_VIEW_PATH', __DIR__ . '/../src/View/');
 define('APP_CACHE_PATH', __DIR__ . '/../temp/cache/');
 
+define('MAIL_FROM', "no-reply@toilettageseduction.fr");
+define('MAIL_TO', "phptestwild@gmail.com");
+
 define('HOME_PAGE', 'home/index');

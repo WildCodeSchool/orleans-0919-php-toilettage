@@ -1,4 +1,4 @@
-<form method="post" action="" class="form-admin-race">
+<form method="post" action="" class="form-admin-race" enctype="multipart/form-data">
     <div class="container-fluid">
         <div class="row">
             <input type="hidden" name="id" value="{{ race.id }}">
@@ -23,8 +23,8 @@
                 <label for="price">Prix :</label>
                 <input type="text" class="form-control" name="price" value="{{ race.price ?? race.price }}">
             </div>
-            {% if errors.prix is defined %}
-                {{ errors.prix }}
+            {% if errors.price is defined %}
+                {{ errors.price }}
             {% endif %}
             <div class="form-group">
                 <label for="description">Description :</label>
@@ -34,14 +34,40 @@
                     {{ errors.description }}
                 {% endif %}
             </div>
+
             <div class="form-group">
                 <label for="image">Image :</label>
-                <input type="text" class="form-control" name="image" id="image"
+                <input type="text" class="form-control" name="path" id="image"
                        value="{{ race.image ?? race.image }}"/>
+                <img src="/uploads/{{ race.image }}">
             </div>
+            <input id="image" type="file" name="path"/>
             {% if errors.image is defined %}
                 {{ errors.image }}
             {% endif %}
+
+            <div class="form-group">
+                <label for="image-before">Image toilletage avant:</label>
+                <input type="text" class="form-control" name="path-before" id="image-before"
+                       value="{{ race.before ?? race.before }}"/>
+                <img src="/uploads/before/{{ race.before }}">
+            </div>
+            <input id="image" type="file" name="path-before"/>
+            {% if errors.image is defined %}
+                {{ errors.image }}
+            {% endif %}
+
+            <div class="form-group">
+                <label for="image-after">Image toilletage après:</label>
+                <input type="text" class="form-control" name="path-after" id="image-after"
+                       value="{{ race.after ?? race.after }}"/>
+                <img src="/uploads/after/{{ race.after }}">
+            </div>
+            <input id="image" type="file" name="path-after"/>
+            {% if errors.image is defined %}
+                {{ errors.image }}
+            {% endif %}
+
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-1">

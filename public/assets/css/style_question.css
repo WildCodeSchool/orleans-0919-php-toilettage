@@ -23,7 +23,7 @@ p {
     /*display: block;*/
     color: var(--mainColor);
     text-decoration: none;
-    font-size: 2rem;
+    font-size: 1.7rem;
 }
 
 .panel-default .panel-title a:after {

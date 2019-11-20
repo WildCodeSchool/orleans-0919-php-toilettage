@@ -1,12 +1,3 @@
-.titlePartner {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    font: var(--titleFont);
-    color: var(--mainColor);
-
-}
-
 .imgPartner {
     width: 25vw;
     height: 32vh;
