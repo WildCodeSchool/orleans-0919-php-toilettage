@@ -16,6 +16,9 @@
     padding: 10px;
 }
 
+.mainParagraph {
+    margin: 0;
+}
 
 .paragraphInfo {
     font-family: var(--paragraphFont);
@@ -72,6 +75,10 @@ a:hover {
 .leftBox {
     min-width: 320px;
     margin-bottom: 30px;
+}
+
+.rightBox :nth-child((n)) {
+    width: 100%;
 }
 
 .pricesBox {
