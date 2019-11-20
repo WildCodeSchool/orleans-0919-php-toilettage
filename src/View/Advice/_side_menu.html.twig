@@ -1,0 +1,40 @@
+    <div class="container-fluid">
+
+        <div class="container-fluid boxes row">
+            <div class=" col-md-2 offset-md-1">
+                <div class="leftBox card">
+
+                    {% for animalName, groupedAnimal in groupedAnimals %}
+                        <div class="card-header headerCollapse">
+                            <p class="titleAnimals">{{ animalName }}</p>
+                        </div>
+
+                        <div class="accordion" id="accordionCategory">
+                            <div class="card">
+
+                                {% for categoryName, animals in groupedAnimal %}
+                                    <div class="card-header categoryHeader" id="heading{{ categoryName }}">
+                                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                                data-target="#collapse{{ categoryName }}"
+                                                aria-expanded="false" aria-controls="collapse{{ categoryName }}">
+                                            {{ categoryName }}
+                                        </button>
+                                    </div>
+
+                                    {% for animal in animals %}
+                                        <div id="collapse{{ categoryName }}" class="collapse raceHeader"
+                                             aria-labelledby="heading{{ categoryName }}"
+                                             data-parent="#accordionCategory">
+                                            <div class="card-body sub">
+                                                <a href="/advice/show/{{ animal.animal_id }}">{{ animal.race_name }}</a>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                {% endfor %}
+
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                </div>
+            </div>

@@ -59,14 +59,14 @@
     text-align: left;
 }
 
-a:link {
+.link-visited:link {
     text-decoration: none;
     color: var(--paragraphTitle);
 }
 
 .link-visited:visited {
     text-decoration: none;
-    color: var(--paragraphTitle)
+    color: var(--paragraphTitle);
 }
 
 /* Network link */

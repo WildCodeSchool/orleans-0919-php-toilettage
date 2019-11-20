@@ -11,6 +11,10 @@ use App\Model\CategoryManager;
  */
 class RaceController extends AbstractController
 {
+
+    const MAX_FILES_SIZE = 100000;
+    const ALLOWED_MIMES = ["image/jpeg", "image/png"];
+
     /**
      * Display item listing
      *
@@ -37,14 +41,37 @@ class RaceController extends AbstractController
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $data = array_map('trim', $_POST);
+            $uploadDir = 'uploads/';
+            $data['image'] = $_FILES['path']['name'];
+
+
+            $uploadDirBefore = 'uploads/before/';
+            $data['before'] = $_FILES['path-before']['name'];
+
+            $uploadDirAfter = 'uploads/after/';
+            $data['after'] = $_FILES['path-after']['name'];
 
             $errors = $this->validate($data);
 
+            $path = $this->validateUpload($_FILES['path']);
+            $pathBefore = $this->validateUpload($_FILES['path-before']);
+            $pathAfter = $this->validateUpload($_FILES['path-after']);
+
             if (empty($errors)) {
-                // update en bdd si pas d'erreur
+                if (!empty($path)) {
+                    $fileName = $_FILES['path']['name'];
+                    move_uploaded_file($_FILES['path']['tmp_name'], $uploadDir . $fileName);
+                }
+                if (!empty($pathBefore)) {
+                    $fileNameBefore = $_FILES['path-before']['name'];
+                    move_uploaded_file($_FILES['path-before']['tmp_name'], $uploadDirBefore . $fileNameBefore);
+                }
+                if (!empty($pathAfter)) {
+                    $fileNameAfter = $_FILES['path-after']['name'];
+                    move_uploaded_file($_FILES['path-after']['tmp_name'], $uploadDirAfter . $fileNameAfter);
+                }
                 $raceManager->update($data);
-                // redirection en GET
-                header('Location: /Race/edit/' . $id);
+                header('Location:/race/index');
             }
         }
 
@@ -78,12 +105,93 @@ class RaceController extends AbstractController
         return $errors ?? [];
     }
 
+
+
+    public function validateUpload($image)
+    {
+        $errors = [];
+        if ($image['error'] === 0) {
+            $errors = "Fichier non ajouté";
+        }
+        if ($image['size'] > self::MAX_FILES_SIZE) {
+            $errors = "Le fichier ne doit pas dépasser " . (self::MAX_FILES_SIZE / 1000) . "KO";
+        }
+        if (!in_array($image['type'], self::ALLOWED_MIMES)) {
+            $errors = "Mauvais type de fichier, les fichier accepté sont "
+                . implode(', ', self::ALLOWED_MIMES);
+        }
+        if (empty($errors)) {
+            return $image;
+        } else {
+            return $errors;
+        }
+    }
+
+    public function add(): string
+    {
+        $raceManager = new RaceManager();
+        $categoryManager = new CategoryManager();
+        $categories = $categoryManager->selectAll();
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $data = array_map('trim', $_POST);
+            $uploadDir = 'uploads/';
+            $data['image'] = $_FILES['path']['name'];
+
+
+            $uploadDirBefore = 'uploads/before/';
+            $data['before'] = $_FILES['path-before']['name'];
+
+            $uploadDirAfter = 'uploads/after/';
+            $data['after'] = $_FILES['path-after']['name'];
+
+            $errors = $this->validate($data);
+
+            $path = $this->validateUpload($_FILES['path']);
+            $pathBefore = $this->validateUpload($_FILES['path-before']);
+            $pathAfter = $this->validateUpload($_FILES['path-after']);
+         
+            if (empty($errors)) {
+                if (!empty($path)) {
+                    $fileName = $_FILES['path']['name'];
+                    move_uploaded_file($_FILES['path']['tmp_name'], $uploadDir . $fileName);
+                }
+                if (!empty($pathBefore)) {
+                    $fileNameBefore = $_FILES['path-before']['name'];
+                    move_uploaded_file($_FILES['path-before']['tmp_name'], $uploadDirBefore . $fileNameBefore);
+                }
+                if (!empty($pathAfter)) {
+                    $fileNameAfter = $_FILES['path-after']['name'];
+                    move_uploaded_file($_FILES['path-after']['tmp_name'], $uploadDirAfter . $fileNameAfter);
+                }
+                $raceManager->insert($data);
+                header('Location:/race/index');
+            }
+        }
+        return $this->twig->render('Race/add.html.twig', [
+
+            'data' => $data ?? [],
+            'errors' => $errors ?? [],
+            'categories' => $categories,
+            'path' => $fileName ?? '',
+            'path-before' => $fileNameBefore ?? '',
+            'path-after' => $fileNameAfter ?? '',
+        ]);
+    }
+
     public function delete(int $id)
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $raceManager = new RaceManager();
-            $raceManager->delete($id);
-
+            $race = $raceManager->selectOneById($id);
+            $fileName = $race['image'];
+            $fileNameBefore = $race['before'];
+            $fileNameAfter = $race['after'];
+            if ($race) {
+                unlink('uploads/' . $fileName);
+                unlink('uploads/before/' .$fileNameBefore);
+                unlink('uploads/after/' .$fileNameAfter);
+                $raceManager->delete($id);
+            }
             header('Location: /Race/index');
         }
     }

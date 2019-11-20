@@ -1,12 +1,5 @@
 @import "style_master.css";
 
-.mainTitle {
-    text-align: center;
-    margin-top: 3%;
-    margin-bottom: 1%;
-    color: var(--mainColor);
-}
-
 .collapse, .collapsing {
     font-size: 1.5rem;
 }
@@ -20,15 +13,16 @@
 }
 
 .titlePrices, .titlePhoto {
-    padding: 20px;
+    padding: 10px;
 }
+
 
 .paragraphInfo {
     font-family: var(--paragraphFont);
     color: var(--paragraphColor);
     text-align: justify;
-    margin-top: 3%;
-    margin-bottom: 5%;
+    margin-top: 2%;
+    margin-bottom: 4%;
 }
 
 li {
@@ -36,7 +30,6 @@ li {
 }
 
 a {
-
     text-decoration: none;
     color: var(--raceMenuColor);
 }
@@ -46,25 +39,18 @@ a:hover {
     color: var(--mainColor);
 }
 
-.boxes {
-    display: flex;
-    margin: 0px;
-}
 
 .headerCollapse {
     background-color: var(--mainColor);
 }
 
-.headerCollapse h2 {
-    color: var(--paragraphTitle);
-}
 
 .categoryHeader {
     background-color: var(--paragraphTitle);
 }
 
 .categoryHeader button {
-    font-size: 1.7rem;
+    font-size: 1.4em;
     color: var(--mainColor);
     text-decoration: none;
 }
@@ -134,30 +120,38 @@ a:hover {
 .photoBoxLeft, .photoBoxRight {
     margin-bottom: 20px;
     min-width: 30px;
+    -webkit-filter: contrast(105%) brightness(115%) sepia(10%) saturate(90%);
 }
 
 .titleAnimals {
-    font-size: 25px;
+    font-family: var(--titleFont);
+    background-color: var(--mainColor);
+    color: var(--paragraphTitle);
+    font-weight: bold;
+    font-size: 1.7em;
 }
 
-.titlePrices, .titlePhoto, .boxPhoto, .pricelistBox {
+.titlePrices, .titlePhoto, .boxPhoto {
     width: 99%;
     flex-direction: row;
     justify-content: center;
     border: none;
 }
 
-.card-title {
-    text-align: center;
-}
 
-.card-body {
+.sub {
     background-color: var(--backgroundColor);
+    padding: 0.6em;
 }
 
 .card-body a {
-    margin: 1rem 0 1rem 2rem;
+    font-size: 1.25rem;
+    margin: 0em 0 0em 1.1em;
 }
 
-
+.discoverBis {
+    padding-bottom: 5%;
+    display: flex;
+    justify-content: center;
+}
 

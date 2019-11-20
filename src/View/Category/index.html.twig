@@ -1,20 +1,17 @@
 {% extends 'layoutAdmin.html.twig' %}
 
-{% block title %}Toilettage Seduction{% endblock %}
+{% block title %}Admin Catégories{% endblock %}
+{% block stylesheet %}<link rel="stylesheet" href="/assets/css/style_category.css">{% endblock %}
 
 {% block content %}
-
-    {% block stylesheet %}
-        <link rel="stylesheet" href="/assets/css/style_race.css">
-    {% endblock %}
     <section class="race_admin">
-        <h1>Liste des races</h1>
+                <h1>Catégories</h1>
         <div class="row">
             <div class="col-lg-3">
 
             <ul class="list">
-                {% for race in races %}
-                    <li><a href="/race/edit/{{ race.id }}">{{ race.name }}</a></li>
+                {% for category in categories %}
+                    <li><a href="/category/edit/{{ category.id }}">{{ category.name }}</a></li>
                 {% else %}
                     <li>Rien à afficher</li>
                 {% endfor %}
@@ -23,7 +20,7 @@
         </div>
         <div class="row">
             <ul class="list">
-                <a href="/race/add">
+                <a href="/category/add">
                     <button class="btn btn-primary">Ajouter</button>
                 </a>
             </ul>
