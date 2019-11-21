@@ -87,7 +87,7 @@ a:hover {
     margin: auto;
 }
 
-.pricesBox {
+.pricesBox, .photoBox {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -117,24 +117,19 @@ a:hover {
     color: var(--mainColor);
 }
 
-.photoBox {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-.photoBox :nth-child(n) {
+.photoBoxLeft, .photoBoxRight {
+    -webkit-filter: contrast(105%) brightness(115%) sepia(10%) saturate(90%);
+    width: 40%;
+    margin: 20px;
     min-width: 350px;
     height: 250px;
     display: flex;
-    margin: 20px;
 }
 
-.photoBoxLeft, .photoBoxRight {
-    margin-bottom: 20px;
-    min-width: 30px;
-    -webkit-filter: contrast(105%) brightness(115%) sepia(10%) saturate(90%);
+.photoBoxLeft img, .photoBoxRight img {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
 }
 
 .titleAnimals {
