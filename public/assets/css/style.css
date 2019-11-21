@@ -350,13 +350,13 @@ label {
 .mapContour {
     display: flow;
     justify-items: center;
-    height: 525px;
+    height: 550px;
     margin-top: 4vw;
 }
 
 .bloc_adress {
     align-content: center;
-    height: 520px;
+    height: 550px;
 }
 
 address {
