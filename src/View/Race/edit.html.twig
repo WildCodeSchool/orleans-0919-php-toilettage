@@ -5,18 +5,15 @@
         <link rel="stylesheet" href="/assets/css/style_race.css" xmlns="http://www.w3.org/1999/html">
     {% endblock %}
     <section class="race-edit">
-        <h2 class="race-edit-title">Modifier les informations d'un animal</h2>
+        <h2 class="race-edit-title">Modifier cette race</h2>
 
         {% include 'Race/_form.html.twig' %}
         <div class="container-fluid">
-
-            <form class="form-group-delete" method="post" action="/Race/delete/{{ race.id }}">
-                <input type="submit" name="delete" value="Supprimer" class="btn btn-primary" OnClick="return confirm('Voulez-vous vraiment supprimer ?');">
-            </form>
-            <a href="/Race/index">
-                <button class="btn btn-primary">Retour</button>
-            </a>
-
+            <div class="delete-button">
+                <form method="post" action="/Race/delete/{{ race.id }}">
+                    <input type="submit" name="delete" value="Supprimer" class="btn btn-danger mr-4" OnClick="return confirm('Voulez-vous vraiment supprimer ?');">
+                </form>
+            </div>
         </div>
     </section>
 {% endblock %}

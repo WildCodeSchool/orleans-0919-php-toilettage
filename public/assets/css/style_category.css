@@ -7,20 +7,17 @@ body {
 .countRaces {
     color: var(--mainColor);
     font-size: 1.1rem;
+    font-weight: bolder;
 }
 
 .form-admin {
-    width: 30%;
-}
-
-
-.race_admin {
-    margin: 50px;
+    width: 65%;
 }
 
 h1 {
     font-family: var(--titleFont);
     text-align: center;
+    margin-top: 0;
 }
 
 .list a {
@@ -43,4 +40,8 @@ h1 {
     color: var(--paragraphTitle);
     background-color: var(--secondaryColor);
     border-color: var(--secondaryColor);
+}
+
+.delete-btn {
+    margin-top: 20px;
 }
