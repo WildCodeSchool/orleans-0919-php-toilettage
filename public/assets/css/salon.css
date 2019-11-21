@@ -2,7 +2,6 @@
     text-align:center;
     width: 70%;
     margin-left: 16%;
-    margin-bottom: 2%;
 }
 
 .salonPresentation {
@@ -12,13 +11,8 @@
 }
 
 .shadowCard-1 {
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
 }
-
-.row {
-    margin-bottom: 3%;
-}
-
 
 .row-center {
     display: flex;
@@ -47,33 +41,37 @@
     margin: auto;
 }
 
-.test{
-    width:45%;
-    margin-left: 25%;
-    border: 1.5rem ridge var(--secondaryColor);
-    margin-bottom: 2%;
+.firstText, .secondaryText{
+    display: flex;
+    align-items: center;
+}
+
+.firstLine, .secondaryLine{
+    margin-top: 5%;
 }
 
 .totalBox {
-    overflow: scroll;
     width: 100%;
     height: 100%;
+    margin-top: 4%;
+    padding-bottom: 2%;
 }
 
 .row__inner {
-    white-space: nowrap;
-    height : 300px;
-    padding: 1%;
+    height : 370px;
+    padding: 1.5%;
+    display: flex;
+    justify-content: space-around;
 }
 
 .tile {
-    display: inline-block;
     width: 20%;
-    margin-right: 10px;
+    height: 50%;
     transition: 450ms all;
 }
 
 .tile__img {
+    margin-top: 10%;
     width: 100%;
     object-fit: cover;
 }

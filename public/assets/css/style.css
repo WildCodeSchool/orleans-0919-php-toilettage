@@ -260,23 +260,20 @@ h2 {
     padding-top: 4%;
 }
 
-.btn-outline-primary {
+.btn-primary {
     color: var(--paragraphTitle);
-    background-color: var(--secondaryColor) ;
-    border-color: var(--secondaryColor);
-    border-radius: .25rem;
-}
-
-.btn-outline-primary:hover {
-    font-family: var(--titleFont);
-    color: var(--paragraphTitle);
-    background-color: var(--mainColor);
     border-color: var(--mainColor);
+    background-color: var(--mainColor) ;
+    margin-bottom:4em;
 }
 
-.btn-outline-primary:active {
-    box-shadow: none;
+.btn-primary:hover {
+    color: var(--paragraphTitle);
+    border-color: var(--secondaryColor);
+    background-color: var(--secondaryColor);
 }
+
+
 /*FIN style section presentation/Home */
 
 /*----formulaire----*/
@@ -324,16 +321,9 @@ label {
     display: none;
 }
 
-.btn-primary:hover {
-    font-family: var(--titleFont);
-    color: var(--paragraphTitle);
-    background-color: var(--secondaryColor);
-    border-color: var(--secondaryColor);
-}
-
 .button_submit {
     margin-top: 2%;
-    margin-bottom: 10%;
+    margin-bottom: 5%;
 }
 
 /*Css section map and adress*/

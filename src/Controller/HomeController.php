@@ -35,8 +35,8 @@ class HomeController extends AbstractController
                         'data' => $data,
                     ]));
                 $mailer->send($email);
+                header('Location: /Home/index/?success=ok#contact');
             }
-            header('Location: /Home/index/?success=ok#contact');
         }
 
 
@@ -49,6 +49,7 @@ class HomeController extends AbstractController
     private function validateContact($data): array
     {
         $errors = [];
+
         if (empty($data['lastname'])) {
             $errors['lastname'] = "Veuillez remplir le champ nom";
         }
