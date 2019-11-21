@@ -2,6 +2,7 @@
     text-align:center;
     width: 70%;
     margin-left: 16%;
+    margin-bottom: 3%;
 }
 
 .salonPresentation {
@@ -46,7 +47,7 @@
     align-items: center;
 }
 
-.firstLine, .secondaryLine{
+.secondaryLine{
     margin-top: 5%;
 }
 
