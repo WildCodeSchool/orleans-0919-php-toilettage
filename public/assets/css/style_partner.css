@@ -1,14 +1,24 @@
+.media {
+    flex-flow: wrap;
+}
+
+.media-body {
+    flex-flow: wrap;
+    min-width: 350px;
+    height: 200px;
+    padding-left: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
 .imgPartner {
-    width: 25vw;
-    height: 32vh;
-    padding: 1.5vw;
+    padding-left: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 340px;
+    height: 200px;
 }
 
-.cardPartner {
-    padding: 1.5vw;
-    width: 25vh;
-}
-
-.linkPartner a:link {
+.linkPartner, a:link {
      color: var(--backgroundColorFooter);
- }
+}
