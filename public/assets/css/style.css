@@ -137,7 +137,7 @@ h3{
 .icon_header {
     position: fixed;
     z-index: 99;
-    left: 0;
+    left: -0.25vw;
     top: 20%;
 }
 
@@ -148,16 +148,16 @@ h3{
     float: right;
     border-radius: 10px 10px 10px 10px;
     background-color: var(--paragraphTitle);
-    padding: .5em .5em 0em 1em;
+    padding: .7em 0.3em 0em 1em;
     margin: 5px 0;
     min-width: 160px;
     transform: translateX(-290px);
-    box-shadow: 0 0 10px var(--backgroundColorFooter);
+    box-shadow: 0 0 5px var(--backgroundColorFooter);
 }
 
 .icon_header a i {
     float: right;
-    padding: 0.3em;
+    padding: 0.05em;
     transition: .5s;
 }
 
@@ -167,7 +167,7 @@ h3{
 
 .icon_header p {
     float: left;
-    margin-right: .5em;
+    margin-right: 0.5em;
 }
 /* Fin Facebook */
 
@@ -189,6 +189,10 @@ h3{
 @media screen and (max-width: 768px) {
 
     .carousel-inner {
+        display: none;
+    }
+
+    .icon_header {
         display: none;
     }
 }
@@ -266,7 +270,7 @@ h2 {
 .btn-primary:hover {
     color: var(--paragraphTitle);
     border-color: var(--secondaryColor);
-    background-color: var(--secondaryColor) ;
+    background-color: var(--secondaryColor);
 }
 
 
@@ -346,13 +350,13 @@ label {
 .mapContour {
     display: flow;
     justify-items: center;
-    height: 78vh;
+    height: 525px;
     margin-top: 4vw;
 }
 
 .bloc_adress {
     align-content: center;
-    height: 75vh;
+    height: 520px;
 }
 
 address {
@@ -362,6 +366,7 @@ address {
 .adressContour {
     display: flow;
     justify-items: center;
+    height: 80%;
     margin-top: 4vw;
     margin-bottom: 4vw;
 
