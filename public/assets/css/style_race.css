@@ -7,6 +7,11 @@
 h1 {
     font-family: var(--titleFont);
     text-align: center;
+    margin-top: 0;
+}
+
+.admin-race {
+    margin-bottom: 0;
 }
 
 a {
@@ -62,12 +67,20 @@ a {
     margin-right: 10px;
 }
 
-.form-group-delete {
-    width: 50px;
-    margin-top: 50px;
-    margin-bottom: 50px;
-}
-
 .back {
     margin-top: 10px;
+}
+
+label {
+    color:var(--raceMenuColor);
+    font-weight: bold;
+}
+
+#image-advice, #image-after, #image-before {
+    display: none;
+}
+
+.delete-button {
+    margin-left: 335px;
+    margin-bottom: 50px;
 }
