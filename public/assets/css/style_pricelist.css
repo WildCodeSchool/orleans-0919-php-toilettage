@@ -16,6 +16,13 @@
     padding: 10px;
 }
 
+.firstParagraph {
+    margin: 0;
+}
+
+.boxes {
+    padding-right: 0;
+}
 
 .paragraphInfo {
     font-family: var(--paragraphFont);
@@ -70,11 +77,17 @@ a:hover {
 }
 
 .leftBox {
+    margin: auto;
     min-width: 320px;
+    max-width: 320px;
     margin-bottom: 30px;
 }
 
-.pricesBox {
+.rightBox {
+    margin: auto;
+}
+
+.pricesBox, .photoBox {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -82,17 +95,17 @@ a:hover {
 }
 
 .pricesBox :nth-child(n) {
-    width: 40%;
     height: 200px;
+    width: 40%;
     min-width: 350px;
     background-color: var(--backgroundColor);
     border: none;
-    margin-bottom: 20px;
+    margin: 20px;
 }
 
 .pricesBoxLeft :nth-child(n), .pricesBoxRight :nth-child(n) {
-    width: 100%;
     color: var(--mainColor);
+    margin: auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -104,23 +117,19 @@ a:hover {
     color: var(--mainColor);
 }
 
-.photoBox {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-.photoBox :nth-child(n) {
+.photoBoxLeft, .photoBoxRight {
+    -webkit-filter: contrast(105%) brightness(115%) sepia(10%) saturate(90%);
+    width: 40%;
+    margin: 20px;
     min-width: 350px;
     height: 250px;
     display: flex;
 }
 
-.photoBoxLeft, .photoBoxRight {
-    margin-bottom: 20px;
-    min-width: 30px;
-    -webkit-filter: contrast(105%) brightness(115%) sepia(10%) saturate(90%);
+.photoBoxLeft img, .photoBoxRight img {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
 }
 
 .titleAnimals {
@@ -149,9 +158,10 @@ a:hover {
     margin: 0em 0 0em 1.1em;
 }
 
-.discoverBis {
-    padding-bottom: 5%;
+.buttonPrice {
+    padding: 5% 0 0 4%;
     display: flex;
     justify-content: center;
 }
+
 

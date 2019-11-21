@@ -1,5 +1,5 @@
 <form method="post" action="" class="form-admin-race" enctype="multipart/form-data">
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
             <input type="hidden" name="id" value="{{ race.id }}">
 
@@ -26,57 +26,69 @@
             {% if errors.price is defined %}
                 {{ errors.price }}
             {% endif %}
-            <div class="form-group">
+            <div class="form-group mb-4">
                 <label for="description">Description :</label>
-                <input type="text" class="form-control" name="description" id="description"
-                       value="{{ race.description ?? race.description }}"/>
+                <textarea class="form-control" name="description" id="description">{{ race.description ?? race.description }}</textarea>
                 {% if errors.description is defined %}
                     {{ errors.description }}
                 {% endif %}
             </div>
 
-            <div class="form-group">
+            <div class="row">
+            <div class="form-group mb-5">
                 <label for="image">Image :</label>
-                <input type="text" class="form-control" name="path" id="image"
-                       value="{{ race.image ?? race.image }}"/>
-                <img src="/uploads/{{ race.image }}">
+                <input type="text" class="form-control" name="path" id="image-advice"
+                       value="{{ race.image ?? race.image }}">
+                <img src="/uploads/{{ race.image }}" width="300">
+                <input id="image" type="file" name="path">
             </div>
-            <input id="image" type="file" name="path"/>
+
             {% if errors.image is defined %}
                 {{ errors.image }}
             {% endif %}
 
-            <div class="form-group">
+            <div class="form-group mb-5">
                 <label for="image-before">Image toilletage avant:</label>
                 <input type="text" class="form-control" name="path-before" id="image-before"
-                       value="{{ race.before ?? race.before }}"/>
-                <img src="/uploads/before/{{ race.before }}">
+                       value="{{ race.before ?? race.before }}">
+                <img src="/uploads/before/{{ race.before }}" width="300">
+                <input id="image" type="file" name="path-before">
             </div>
-            <input id="image" type="file" name="path-before"/>
+
             {% if errors.image is defined %}
                 {{ errors.image }}
             {% endif %}
 
-            <div class="form-group">
+            <div class="form-group mb-5">
                 <label for="image-after">Image toilletage après:</label>
                 <input type="text" class="form-control" name="path-after" id="image-after"
-                       value="{{ race.after ?? race.after }}"/>
-                <img src="/uploads/after/{{ race.after }}">
+                       value="{{ race.after ?? race.after }}">
+                <img src="/uploads/after/{{ race.after }}" width="300">
+                <input id="image" type="file" name="path-after">
             </div>
-            <input id="image" type="file" name="path-after"/>
+
             {% if errors.image is defined %}
                 {{ errors.image }}
             {% endif %}
+            </div>
 
-            <div class="container-fluid">
+            <div class="container-fluid mb-4">
                 <div class="row">
-                    <div class="col-md-1">
-                        <input type="submit" value="Valider" class="btn btn-primary">
+                    <div>
+                        <input type="submit" value="Valider" class="btn btn-success mr-4">
                     </div>
+                    <div>
+                        <a href="/Race/index">
+                            <button type="button" class="btn btn-secondary mr-4">Retour</button>
+                        </a>
+                    </div>
+
                 </div>
             </div>
+
         </div>
     </div>
 
 </form>
+
 
